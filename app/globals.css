@@ -1,26 +1,62 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-primary: #00a3af;
+  --color-primary-container: #00a3af;
+  --color-primary-light: #5dd7e4;
+  --color-bamboo: #8fe3c6;
+  --color-tertiary: #8fe3c6;
+  --color-lapis: #1e50a2;
+  --color-secondary: #1e50a2;
+  --color-background: #0b111d;
+  --color-surface: #101828;
+  --color-surface-container: #131c2d;
+  --color-surface-low: #0f1624;
+  --color-surface-card: #131e33;
+  --color-surface-high: #182337;
+  --color-surface-highest: #222f46;
+  --color-outline-border: #1e2c44;
+  --color-outline-kintou: #203150;
+  
+  --font-headline: "Space Grotesk", sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-label: "JetBrains Mono", monospace;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #0b111d;
+    color: #e2e8f0;
+    font-family: var(--font-body);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Material Symbols configuration */
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom scrollbar hiding */
+::-webkit-scrollbar {
+  display: none;
+}
+html {
+  scrollbar-width: none;
+  scroll-behavior: smooth;
 }
