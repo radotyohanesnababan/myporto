@@ -7,17 +7,13 @@ export default function Footer() {
         <div className="flex flex-col items-center md:items-start gap-1">
           <div className="flex items-center gap-2">
             <span className="font-headline text-base font-semibold text-white">Radot Yohanes Nababan</span>
-            <span className="font-mono text-xs text-[#8fe3c6] font-medium">v2025.1</span>
           </div>
-          <p className="font-body text-xs text-[#94a3b8] text-center md:text-left">
-            © 2025 Radot Yohanes Nababan. Informatics Engineering ITERA.
-          </p>
         </div>
 
         <div className="flex items-center gap-3 flex-wrap justify-center">
           <a
             className="px-3 py-1.5 rounded-lg font-label text-xs text-[#94a3b8] hover:text-[#8fe3c6] hover:bg-[#101828] transition-colors flex items-center gap-1.5 border border-transparent hover:border-[#1e2c44]"
-            href="https://github.com/alexpratama-dev"
+            href="https://github.com/radotyohanesnababan"
             rel="noreferrer"
             target="_blank"
           >

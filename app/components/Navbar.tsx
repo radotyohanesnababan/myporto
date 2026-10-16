@@ -80,7 +80,7 @@ export default function Navbar() {
         <div className="flex flex-col items-center gap-1.5">
           <a
             className="w-9 h-9 rounded-xl flex items-center justify-center text-[#94a3b8] hover:text-[#8fe3c6] hover:bg-[#00a3af]/10 transition-colors"
-            href="https://github.com/alexpratama-dev"
+            href="https://github.com/radotyohanesnababan"
             rel="noreferrer"
             target="_blank"
             title="GitHub"

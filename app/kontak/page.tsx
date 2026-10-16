@@ -52,27 +52,13 @@ export default function KontakPage() {
               <h1 className="font-headline font-bold text-xl sm:text-2xl text-white tracking-tight">
                 Hubungi &amp; Kolaborasi
               </h1>
-              <p className="font-body text-xs text-[#8fe3c6]">Konsultasi Proyek &amp; Penawaran Kerja</p>
             </div>
-          </div>
-
-          <div className="flex items-center gap-2">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#101828] border border-[#00a3af]/30 text-xs font-mono text-[#8fe3c6]">
-              <span className="w-2 h-2 rounded-full bg-[#8fe3c6] animate-pulse" />
-              Tersedia untuk Q2/Q3
-            </span>
           </div>
         </div>
 
         {/* Section: Contact Form & Collaboration */}
         <section className="mb-14" id="kontak">
           <div className="mb-8 max-w-3xl">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#101828] border border-[#00a3af]/30 mb-3 shadow-inner">
-              <span className="material-symbols-outlined text-[#00a3af] text-sm">alternate_email</span>
-              <span className="font-body text-xs text-[#8fe3c6] font-semibold tracking-wider uppercase">
-                Hubungi Sekarang
-              </span>
-            </div>
             <h2 className="font-headline text-3xl sm:text-4xl text-white font-bold tracking-tight">
               Mari Berkolaborasi atau Diskusikan Proyek Anda
             </h2>

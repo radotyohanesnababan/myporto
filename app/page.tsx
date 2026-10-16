@@ -4,28 +4,27 @@ export default function Home() {
   return (
     <main className="w-full xl:pl-24 bg-[#0b111d] min-h-screen">
       <div className="flex flex-col w-full">
-        {/* Ambient Dark Mode Luminous Glows */}
-        <div className="relative w-full overflow-hidden bg-[#0b111d]">
-          <div className="absolute -top-32 -left-32 w-96 h-96 bg-[#1e50a2]/20 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute top-1/4 -right-40 w-[34rem] h-[34rem] bg-[#00a3af]/15 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute bottom-10 left-1/3 w-80 h-80 bg-[#8fe3c6]/10 rounded-full blur-3xl pointer-events-none" />
+        {/* Ambient Dark Mode Luminous Glows & Fullscreen Hero */}
+        <div className="relative w-full overflow-hidden bg-[#0b111d] min-h-screen min-h-[100dvh] flex flex-col justify-center">
+          <div className="absolute -top-32 -left-32 w-[32rem] h-[32rem] bg-[#1e50a2]/20 rounded-full blur-3xl pointer-events-none animate-pulse" />
+          <div className="absolute top-1/3 -right-40 w-[38rem] h-[38rem] bg-[#00a3af]/15 rounded-full blur-3xl pointer-events-none animate-pulse" />
+          <div className="absolute bottom-10 left-1/3 w-[28rem] h-[28rem] bg-[#8fe3c6]/10 rounded-full blur-3xl pointer-events-none" />
 
           {/* HERO SECTION */}
-          <section className="relative max-w-7xl mx-auto px-6 lg:px-12 pt-14 pb-16 lg:pt-24 lg:pb-20">
-            <div className="max-w-4xl mx-auto flex flex-col items-center text-center gap-7 pt-2 pb-8 lg:pt-6 lg:pb-14">
-
+          <section className="relative w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 py-12 md:py-20 flex-1 flex flex-col justify-center items-center">
+            <div className="max-w-4xl mx-auto flex flex-col items-center text-center gap-8 md:gap-10 my-auto">
               {/* Title & Tagline */}
-              <div className="flex flex-col items-center gap-2">
-                <h1 className="font-headline text-3xl sm:text-5xl lg:text-6xl text-slate-100 font-extrabold tracking-tight leading-[1.15]">
+              <div className="flex flex-col items-center gap-3">
+                <h1 className="font-headline text-4xl sm:text-6xl md:text-7xl lg:text-[4.75rem] text-slate-100 font-extrabold tracking-tight leading-[1.12]">
                   Radot Yohanes Nababan
                 </h1>
-                <p className="font-headline text-lg sm:text-2xl text-[#8fe3c6] font-medium tracking-tight">
-                  Informatics Engineering ITERA &amp; Cloud Specialist
+                <p className="font-headline text-xl sm:text-2xl md:text-3xl text-[#8fe3c6] font-medium tracking-tight">
+                  Web Developer &amp; Cloud Computing Enthusiast
                 </p>
               </div>
 
               {/* Summary Bio */}
-              <p className="font-body text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed font-normal">
+              <p className="font-body text-base sm:text-xl text-slate-300 max-w-3xl leading-relaxed font-normal">
                 <span className="text-slate-100 font-semibold">Fresh Graduate Teknik Informatika ITERA</span> dengan
                 fokus mendalam pada modern{" "}
                 <span className="text-[#00a3af] font-medium">full-stack web development</span> (Laravel, React, PHP)
@@ -34,55 +33,32 @@ export default function Home() {
               </p>
 
               {/* Call to Actions */}
-              <div className="flex flex-wrap items-center justify-center gap-3.5 pt-2 w-full sm:w-auto">
+              <div className="flex flex-wrap items-center justify-center gap-4 pt-2 w-full sm:w-auto">
                 <Link
                   href="/proyek"
-                  className="group inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-[#1e50a2] via-[#00a3af] to-[#00a3af] hover:to-[#8fe3c6] text-white font-body font-bold text-sm tracking-wide shadow-lg shadow-[#00a3af]/25 hover:shadow-[#00a3af]/40 transition-all duration-300 w-full sm:w-auto"
+                  className="group inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-gradient-to-r from-[#1e50a2] via-[#00a3af] to-[#00a3af] hover:to-[#8fe3c6] text-white font-body font-bold text-sm sm:text-base tracking-wide shadow-lg shadow-[#00a3af]/25 hover:shadow-[#00a3af]/40 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 w-full sm:w-auto"
                 >
                   <span>Lihat Proyek Terpilih</span>
-                  <span className="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">
+                  <span className="material-symbols-outlined text-xl group-hover:translate-x-1 transition-transform">
                     arrow_forward
                   </span>
                 </Link>
 
                 <Link
                   href="/kontak"
-                  className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-[#101828] hover:bg-[#162035] text-slate-200 font-body text-sm font-semibold border border-[#283959] shadow-sm hover:border-[#00a3af]/50 hover:text-[#8fe3c6] transition-all duration-200 w-full sm:w-auto"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-[#101828] hover:bg-[#162035] text-slate-200 font-body text-sm sm:text-base font-semibold border border-[#283959] shadow-sm hover:border-[#00a3af]/50 hover:text-[#8fe3c6] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 w-full sm:w-auto"
                 >
-                  <span className="material-symbols-outlined text-lg text-[#00a3af]">chat_bubble</span>
+                  <span className="material-symbols-outlined text-xl text-[#00a3af]">chat_bubble</span>
                   <span>Hubungi / Diskusi</span>
                 </Link>
 
                 <Link
-                  href="/pengalaman"
-                  className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-transparent hover:bg-[#101828] text-slate-400 hover:text-[#8fe3c6] font-body text-sm font-semibold transition-colors border border-transparent hover:border-[#283959] w-full sm:w-auto"
+                  href="/curriculum-vitae"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-transparent hover:bg-[#101828] text-slate-400 hover:text-[#8fe3c6] font-body text-sm sm:text-base font-semibold transition-colors border border-transparent hover:border-[#283959] hover:-translate-y-0.5 active:translate-y-0 w-full sm:w-auto"
                 >
-                  <span className="material-symbols-outlined text-lg">work_history</span>
-                  <span>Rekam Jejak Karir</span>
+                  <span className="material-symbols-outlined text-xl">work_history</span>
+                  <span>Download CV</span>
                 </Link>
-              </div>
-
-              {/* Stats Counters */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5 w-full pt-6 mt-2">
-                <div className="p-4 rounded-xl bg-[#101828] border border-[#283959] shadow-sm flex flex-col items-center hover:border-[#00a3af]/40 transition-colors">
-                  <div className="font-headline text-3xl font-bold text-[#00a3af] tracking-tight">3.58</div>
-                  <div className="font-body text-xs text-slate-400 mt-1 font-medium">IPK (Cum Laude)</div>
-                </div>
-
-                <div className="p-4 rounded-xl bg-[#101828] border border-[#283959] shadow-sm flex flex-col items-center hover:border-[#00a3af]/40 transition-colors">
-                  <div className="font-headline text-3xl font-bold text-[#8fe3c6] tracking-tight">6+</div>
-                  <div className="font-body text-xs text-slate-400 mt-1 font-medium">Proyek &amp; Riset Web</div>
-                </div>
-
-                <div className="p-4 rounded-xl bg-[#101828] border border-[#283959] shadow-sm flex flex-col items-center hover:border-[#00a3af]/40 transition-colors">
-                  <div className="font-headline text-3xl font-bold text-[#00a3af] tracking-tight">1200+</div>
-                  <div className="font-body text-xs text-slate-400 mt-1 font-medium">Peserta Dikoordinir</div>
-                </div>
-
-                <div className="p-4 rounded-xl bg-[#101828] border border-[#283959] shadow-sm flex flex-col items-center hover:border-[#00a3af]/40 transition-colors">
-                  <div className="font-headline text-2xl font-bold text-slate-100 tracking-tight">Bangkit</div>
-                  <div className="font-body text-xs text-slate-400 mt-1 font-medium">Cloud Track Graduate</div>
-                </div>
               </div>
             </div>
           </section>
@@ -97,27 +73,16 @@ export default function Home() {
             {/* Section Header */}
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
               <div className="flex flex-col gap-2 max-w-2xl">
-                <div className="flex items-center gap-2">
-                  <span className="font-body text-xs text-[#00a3af] font-bold uppercase tracking-wider">
-                    Standar Rekayasa &amp; Nilai Teknis
-                  </span>
-                  <span className="text-slate-600">/</span>
-                  <span className="font-body text-xs text-slate-400 font-medium">Tech Stack Focus</span>
-                </div>
                 <h2 className="font-headline text-2xl sm:text-4xl text-slate-100 font-bold tracking-tight">
                   Mengapa Bekerja Sama Dengan Saya?
                 </h2>
               </div>
-              <p className="font-body text-sm sm:text-base text-slate-400 max-w-md leading-relaxed">
-                Menghubungkan logika bisnis dan arsitektur kode bersih agar produk digital Anda handal, cepat diakses,
-                serta siap dikembangkan dalam skala besar.
-              </p>
             </div>
 
             {/* Feature Grid: 3 Focused Tech Stack Cards */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {/* Card 1: Modern Full-Stack Web Development */}
-              <div className="group p-6 sm:p-8 rounded-2xl bg-[#162035] border border-[#283959] shadow-sm hover:shadow-xl hover:border-[#00a3af]/50 transition-all duration-300 flex flex-col justify-between gap-6">
+              <div className="group p-6 sm:p-8 rounded-2xl bg-[#162035] border border-[#283959] shadow-sm hover:shadow-xl hover:border-[#00a3af]/50 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between gap-6 cursor-default">
                 <div className="flex flex-col gap-4">
                   <div className="w-12 h-12 rounded-xl bg-[#00a3af]/15 border border-[#00a3af]/30 flex items-center justify-center text-[#8fe3c6] shadow-sm group-hover:scale-105 transition-transform">
                     <span className="material-symbols-outlined text-2xl">code_blocks</span>
@@ -150,7 +115,7 @@ export default function Home() {
               </div>
 
               {/* Card 2: Cloud Infrastructure & Scalable API */}
-              <div className="group p-6 sm:p-8 rounded-2xl bg-[#162035] border border-[#283959] shadow-sm hover:shadow-xl hover:border-[#8fe3c6]/50 transition-all duration-300 flex flex-col justify-between gap-6">
+              <div className="group p-6 sm:p-8 rounded-2xl bg-[#162035] border border-[#283959] shadow-sm hover:shadow-xl hover:border-[#8fe3c6]/50 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between gap-6 cursor-default">
                 <div className="flex flex-col gap-4">
                   <div className="w-12 h-12 rounded-xl bg-[#1e50a2]/25 border border-[#1e50a2]/40 flex items-center justify-center text-[#5dd7e4] shadow-sm group-hover:scale-105 transition-transform">
                     <span className="material-symbols-outlined text-2xl">cloud_sync</span>
@@ -183,7 +148,7 @@ export default function Home() {
               </div>
 
               {/* Card 3: Database Design & Reliability */}
-              <div className="group p-6 sm:p-8 rounded-2xl bg-[#162035] border border-[#283959] shadow-sm hover:shadow-xl hover:border-[#00a3af]/50 transition-all duration-300 flex flex-col justify-between gap-6">
+              <div className="group p-6 sm:p-8 rounded-2xl bg-[#162035] border border-[#283959] shadow-sm hover:shadow-xl hover:border-[#00a3af]/50 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between gap-6 cursor-default">
                 <div className="flex flex-col gap-4">
                   <div className="w-12 h-12 rounded-xl bg-[#00a3af]/15 border border-[#00a3af]/30 flex items-center justify-center text-[#00a3af] shadow-sm group-hover:scale-105 transition-transform">
                     <span className="material-symbols-outlined text-2xl">database</span>
@@ -197,7 +162,7 @@ export default function Home() {
                     </h3>
                     <p className="font-body text-sm text-slate-300 leading-relaxed mt-1">
                       Perancangan skema database MySQL terindeks efisien untuk ratusan pengguna simultan, kebiasaan
-                      bekerja di terminal Ubuntu Linux, manajemen versi Git branching, dan otomasi alur deployment.
+                      bekerja di terminal Ubuntu Linux.
                     </p>
                   </div>
                 </div>
@@ -223,7 +188,6 @@ export default function Home() {
           <div className="max-w-7xl mx-auto flex flex-col gap-8">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div className="flex flex-col gap-1">
-                <span className="font-body text-xs text-[#00a3af] font-bold uppercase tracking-wider">Karya Flagship</span>
                 <h2 className="font-headline text-2xl sm:text-3xl text-slate-100 font-bold tracking-tight">
                   Proyek Unggulan Terpilih
                 </h2>
@@ -232,30 +196,26 @@ export default function Home() {
                 href="/proyek"
                 className="inline-flex items-center gap-1.5 font-headline text-xs font-bold text-[#8fe3c6] hover:text-white transition-colors"
               >
-                <span>Lihat Seluruh Arsip Proyek (5 Proyek)</span>
+                <span>Lihat Seluruh Arsip Proyek</span>
                 <span className="material-symbols-outlined text-sm">arrow_forward</span>
               </Link>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {/* Project 1 */}
-              <article className="group flex flex-col rounded-2xl bg-[#101828] border border-[#283959] overflow-hidden shadow-sm hover:shadow-xl hover:border-[#00a3af]/50 transition-all duration-300">
-                <div className="relative w-full h-56 sm:h-64 overflow-hidden bg-[#162035]">
+              <article className="group flex flex-col rounded-2xl bg-[#101828] border border-[#283959] overflow-hidden shadow-sm hover:shadow-xl hover:border-[#00a3af]/50 hover:-translate-y-1.5 transition-all duration-300">
+                <div className="relative w-full h-48 sm:h-52 overflow-hidden bg-[#162035]">
                   <img
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
                     alt="Sistem Informasi Perpustakaan SMP N 1 Tarutung"
                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuADmoxlO4drt2rHg_Y8oYefLl208RBy-zvxsc-AfSI04ZRXNIL0KvAgCEYFGlpE2xu3VSJj5krzdi4TYyrCgyDBUiW-4fYxDydl9S67yY3QFylqauUleBMgtmjbf5O3j5YLdHSfqbec8i7yA8sTmbnjiABJXnPwRmod-CJMMIYfTtyUlIdVjSqEr3HMxytXIQRT_3rme2xukFo08Ug74ARsovSY7Xy4wvRCcOO1nk5XxqEb6oIMp9k"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#101828] via-transparent to-transparent" />
-                  <div className="absolute top-3.5 left-3.5 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#0b111d]/85 backdrop-blur-md border border-[#283959] shadow-sm">
-                    <span className="w-2 h-2 rounded-full bg-[#00a3af] animate-pulse" />
-                    <span className="font-body text-xs text-slate-200 font-semibold">Production Ready</span>
-                  </div>
                 </div>
 
                 <div className="p-6 flex flex-col gap-3 flex-1 justify-between bg-[#101828]">
                   <div className="flex flex-col gap-1.5">
-                    <h3 className="font-headline text-lg sm:text-xl text-slate-100 font-bold group-hover:text-[#8fe3c6] transition-colors">
+                    <h3 className="font-headline text-lg text-slate-100 font-bold group-hover:text-[#8fe3c6] transition-colors">
                       Sistem Informasi Perpustakaan SMP N 1 Tarutung
                     </h3>
                     <p className="font-body text-xs sm:text-sm text-slate-400 leading-relaxed">
@@ -278,23 +238,19 @@ export default function Home() {
               </article>
 
               {/* Project 2 */}
-              <article className="group flex flex-col rounded-2xl bg-[#101828] border border-[#283959] overflow-hidden shadow-sm hover:shadow-xl hover:border-[#00a3af]/50 transition-all duration-300">
-                <div className="relative w-full h-56 sm:h-64 overflow-hidden bg-[#162035]">
+              <article className="group flex flex-col rounded-2xl bg-[#101828] border border-[#283959] overflow-hidden shadow-sm hover:shadow-xl hover:border-[#00a3af]/50 hover:-translate-y-1.5 transition-all duration-300">
+                <div className="relative w-full h-48 sm:h-52 overflow-hidden bg-[#162035]">
                   <img
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
                     alt="Bangkit Capstone: Lettuce Plant Disease Detection"
                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5iHPHJrdyq9blKKkkadlyMbzjA-2iH2aMrSsx1KySZIKIDlj8GCd--c8z7egbMbP83clROSnbJbBFByMu8BvIuf-uEOxpuANfwvI0ud236wrOvBlvpOxHmHJ9tySypIdzZ7cRGvo-afr7VhNLxYszWdYjiVWlDYML7xtqTDq5JxpVN8a1xJOioToSdgjqxNVFFOUoRaF_wtmwAKsEl3-1Zv3u4IRiZa1TkgqlXUaBD1fxzkGKu3s"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#101828] via-transparent to-transparent" />
-                  <div className="absolute top-3.5 left-3.5 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#0b111d]/85 backdrop-blur-md border border-[#283959] shadow-sm">
-                    <span className="w-2 h-2 rounded-full bg-[#8fe3c6]" />
-                    <span className="font-body text-xs text-slate-200 font-semibold">Cloud ML Integration</span>
-                  </div>
                 </div>
 
                 <div className="p-6 flex flex-col gap-3 flex-1 justify-between bg-[#101828]">
                   <div className="flex flex-col gap-1.5">
-                    <h3 className="font-headline text-lg sm:text-xl text-slate-100 font-bold group-hover:text-[#8fe3c6] transition-colors">
+                    <h3 className="font-headline text-lg text-slate-100 font-bold group-hover:text-[#8fe3c6] transition-colors">
                       Bangkit Capstone: Lettuce Disease Detection API
                     </h3>
                     <p className="font-body text-xs sm:text-sm text-slate-400 leading-relaxed">
@@ -304,13 +260,47 @@ export default function Home() {
                   </div>
                   <div className="flex flex-wrap gap-1.5 pt-1">
                     <span className="px-2.5 py-0.5 rounded-md bg-[#162035] text-slate-300 font-mono text-xs border border-[#283959]">
-                      Cloud Engineer
+                      Express.JS
                     </span>
                     <span className="px-2.5 py-0.5 rounded-md bg-[#162035] text-slate-300 font-mono text-xs border border-[#283959]">
-                      Google Cloud
+                      Google Cloud Platform
                     </span>
                     <span className="px-2.5 py-0.5 rounded-md bg-[#162035] text-slate-300 font-mono text-xs border border-[#283959]">
                       Cloud Run
+                    </span>
+                  </div>
+                </div>
+              </article>
+
+              {/* Project 3 */}
+              <article className="group flex flex-col rounded-2xl bg-[#101828] border border-[#283959] overflow-hidden shadow-sm hover:shadow-xl hover:border-[#00a3af]/50 hover:-translate-y-1.5 transition-all duration-300">
+                <div className="relative w-full h-48 sm:h-52 overflow-hidden bg-[#162035]">
+                  <img
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+                    alt="Tapamajuma Learning | PWA Literasi & Numerasi"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSNEcddK_aGvhBzRNr_UaL-Ti_oRhFcpIw9ByOD4Iwcdl3cQSlar-6NSXh8_AuXP2HIZYl8wYaelTeGU9K-VHOWf_vYzrcazGStWHUOmYpkOUuGlJffbBATtoaYc0_biPTcwZvaP2xtatYSs5J7dBYgcfCHMx5Ihz98Y3VWqYir0-c1bd8-TdTDU0P9Q17eIFIiPSNBVVwxx1HMYad2-Nrfx1B-dTGD78WthWAO6ioOL6zZxs3MR0"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#101828] via-transparent to-transparent" />
+                </div>
+
+                <div className="p-6 flex flex-col gap-3 flex-1 justify-between bg-[#101828]">
+                  <div className="flex flex-col gap-1.5">
+                    <h3 className="font-headline text-lg sm:text-xl text-slate-100 font-bold group-hover:text-[#8fe3c6] transition-colors">
+                      Tapamajuma Learning | Sistem Informasi Literasi dan Numerasi Sekolah
+                    </h3>
+                    <p className="font-body text-xs sm:text-sm text-slate-400 leading-relaxed">
+                      Sistem informasi literasi dan numerasi sekolah untuk meningkatkan kemampuan literasi dan numerasi siswa berbasis soal dan gamifikasi.
+                    </p>
+                  </div>
+                  <div className="flex flex-wrap gap-1.5 pt-1">
+                    <span className="px-2.5 py-0.5 rounded-md bg-[#162035] text-slate-300 font-mono text-xs border border-[#283959]">
+                      React JS
+                    </span>
+                    <span className="px-2.5 py-0.5 rounded-md bg-[#162035] text-slate-300 font-mono text-xs border border-[#283959]">
+                      Laravel PHP
+                    </span>
+                    <span className="px-2.5 py-0.5 rounded-md bg-[#162035] text-slate-300 font-mono text-xs border border-[#283959]">
+                      MySQL
                     </span>
                   </div>
                 </div>
@@ -323,23 +313,17 @@ export default function Home() {
         <section className="w-full bg-[#101828] py-14 lg:py-18 px-6 lg:px-12 border-y border-[#283959]">
           <div className="max-w-7xl mx-auto flex flex-col gap-8">
             <div className="flex flex-col gap-2">
-              <span className="font-label text-xs text-[#00a3af] font-bold uppercase tracking-wider">
-                Eksplorasi Halaman Khusus
-              </span>
               <h2 className="font-headline text-2xl sm:text-3xl text-slate-100 font-bold tracking-tight">
                 Rangkuman Portofolio &amp; Jejak Karir
               </h2>
-              <p className="font-body text-sm sm:text-base text-slate-400 max-w-2xl leading-relaxed">
-                Setiap aspek rekayasa, kontribusi organisasi, dan matriks keahlian dipisahkan ke dalam halaman khusus
-                agar mudah ditinjau secara mendalam.
-              </p>
+
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {/* Card 1: Halaman Karir & Rekayasa */}
               <Link
                 href="/pengalaman"
-                className="group p-6 rounded-2xl bg-[#141f36] border border-[#283959] hover:border-[#00a3af]/50 hover:bg-[#18253e] transition-all flex flex-col justify-between gap-5"
+                className="group p-6 rounded-2xl bg-[#141f36] border border-[#283959] hover:border-[#00a3af]/50 hover:bg-[#18253e] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between gap-5 h-full"
               >
                 <div className="flex flex-col gap-3">
                   <div className="w-11 h-11 rounded-xl bg-[#00a3af]/15 border border-[#00a3af]/30 flex items-center justify-center text-[#8fe3c6]">
@@ -350,8 +334,7 @@ export default function Home() {
                       Rekam Jejak Profesional
                     </h3>
                     <p className="font-body text-xs text-slate-300 mt-1 leading-relaxed">
-                      Riwayat rekayasa perangkat lunak di Perpustakaan Tarutung, Haltev &amp; Alphapro, serta Bangkit
-                      Academy Cloud Cohort.
+                      Riwayat rekayasa dan riwayat membangun sistem dengan tech stack yang ada.
                     </p>
                   </div>
                 </div>
@@ -366,7 +349,7 @@ export default function Home() {
               {/* Card 2: Halaman Organisasi */}
               <Link
                 href="/organisasi"
-                className="group p-6 rounded-2xl bg-[#141f36] border border-[#283959] hover:border-[#8fe3c6]/50 hover:bg-[#18253e] transition-all flex flex-col justify-between gap-5"
+                className="group p-6 rounded-2xl bg-[#141f36] border border-[#283959] hover:border-[#8fe3c6]/50 hover:bg-[#18253e] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between gap-5 h-full"
               >
                 <div className="flex flex-col gap-3">
                   <div className="w-11 h-11 rounded-xl bg-[#1e50a2]/25 border border-[#1e50a2]/40 flex items-center justify-center text-[#5dd7e4]">
@@ -377,8 +360,7 @@ export default function Home() {
                       Pengalaman Organisasi
                     </h3>
                     <p className="font-body text-xs text-slate-300 mt-1 leading-relaxed">
-                      Kepemimpinan divisi di HMIF ITERA (Public Relations), PMK ITERA (Akomodasi 1200+ peserta), dan
-                      Asisten Lab Komputer.
+                      Kepemimpinan dan pengalaman dalam berorganisasi selama berkuliah.
                     </p>
                   </div>
                 </div>
@@ -393,7 +375,7 @@ export default function Home() {
               {/* Card 3: Halaman Tech Stack */}
               <Link
                 href="/tech-stack"
-                className="group p-6 rounded-2xl bg-[#141f36] border border-[#283959] hover:border-[#00a3af]/50 hover:bg-[#18253e] transition-all flex flex-col justify-between gap-5"
+                className="group p-6 rounded-2xl bg-[#141f36] border border-[#283959] hover:border-[#00a3af]/50 hover:bg-[#18253e] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between gap-5 h-full"
               >
                 <div className="flex flex-col gap-3">
                   <div className="w-11 h-11 rounded-xl bg-[#00a3af]/15 border border-[#00a3af]/30 flex items-center justify-center text-[#00a3af]">
@@ -401,11 +383,11 @@ export default function Home() {
                   </div>
                   <div>
                     <h3 className="font-headline text-lg font-bold text-white group-hover:text-[#8fe3c6] transition-colors">
-                      Keahlian Teknis &amp; Ekosistem
+                      Tech Stack &amp; Ekosistem
                     </h3>
                     <p className="font-body text-xs text-slate-300 mt-1 leading-relaxed">
-                      Matriks kualifikasi 4 domain, visualisasi diagram integrasi cloud, dan filosofi penulisan kode
-                      bersih.
+                      Rangkuman kemahiran dalam berbegai bidang rekayasa perangkat lunak dan ekosistem yang saya 
+                      kuasai.
                     </p>
                   </div>
                 </div>
@@ -429,12 +411,6 @@ export default function Home() {
 
               <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-8">
                 <div className="flex flex-col gap-4 max-w-2xl">
-                  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#162035] border border-[#00a3af]/40 self-start shadow-sm">
-                    <span className="w-2 h-2 rounded-full bg-[#00a3af]" />
-                    <span className="font-body text-xs text-[#8fe3c6] font-bold uppercase tracking-wider">
-                      Terbuka Untuk Peluang Kerja &amp; Proyek
-                    </span>
-                  </div>
                   <h2 className="font-headline text-2xl sm:text-4xl text-slate-100 font-extrabold tracking-tight">
                     Punya ide proyek atau butuh developer di tim Anda?
                   </h2>
@@ -447,13 +423,13 @@ export default function Home() {
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 shrink-0">
                   <Link
                     href="/kontak"
-                    className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl bg-gradient-to-r from-[#1e50a2] via-[#00a3af] to-[#00a3af] hover:to-[#8fe3c6] text-white font-body text-sm font-bold shadow-lg shadow-[#00a3af]/25 hover:shadow-[#00a3af]/40 transition-all duration-300"
+                    className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl bg-gradient-to-r from-[#1e50a2] via-[#00a3af] to-[#00a3af] hover:to-[#8fe3c6] text-white font-body text-sm font-bold shadow-lg shadow-[#00a3af]/25 hover:shadow-[#00a3af]/40 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 w-full sm:w-auto"
                   >
                     <span className="material-symbols-outlined text-lg">mail</span>
                     <span>Hubungi Saya</span>
                   </Link>
                   <a
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#162035] hover:bg-[#1c2844] text-slate-100 font-body text-sm font-bold border border-[#283959] hover:border-[#00a3af]/40 shadow-sm transition-all"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#162035] hover:bg-[#1c2844] text-slate-100 font-body text-sm font-bold border border-[#283959] hover:border-[#00a3af]/40 shadow-sm hover:-translate-y-0.5 active:translate-y-0 transition-all w-full sm:w-auto"
                     href="https://linkedin.com/in/radot-nababan-a51247195"
                     rel="noreferrer"
                     target="_blank"
