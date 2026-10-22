@@ -3,6 +3,7 @@ import { Space_Grotesk, JetBrains_Mono, Geist } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import ScrollReveal from "./components/ScrollReveal";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-headline",
@@ -34,7 +35,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id" className="dark scroll-smooth">
+    <html lang="id" className="dark scroll-smooth" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
@@ -44,8 +45,10 @@ export default function RootLayout({
         />
       </head>
       <body
+        suppressHydrationWarning
         className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} ${geist.variable} font-body bg-[#0b111d] text-[#e2e8f0] min-h-screen selection:bg-[#00a3af]/30 selection:text-[#8fe3c6] relative overflow-x-hidden`}
       >
+        <ScrollReveal />
         <Navbar />
         {children}
         <Footer />

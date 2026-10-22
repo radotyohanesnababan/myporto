@@ -61,6 +61,31 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Global Scroll Reveal Animations */
+.scroll-reveal {
+  opacity: 0;
+  transform: translate3d(0, 26px, 0);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.scroll-reveal.is-revealed {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.scroll-reveal-stagger-1 {
+  transition-delay: 0.06s;
+}
+
+.scroll-reveal-stagger-2 {
+  transition-delay: 0.12s;
+}
+
+.scroll-reveal-stagger-3 {
+  transition-delay: 0.18s;
+}
+
 /* Accessibility: Focus rings */
 :focus-visible {
   outline: 2px solid var(--color-primary, #00a3af);
@@ -76,6 +101,11 @@ html {
   .animate-spin,
   .animate-bounce {
     animation: none !important;
+  }
+  .scroll-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
   * {
     transition-duration: 0.05s !important;
