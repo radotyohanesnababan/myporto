@@ -10,37 +10,40 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex items-center gap-3 flex-wrap justify-center">
+        <div className="flex items-center gap-2.5 sm:gap-3 flex-wrap justify-center">
           <a
-            className="px-3 py-1.5 rounded-lg font-label text-xs text-[#94a3b8] hover:text-[#8fe3c6] hover:bg-[#101828] transition-colors flex items-center gap-1.5 border border-transparent hover:border-[#1e2c44]"
+            className="min-h-[44px] px-3.5 py-2.5 rounded-xl font-label text-xs text-[#94a3b8] hover:text-[#8fe3c6] hover:bg-[#101828] transition-colors flex items-center gap-2 border border-transparent hover:border-[#1e2c44]"
             href="https://github.com/radotyohanesnababan"
             rel="noreferrer"
             target="_blank"
+            aria-label="GitHub Radot Yohanes Nababan (membuka di tab baru)"
           >
-            <span className="material-symbols-outlined text-sm">code</span>
+            <span className="material-symbols-outlined text-sm" aria-hidden="true">code</span>
             <span>GitHub</span>
           </a>
           <a
-            className="px-3 py-1.5 rounded-lg font-label text-xs text-[#94a3b8] hover:text-[#8fe3c6] hover:bg-[#101828] transition-colors flex items-center gap-1.5 border border-transparent hover:border-[#1e2c44]"
-            href="https://linkedin.com/in/radot-nababan-a51247195"
+            className="min-h-[44px] px-3.5 py-2.5 rounded-xl font-label text-xs text-[#94a3b8] hover:text-[#8fe3c6] hover:bg-[#101828] transition-colors flex items-center gap-2 border border-transparent hover:border-[#1e2c44]"
+            href="https://linkedin.com/in/radotnababan"
             rel="noreferrer"
             target="_blank"
+            aria-label="LinkedIn Radot Yohanes Nababan (membuka di tab baru)"
           >
-            <span className="material-symbols-outlined text-sm">hub</span>
+            <span className="material-symbols-outlined text-sm" aria-hidden="true">hub</span>
             <span>LinkedIn</span>
           </a>
           <a
-            className="px-3 py-1.5 rounded-lg font-label text-xs text-[#94a3b8] hover:text-[#8fe3c6] hover:bg-[#101828] transition-colors flex items-center gap-1.5 border border-transparent hover:border-[#1e2c44]"
+            className="min-h-[44px] px-3.5 py-2.5 rounded-xl font-label text-xs text-[#94a3b8] hover:text-[#8fe3c6] hover:bg-[#101828] transition-colors flex items-center gap-2 border border-transparent hover:border-[#1e2c44]"
             href="mailto:radot2510@gmail.com"
+            aria-label="Kirim Email ke radot2510@gmail.com"
           >
-            <span className="material-symbols-outlined text-sm">mail</span>
+            <span className="material-symbols-outlined text-sm" aria-hidden="true">mail</span>
             <span>Email</span>
           </a>
           <Link
-            className="px-3 py-1.5 rounded-lg font-label text-xs text-[#00a3af] hover:text-[#8fe3c6] hover:bg-[#101828] transition-colors flex items-center gap-1.5 border border-[#00a3af]/20"
+            className="min-h-[44px] px-3.5 py-2.5 rounded-xl font-label text-xs text-[#00a3af] hover:text-[#8fe3c6] hover:bg-[#101828] transition-colors flex items-center gap-2 border border-[#00a3af]/20"
             href="/kontak"
           >
-            <span className="material-symbols-outlined text-sm">chat</span>
+            <span className="material-symbols-outlined text-sm" aria-hidden="true">chat</span>
             <span>Diskusi Teknis</span>
           </Link>
         </div>

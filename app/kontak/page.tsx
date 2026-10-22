@@ -6,17 +6,9 @@ export default function KontakPage() {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [projectType, setProjectType] = useState("fullstack");
-  const [selectedBudget, setSelectedBudget] = useState("15 - 40 Juta");
   const [message, setMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const budgetOptions = [
-    { tier: "TIER 1", label: "< 15 Juta" },
-    { tier: "TIER 2 (POPULAR)", label: "15 - 40 Juta" },
-    { tier: "ENTERPRISE", label: "> 40 Juta" },
-    { tier: "CAREER", label: "Rekrutmen Tetap" },
-  ];
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -36,10 +28,10 @@ export default function KontakPage() {
   };
 
   return (
-    <main className="w-full xl:pl-24 bg-[#090e1a] text-[#dbe2f9] min-h-screen relative z-10">
+    <main className="w-full xl:pl-24 bg-[#090e1a] text-[#dbe2f9] min-h-screen relative z-10 overflow-hidden">
       {/* Background ambient lighting */}
-      <div className="fixed -top-40 left-1/3 w-[550px] h-[550px] rounded-full bg-[#1e50a2]/15 blur-[120px] pointer-events-none z-0" />
-      <div className="fixed bottom-10 right-10 w-[500px] h-[500px] rounded-full bg-[#00a3af]/10 blur-[130px] pointer-events-none z-0" />
+      <div className="absolute -top-40 left-1/3 w-[450px] h-[450px] rounded-full bg-[#1e50a2]/15 blur-3xl pointer-events-none z-0" />
+      <div className="absolute bottom-10 right-10 w-[400px] h-[400px] rounded-full bg-[#00a3af]/10 blur-3xl pointer-events-none z-0" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-10 relative z-10">
         {/* Header identity row */}
@@ -86,6 +78,7 @@ export default function KontakPage() {
                       id="fullName"
                       placeholder="mis. Sarah Wijaya"
                       required
+                      aria-required="true"
                       type="text"
                       value={fullName}
                       onChange={(e) => setFullName(e.target.value)}
@@ -106,6 +99,7 @@ export default function KontakPage() {
                       id="emailAddr"
                       placeholder="sarah@company.com"
                       required
+                      aria-required="true"
                       type="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
@@ -144,7 +138,7 @@ export default function KontakPage() {
                         Lainnya / Diskusi Lepas
                       </option>
                     </select>
-                    <span className="material-symbols-outlined absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400 text-base">
+                    <span className="material-symbols-outlined absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400 text-base" aria-hidden="true">
                       expand_more
                     </span>
                   </div>
@@ -165,6 +159,7 @@ export default function KontakPage() {
                     id="projectMessage"
                     placeholder="Jelaskan kebutuhan fungsional, target waktu peluncuran, atau detail teknis yang relevan..."
                     required
+                    aria-required="true"
                     rows={4}
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
@@ -174,7 +169,7 @@ export default function KontakPage() {
                 {/* Submit & SLA Note */}
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-2">
                   <div className="flex items-center gap-1.5 text-slate-400">
-                    <span className="material-symbols-outlined text-base text-[#00a3af]">schedule</span>
+                    <span className="material-symbols-outlined text-base text-[#00a3af]" aria-hidden="true">schedule</span>
                     <span className="font-body text-xs font-medium">Biasanya membalas dalam kurun 24 jam</span>
                   </div>
                   <button
@@ -184,13 +179,13 @@ export default function KontakPage() {
                   >
                     {isSubmitting ? (
                       <>
-                        <span className="material-symbols-outlined animate-spin text-base">progress_activity</span>
+                        <span className="material-symbols-outlined animate-spin text-base" aria-hidden="true">progress_activity</span>
                         <span>Mengirim Pesan...</span>
                       </>
                     ) : (
                       <>
                         <span>Kirim Pesan Langsung</span>
-                        <span className="material-symbols-outlined text-base">send</span>
+                        <span className="material-symbols-outlined text-base" aria-hidden="true">send</span>
                       </>
                     )}
                   </button>
@@ -198,8 +193,8 @@ export default function KontakPage() {
 
                 {/* Toast Feedback */}
                 {isSubmitted && (
-                  <div className="p-3.5 rounded-xl bg-[#101828] border border-[#00a3af] text-[#8fe3c6] font-body text-sm flex items-center gap-2 shadow-lg animate-fade-in">
-                    <span className="material-symbols-outlined text-base text-[#8fe3c6]">check_circle</span>
+                  <div role="status" aria-live="polite" className="p-3.5 rounded-xl bg-[#101828] border border-[#00a3af] text-[#8fe3c6] font-body text-sm flex items-center gap-2 shadow-lg animate-fade-in">
+                    <span className="material-symbols-outlined text-base text-[#8fe3c6]" aria-hidden="true">check_circle</span>
                     <span className="font-semibold">
                       Pesan terkirim dengan sukses! Radot akan segera menghubungi Anda kembali via email.
                     </span>

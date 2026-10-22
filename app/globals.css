@@ -61,6 +61,27 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Accessibility: Focus rings */
+:focus-visible {
+  outline: 2px solid var(--color-primary, #00a3af);
+  outline-offset: 2px;
+}
+
+/* Accessibility: Respect motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+  .animate-pulse,
+  .animate-spin,
+  .animate-bounce {
+    animation: none !important;
+  }
+  * {
+    transition-duration: 0.05s !important;
+  }
+}
+
 @media print {
   aside,
   nav,
@@ -79,7 +100,11 @@ html {
     background: #ffffff !important;
   }
   @page {
-    margin: 1.5cm 1.5cm;
+    margin: 1.2cm 1.5cm;
     size: A4 portrait;
+  }
+  .page-break {
+    break-after: page !important;
+    page-break-after: always !important;
   }
 }

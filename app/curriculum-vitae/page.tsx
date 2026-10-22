@@ -15,9 +15,9 @@ export default function CurriculumVitaePage() {
       <div className="max-w-4xl mx-auto mb-6 no-print print:hidden flex flex-wrap items-center justify-between gap-4">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#101828] border border-[#1e2c44] text-[#94a3b8] hover:text-[#8fe3c6] hover:border-[#00a3af]/50 transition-colors text-sm font-medium"
+          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#101828] border border-[#1e2c44] text-slate-300 hover:text-[#8fe3c6] hover:border-[#00a3af]/50 transition-colors text-sm font-medium"
         >
-          <span className="material-symbols-outlined text-base">arrow_back</span>
+          <span className="material-symbols-outlined text-base" aria-hidden="true">arrow_back</span>
           <span>Kembali ke Beranda</span>
         </Link>
 
@@ -26,236 +26,292 @@ export default function CurriculumVitaePage() {
           <a
             href="/CV-Radot-Yohanes-Nababan.pdf"
             download="CV-Radot-Yohanes-Nababan.pdf"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#1e50a2] to-[#00a3af] hover:to-[#8fe3c6] text-white text-sm font-semibold shadow-lg shadow-[#00a3af]/25 hover:shadow-[#00a3af]/40 hover:-translate-y-0.5 active:translate-y-0 transition-all cursor-pointer"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#00a3af] to-[#8fe3c6] text-slate-950 text-sm font-bold shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-all cursor-pointer"
             title="Download file PDF asli langsung ke perangkat"
+            aria-label="Download CV Radot Yohanes Nababan format PDF"
           >
-            <span className="material-symbols-outlined text-lg">download</span>
+            <span className="material-symbols-outlined text-lg" aria-hidden="true">download</span>
             <span>Download PDF Asli</span>
           </a>
         </div>
       </div>
 
-      {/* CV Paper Sheet (A4 White Layout) */}
-      <article className="max-w-4xl mx-auto bg-white text-black p-8 sm:p-12 md:p-14 shadow-2xl rounded-sm font-sans text-[13px] leading-relaxed print:p-0 print:shadow-none print:max-w-full print:m-0">
-        {/* HEADER */}
-        <header className="mb-4">
-          <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-black mb-1">
-            RADOT YOHANES NABABAN
-          </h1>
-          <div className="text-[12px] text-gray-700 space-y-0.5">
-            <div>
-              <span>082272118326</span>
-              <span className="mx-1.5">|</span>
+      <div className="max-w-4xl mx-auto">
+        {/* ==================== PAGE 1 ==================== */}
+        <article className="page-break bg-white text-black p-8 sm:p-12 md:p-14 shadow-2xl rounded-sm font-sans text-[12.5px] leading-relaxed print:p-0 print:shadow-none print:max-w-full print:m-0 mb-8 print:mb-0">
+          {/* HEADER */}
+          <header className="text-center mb-3">
+            <h1 className="text-xl sm:text-2xl font-bold tracking-normal text-black uppercase">
+              RADOT YOHANES NABABAN
+            </h1>
+            <p className="text-[13px] font-medium text-black mt-0.5">
+              Full-Stack Web Developer
+            </p>
+            <div className="text-[12px] text-black mt-1 flex flex-wrap items-center justify-center gap-x-2">
+              <span>+62 82272118326</span>
+              <span>|</span>
               <a href="mailto:radot2510@gmail.com" className="hover:underline">
                 radot2510@gmail.com
               </a>
-              <span className="mx-1.5">|</span>
+              <span>|</span>
+              <span>Bandar Lampung</span>
+              <span>|</span>
               <a
-                href="https://www.linkedin.com/in/radot-nababan-a51247195/"
+                href="https://linkedin.com/in/radotnababan"
                 target="_blank"
                 rel="noreferrer"
                 className="hover:underline"
               >
-                https://www.linkedin.com/in/radot-nababan-a51247195/
+                linkedin.com/in/radotnababan
               </a>
             </div>
-            <div>Bandar Lampung, Indonesia</div>
-          </div>
-          <p className="mt-2.5 text-[12.5px] text-gray-800 text-justify">
-            Informatics Engineering Fresh Graduate, Institut Teknologi Sumatera. Has an interest in the world of Website Development and Cloud Computing.
-          </p>
-        </header>
+            <hr className="border-t-2 border-black mt-2.5 mb-3" />
+          </header>
 
-        {/* PENDIDIKAN */}
-        <section className="mb-4">
-          <h2 className="text-[14px] font-bold text-black uppercase tracking-wide border-b border-black pb-0.5 mb-2">
-            Pendidikan
-          </h2>
-          <div className="space-y-2.5">
-            <div>
-              <div className="flex justify-between items-baseline font-bold text-[13px]">
-                <span>INSTITUT TEKNOLOGI SUMATERA - South Lampung Regency</span>
-                <span className="font-normal text-[12px] text-gray-700">Aug 2021 - Sep 2026</span>
-              </div>
-              <div className="italic text-[12.5px] text-gray-800">
-                Bachelor of Informatics Engineering, 3.58/4.00
-              </div>
-            </div>
+          {/* PROFILE */}
+          <section className="mb-3.5">
+            <h2 className="text-[13px] font-bold text-black uppercase tracking-wider mb-1">
+              PROFILE
+            </h2>
+            <p className="text-[12px] text-black leading-relaxed text-justify">
+              Informatics Engineering graduate of Institut Teknologi Sumatera (ITERA), class of 2026, focused on
+              full-stack web development. Experienced in building an Express.js backend for an Android
+              application and a library information system with Laravel. Currently developing a Laravel + React
+              (SPA) project that is actively used by 250+ students and was submitted to the 2026 GTK
+              Transformatif Competition in North Sumatra.
+            </p>
+          </section>
 
+          {/* EDUCATION */}
+          <section className="mb-3.5">
+            <h2 className="text-[13px] font-bold text-black uppercase tracking-wider mb-1.5">
+              EDUCATION
+            </h2>
             <div>
-              <div className="flex justify-between items-baseline font-bold text-[13px]">
-                <span>SMA Negeri 1 Siborongborong - North Tapanuli Regency</span>
-                <span className="font-normal text-[12px] text-gray-700">Aug 2018 - Apr 2021</span>
+              <div className="flex justify-between items-baseline font-bold text-[12.5px] text-black">
+                <span>S.Kom in Informatics Engineering - Institut Teknologi Sumatera</span>
+                <span className="font-bold text-[12px]">Aug 2021 – Sep 2026</span>
               </div>
-              <div className="text-[12.5px] text-gray-800">
-                Ilmu Pengetahuan Alam
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* WORK EXPERIENCE */}
-        <section className="mb-4">
-          <h2 className="text-[14px] font-bold text-black uppercase tracking-wide border-b border-black pb-0.5 mb-2">
-            Work Experience
-          </h2>
-          <div className="space-y-3.5">
-            {/* 1. Perpustakaan SMP N 1 Tarutung */}
-            <div>
-              <div className="flex justify-between items-baseline font-bold text-[13px]">
-                <span>Perpustakaan SMP N 1 Tarutung - Tarutung, North Tapanuli Regency</span>
-                <span className="font-normal text-[12px] text-gray-700">Aug 2025 - Feb 2026</span>
-              </div>
-              <div className="italic text-[12.5px] text-gray-800 font-medium">Researcher</div>
-              <ul className="list-disc ml-5 mt-1 space-y-0.5 text-[12.5px] text-gray-800">
-                <li>Creating a library information system build by Laravel PHP - React Framework</li>
-                <li>This information system accommodates the needs of approximately 300 students.</li>
+              <ul className="list-disc ml-4 mt-0.5 space-y-0.5 text-[12px] text-black">
+                <li><span className="font-bold">GPA :</span> 3.58 / 4.00.</li>
               </ul>
+              <p className="text-[12px] text-black mt-0.5">
+                <span className="font-bold">Thesis :</span> Design and Development of a Web-Based Library Information System Using the Modified Waterfall Method
+              </p>
+              <p className="text-[12px] text-black mt-0.5">
+                <span className="font-bold">Relevant Coursework :</span> Information Technology Project Management (A), Database (AB), Object-Oriented Programming (A), Human-Computer Interaction (A), Information Systems (A)
+              </p>
             </div>
+          </section>
 
-            {/* 2. Haltev IT Learning Center */}
-            <div>
-              <div className="flex justify-between items-baseline font-bold text-[13px]">
-                <span>Haltev IT Learning Center - Bekasi City</span>
-                <span className="font-normal text-[12px] text-gray-700">Jun 2025 - Jul 2025</span>
+          {/* PROJECTS */}
+          <section className="mb-3.5">
+            <h2 className="text-[13px] font-bold text-black uppercase tracking-wider mb-1.5">
+              PROJECTS
+            </h2>
+            <div className="space-y-2">
+              {/* HICARE */}
+              <div>
+                <div className="flex justify-between items-baseline font-bold text-[12.5px] text-black">
+                  <span>HICARE – Bangkit Capstone Project</span>
+                  <span className="font-bold text-[12px]">2024</span>
+                </div>
+                <ul className="list-disc ml-4 space-y-0.5 text-[12px] text-black">
+                  <li>Built a RESTful API with Express.js to serve a machine learning model for integration into a mobile application.</li>
+                  <li>Created a static HTML landing page as the application download page.</li>
+                </ul>
               </div>
-              <div className="italic text-[12.5px] text-gray-800 font-medium">Internship</div>
-              <ul className="list-disc ml-5 mt-1 space-y-0.5 text-[12.5px] text-gray-800">
-                <li>Create a example website to Web Development Expert Student in Class with Laravel Framework</li>
-              </ul>
-            </div>
 
-            {/* 3. Bimbingan Belajar Alphapro */}
-            <div>
-              <div className="flex justify-between items-baseline font-bold text-[13px]">
-                <span>Bimbingan Belajar Alphapro - Bekasi City</span>
-                <span className="font-normal text-[12px] text-gray-700">Jan 2025 - Jun 2025</span>
+              {/* SPARTA */}
+              <div>
+                <div className="flex justify-between items-baseline font-bold text-[12.5px] text-black">
+                  <span>SPARTA – Library Information System, SMP N 1 Tarutung</span>
+                  <span className="font-bold text-[12px]">2025-2026</span>
+                </div>
+                <ul className="list-disc ml-4 space-y-0.5 text-[12px] text-black">
+                  <li>Designed and developed the system with Laravel (PHP), from requirements analysis through implementation.</li>
+                  <li>Conducted on-site system testing using the Blackbox Testing method.</li>
+                </ul>
               </div>
-              <div className="italic text-[12.5px] text-gray-800 font-medium">Freelancer</div>
-              <ul className="list-disc ml-5 mt-1 space-y-0.5 text-[12.5px] text-gray-800">
-                <li>Build a Landing Page Website with Laravel-PHP Framework</li>
-              </ul>
-            </div>
 
-            {/* 4. Bangkit Academy Capstone */}
-            <div>
-              <div className="flex justify-between items-baseline font-bold text-[13px]">
-                <span>Bangkit Academy Capstone Project - Bandar Lampung</span>
-                <span className="font-normal text-[12px] text-gray-700">May 2024 - Dec 2024</span>
+              {/* TAPAMAJUMA */}
+              <div>
+                <div className="flex justify-between items-baseline font-bold text-[12.5px] text-black">
+                  <span>TAPAMAJUMA – Literacy and Numeracy Learning Website</span>
+                  <span className="font-bold text-[12px]">2026</span>
+                </div>
+                <ul className="list-disc ml-4 space-y-0.5 text-[12px] text-black">
+                  <li>Built a literacy and numeracy assessment system with Laravel and React (SPA).</li>
+                  <li>Actively used by 250+ students at SMP N 1 Siborongborong.</li>
+                </ul>
               </div>
-              <div className="italic text-[12.5px] text-gray-800 font-medium">Cloud Engineer</div>
-              <ul className="list-disc ml-5 mt-1 space-y-0.5 text-[12.5px] text-gray-800">
-                <li>Create a RESTful API for Machine Learning models that have been created to be integrated into Mobile Applications (Android)</li>
-                <li>Maximizing Google Cloud Platform performance in implementing API integration</li>
-                <li>Creating a Welcome Page for the Lettuce Plant Disease Detection Android Application.</li>
-              </ul>
             </div>
+          </section>
 
-            {/* 5. Lab Sistem Operasi */}
-            <div>
-              <div className="flex justify-between items-baseline font-bold text-[13px]">
-                <span>Laboratorium Informatika Institut Teknologi Sumatera - South Lampung Regency</span>
-                <span className="font-normal text-[12px] text-gray-700">Feb 2024 - May 2024</span>
+          {/* WORK EXPERIENCE */}
+          <section className="mb-3.5">
+            <h2 className="text-[13px] font-bold text-black uppercase tracking-wider mb-1.5">
+              WORK EXPERIENCE
+            </h2>
+            <div className="space-y-2">
+              {/* Web Developer Intern */}
+              <div>
+                <div className="flex justify-between items-baseline font-bold text-[12.5px] text-black">
+                  <span>Web Developer Intern | Internship</span>
+                  <span className="font-bold text-[12px]">Jun 2025 – Jul 2025</span>
+                </div>
+                <div className="italic text-[12px] text-black mb-0.5">
+                  Haltekom Media Inovasi – Bekasi, West Java
+                </div>
+                <ul className="list-disc ml-4 space-y-0.5 text-[12px] text-black">
+                  <li>Built a dynamic website with Laravel (PHP) and MySQL as a learning platform for Junior Web Developer certification preparation, covering basic CRUD operations and authentication.</li>
+                  <li>Developed 1 responsive static landing page with HTML and CSS to support the learning program.</li>
+                </ul>
               </div>
-              <div className="italic text-[12.5px] text-gray-800 font-medium">Practicum Assistant of &quot;Sistem Operasi&quot;</div>
-              <ul className="list-disc ml-5 mt-1 space-y-0.5 text-[12.5px] text-gray-800">
-                <li>Guiding Practicums and providing materials to practitioners related to the Ubuntu Operating System (Ubuntu Terminal Basics and File and Process Security Management in Ubuntu)</li>
-              </ul>
-            </div>
 
-            {/* 6. Lab PKS 1 */}
-            <div>
-              <div className="flex justify-between items-baseline font-bold text-[13px]">
-                <span>Laboratorium Komputer Institut Teknologi Sumatera - South Lampung Regency</span>
-                <span className="font-normal text-[12px] text-gray-700">Feb 2024 - May 2024</span>
+              {/* Lab Assistant */}
+              <div>
+                <div className="flex justify-between items-baseline font-bold text-[12.5px] text-black">
+                  <span>Lab Assistant | Contract</span>
+                  <span className="font-bold text-[12px]">Sep 2023 – May 2024</span>
+                </div>
+                <div className="italic text-[12px] text-black mb-0.5">
+                  Informatics Engineering Laboratory, Institut Teknologi Sumatera
+                </div>
+                <ul className="list-disc ml-4 space-y-0.5 text-[12px] text-black">
+                  <li>Guided 60+ students in using the Ubuntu operating system (file management and basic terminal commands).</li>
+                  <li>Guided 50+ students in Office applications, covering Mail Merge in Word and VBA in Excel.</li>
+                  <li>Guided 50+ students in C++ programming fundamentals (variables, conditionals, and loops).</li>
+                </ul>
               </div>
-              <div className="italic text-[12.5px] text-gray-800 font-medium">Practical Assistant Pengantar Komputer dan Software 1</div>
-              <ul className="list-disc ml-5 mt-1 space-y-0.5 text-[12.5px] text-gray-800">
-                <li>Assisting Lecturers in Teaching Courses in providing Lecture Theory</li>
-                <li>Guide Practitioners in conducting experiments related to the Basics of the C++ Programming Language</li>
-              </ul>
             </div>
+          </section>
 
-            {/* 7. Lab PKS 2 */}
-            <div>
-              <div className="flex justify-between items-baseline font-bold text-[13px]">
-                <span>Laboratorium Komputer Institut Teknologi Sumatera - South Lampung Regency</span>
-                <span className="font-normal text-[12px] text-gray-700">Sep 2023 - Dec 2023</span>
+          {/* SKILLS */}
+          <section className="pt-1 border-t border-black">
+            <h2 className="text-[13px] font-bold text-black uppercase tracking-wider mb-1.5">
+              SKILLS
+            </h2>
+            <div className="space-y-1 text-[12px] text-black">
+              <div>
+                <span className="font-bold">Office Software :</span> Microsoft (Word, Excel, PowerPoint), Google (Docs, Sheets, Slides)
               </div>
-              <div className="italic text-[12.5px] text-gray-800 font-medium">Practical Assistant for Pengantar Komputer dan Software 2</div>
-              <ul className="list-disc ml-5 mt-1 space-y-0.5 text-[12.5px] text-gray-800">
-                <li>Assisting Lecturers in Teaching Courses in Providing Lecture Theory</li>
-                <li>Guiding Student Practicums in Practicing Microsoft Word (Word Basics, Making Proposals, Mail Merge) and Microsoft Excel (VBA, Macros, Formulas in Excel)</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* ORGANIZATIONAL / COMMITTEE EXPERIENCE */}
-        <section className="mb-4">
-          <h2 className="text-[14px] font-bold text-black uppercase tracking-wide border-b border-black pb-0.5 mb-2">
-            Organizational/Committee Experience
-          </h2>
-          <div className="space-y-3.5">
-            {/* 1. HMIF ITERA */}
-            <div>
-              <div className="flex justify-between items-baseline font-bold text-[13px]">
-                <span>Himpunan Mahasiswa Informatika ITERA - South Lampung Regency</span>
-                <span className="font-normal text-[12px] text-gray-700">May 2023 - Sekarang</span>
+              <div>
+                <span className="font-bold">Web Development Stack :</span> HTML, CSS, PHP, Laravel, React.js, Express.js, Node.js, Figma.
               </div>
-              <div className="italic text-[12.5px] text-gray-800 font-medium">Head of Kajian Teknologi, Departemen Keprofesian</div>
-              <ul className="list-disc ml-5 mt-1 space-y-0.5 text-[12.5px] text-gray-800">
-                <li>Organize the creation of HMIF ITERA articles on the HMIF ITERA Website and HMIF ITERA Medium which reaches the HMIF ITERA masses and the general public</li>
-                <li>Organizing and Monitoring the Making of the &quot;Berisik&quot; Podcast (Talking About Informatics) with the achievement of 300+ views on HMIF ITERA Youtube and 100+ listens on HMIF ITERA Spotify</li>
-              </ul>
-            </div>
-
-            {/* 2. Point Project 1.0 */}
-            <div>
-              <div className="flex justify-between items-baseline font-bold text-[13px]">
-                <span>Point Project 1.0 HMIF ITERA - South Lampung Regency</span>
-                <span className="font-normal text-[12px] text-gray-700">Oct 2023 - Dec 2023</span>
+              <div>
+                <span className="font-bold">Database Stack :</span> MySQL, TiDB
               </div>
-              <div className="italic text-[12.5px] text-gray-800 font-medium">Head of Public Relations Division</div>
-              <div className="text-[12px] text-gray-600 italic">The first UI/UX Design Competition at ITERA organized by the HMIF ITERA</div>
-              <ul className="list-disc ml-5 mt-1 space-y-0.5 text-[12.5px] text-gray-800">
-                <li>Disseminating information regarding the HMIF ITERA Point Project Competition, with the results being participated by 12+ teams from various study programs at the Sumatra Institute of Technology</li>
-                <li>Recruiting Professional Judges in the UI/UX field (Prodi Lecturers) in the Competition</li>
-                <li>Providing a Competition Presentation Platform</li>
-              </ul>
-            </div>
-
-            {/* 3. PMK ITERA Christmas Celebration 2022 */}
-            <div>
-              <div className="flex justify-between items-baseline font-bold text-[13px]">
-                <span>PMK ITERA Christmas Celebration 2022 - Bandar Lampung</span>
-                <span className="font-normal text-[12px] text-gray-700">Oct 2022 - Dec 2022</span>
+              <div>
+                <span className="font-bold">Web Infrastructure :</span> Google Cloud Platform, Cloudflare R2, Railway, Docker
               </div>
-              <div className="italic text-[12.5px] text-gray-800 font-medium">Head of Accommodation Sub-Division</div>
-              <div className="text-[12px] text-gray-600 italic">The Biggest Christmas Celebration Event at the Institut Teknologi Sumatera in 2022</div>
-              <ul className="list-disc ml-5 mt-1 space-y-0.5 text-[12.5px] text-gray-800">
-                <li>Logistics Accommodation Before and After Christmas Celebration to meet the needs of 1200+ Committees and Participants</li>
-                <li>Field Coordinator who coordinates 1200 Participants and Committees</li>
-              </ul>
+              <div>
+                <span className="font-bold">Soft Skills :</span> Decision Making, Team Collaboration, Problem Solving
+              </div>
+              <div>
+                <span className="font-bold">Languages :</span> Indonesian (Native), English (Intermediate)
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </article>
 
-        {/* OTHER RELATED PROJECT */}
-        <section className="mb-2">
-          <h2 className="text-[14px] font-bold text-black uppercase tracking-wide border-b border-black pb-0.5 mb-2">
-            Other Related Project
-          </h2>
-          <ul className="list-disc ml-5 space-y-1.5 text-[12.5px] text-gray-800 text-justify">
-            <li>
-              <span className="font-bold text-black">PWA Tapamajuma Projects in SMP N 1 Siborongborong (2026)</span> : Developed a project combining React (SPA) and the Laravel framework to facilitate literacy and numeracy exercises for students at SMP N 1 Siborongborong. As of 2026, it is being used by over 200 active users.
-            </li>
-            <li>
-              <span className="font-bold text-black">Website HTML CSS Native, and PHP, Mata Kuliah Pemrograman Web (2023)</span> : Creating a Website (HTML, Native CSS) containing an introductory homepage, creating forms and tables and filling in tables using PHP
-            </li>
-          </ul>
-        </section>
-      </article>
+        {/* Page 2 Separator indicator (Only visible on web, hidden during print) */}
+        <div className="no-print my-6 flex items-center justify-center gap-3">
+          <div className="h-px bg-white/10 w-24" />
+          <span className="font-mono text-xs text-[#94a3b8] uppercase tracking-wider bg-[#101828] px-3 py-1 rounded-full border border-white/10">
+            Halaman 2
+          </span>
+          <div className="h-px bg-white/10 w-24" />
+        </div>
+
+        {/* ==================== PAGE 2 ==================== */}
+        <article className="bg-white text-black p-8 sm:p-12 md:p-14 shadow-2xl rounded-sm font-sans text-[12.5px] leading-relaxed print:p-0 print:shadow-none print:max-w-full print:m-0 mb-12">
+          {/* CERTIFICATIONS & TRAINING */}
+          <section className="mb-5">
+            <h2 className="text-[13px] font-bold text-black uppercase tracking-wider mb-2">
+              CERTIFICATIONS &amp; TRAINING
+            </h2>
+            <div className="space-y-1.5 text-[12px] text-black">
+              <div className="flex justify-between items-baseline">
+                <span>Learn to Build Back-End Applications with Google Cloud – Dicoding Indonesia</span>
+                <span className="font-bold text-black">2024</span>
+              </div>
+              <div className="flex justify-between items-baseline">
+                <span>Learn JavaScript Programming – Dicoding Indonesia</span>
+                <span className="font-bold text-black">2024</span>
+              </div>
+              <div className="flex justify-between items-baseline">
+                <span>Create and Manage Cloud Resources – Google Cloud Skill Boost</span>
+                <span className="font-bold text-black">2024</span>
+              </div>
+              <div className="flex justify-between items-baseline">
+                <span>Perform Foundational Data, ML, and AI Tasks in Google Cloud – Google Cloud Skill Boost</span>
+                <span className="font-bold text-black">2024</span>
+              </div>
+              <div className="flex justify-between items-baseline">
+                <span>Become a Google Cloud Engineer – Dicoding Indonesia</span>
+                <span className="font-bold text-black">2024</span>
+              </div>
+            </div>
+          </section>
+
+          {/* ORGANIZATIONAL EXPERIENCE / COMMITTEES */}
+          <section className="mb-2">
+            <h2 className="text-[13px] font-bold text-black uppercase tracking-wider mb-2">
+              ORGANIZATIONAL EXPERIENCE / COMMITTEES
+            </h2>
+            <div className="space-y-3.5">
+              {/* Head of Technology Studies Division */}
+              <div>
+                <div className="flex justify-between items-baseline font-bold text-[12.5px] text-black">
+                  <span>Head of Technology Studies Division</span>
+                  <span className="font-bold text-[12px]">May 2023 – May 2024</span>
+                </div>
+                <div className="italic text-[12px] text-black mb-0.5">
+                  Himpunan Mahasiswa Informatika (HMIF) ITERA – Lampung
+                </div>
+                <ul className="list-disc ml-4 space-y-0.5 text-[12px] text-black">
+                  <li>
+                    Guided article writing for the HMIF ITERA website and led production of the &quot;Berisik&quot; podcast on the HMIF ITERA YouTube channel.
+                  </li>
+                </ul>
+              </div>
+
+              {/* Head of Public Relations Division */}
+              <div>
+                <div className="flex justify-between items-baseline font-bold text-[12.5px] text-black">
+                  <span>Head of Public Relations Division</span>
+                  <span className="font-bold text-[12px]">Oct 2023 – Dec 2023</span>
+                </div>
+                <div className="italic text-[12px] text-black mb-0.5">
+                  Point Project 1.0 HMIF ITERA – Lampung
+                </div>
+                <ul className="list-disc ml-4 space-y-0.5 text-[12px] text-black">
+                  <li>
+                    Attracted 12 teams from various study programs to compete in the first UI/UX competition at ITERA.
+                  </li>
+                </ul>
+              </div>
+
+              {/* Sub-Division Head of Accommodation, Operations/Logistics Division */}
+              <div>
+                <div className="flex justify-between items-baseline font-bold text-[12.5px] text-black">
+                  <span>Sub-Division Head of Accommodation, Operations/Logistics Division</span>
+                  <span className="font-bold text-[12px]">Oct 2022 – Dec 2022</span>
+                </div>
+                <div className="italic text-[12px] text-black mb-0.5">
+                  PMK ITERA Christmas Celebration 2022 – Lampung
+                </div>
+                <ul className="list-disc ml-4 space-y-0.5 text-[12px] text-black">
+                  <li>
+                    Planned the accommodation and security flow of the event and coordinated on-site operations for 1,200 participants and committee members.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+        </article>
+      </div>
     </main>
   );
 }

@@ -4,10 +4,27 @@ export default function Home() {
   return (
     <main className="w-full xl:pl-24 bg-[#0b111d] min-h-screen">
       <div className="flex flex-col w-full">
+        {/* Header identity row */}
+        <div className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 pt-8 pb-2 relative z-20">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-white/5">
+            <div className="flex items-center gap-3">
+              <span className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#1e50a2] via-[#00a3af] to-[#8fe3c6] flex items-center justify-center font-mono font-bold text-slate-950 text-xs shadow-md shadow-[#00a3af]/20">
+                &lt;/&gt;
+              </span>
+              <div>
+                <span className="font-headline font-bold text-xl sm:text-2xl text-white tracking-tight block">
+                  Portofolio Personal
+                </span>
+                <p className="font-body text-xs text-[#8fe3c6]">Radot Yohanes Nababan &bull; Web &amp; Cloud</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Ambient Dark Mode Luminous Glows & Fullscreen Hero */}
         <div className="relative w-full overflow-hidden bg-[#0b111d] min-h-screen min-h-[100dvh] flex flex-col justify-center">
-          <div className="absolute -top-32 -left-32 w-[32rem] h-[32rem] bg-[#1e50a2]/20 rounded-full blur-3xl pointer-events-none animate-pulse" />
-          <div className="absolute top-1/3 -right-40 w-[38rem] h-[38rem] bg-[#00a3af]/15 rounded-full blur-3xl pointer-events-none animate-pulse" />
+          <div className="absolute -top-32 -left-32 w-[32rem] h-[32rem] bg-[#1e50a2]/15 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute top-1/3 -right-40 w-[38rem] h-[38rem] bg-[#00a3af]/10 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute bottom-10 left-1/3 w-[28rem] h-[28rem] bg-[#8fe3c6]/10 rounded-full blur-3xl pointer-events-none" />
 
           {/* HERO SECTION */}
@@ -15,16 +32,16 @@ export default function Home() {
             <div className="max-w-4xl mx-auto flex flex-col items-center text-center gap-8 md:gap-10 my-auto">
               {/* Title & Tagline */}
               <div className="flex flex-col items-center gap-3">
-                <h1 className="font-headline text-4xl sm:text-6xl md:text-7xl lg:text-[4.75rem] text-slate-100 font-extrabold tracking-tight leading-[1.12]">
+                <h1 className="font-headline text-4xl sm:text-6xl md:text-7xl lg:text-[4.75rem] text-slate-100 font-extrabold tracking-tight leading-[1.12] text-balance">
                   Radot Yohanes Nababan
                 </h1>
-                <p className="font-headline text-xl sm:text-2xl md:text-3xl text-[#8fe3c6] font-medium tracking-tight">
+                <p className="font-headline text-xl sm:text-2xl md:text-3xl text-[#8fe3c6] font-medium tracking-tight text-balance">
                   Web Developer &amp; Cloud Computing Enthusiast
                 </p>
               </div>
 
               {/* Summary Bio */}
-              <p className="font-body text-base sm:text-xl text-slate-300 max-w-3xl leading-relaxed font-normal">
+              <p className="font-body text-base sm:text-xl text-slate-300 max-w-3xl leading-relaxed font-normal text-pretty">
                 <span className="text-slate-100 font-semibold">Fresh Graduate Teknik Informatika ITERA</span> dengan
                 fokus mendalam pada modern{" "}
                 <span className="text-[#00a3af] font-medium">full-stack web development</span> (Laravel, React, PHP)
@@ -36,10 +53,10 @@ export default function Home() {
               <div className="flex flex-wrap items-center justify-center gap-4 pt-2 w-full sm:w-auto">
                 <Link
                   href="/proyek"
-                  className="group inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-gradient-to-r from-[#1e50a2] via-[#00a3af] to-[#00a3af] hover:to-[#8fe3c6] text-white font-body font-bold text-sm sm:text-base tracking-wide shadow-lg shadow-[#00a3af]/25 hover:shadow-[#00a3af]/40 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 w-full sm:w-auto"
+                  className="group inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-gradient-to-r from-[#00a3af] via-[#5dd7e4] to-[#8fe3c6] text-slate-950 font-body font-bold text-sm sm:text-base tracking-wide shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 w-full sm:w-auto"
                 >
                   <span>Lihat Proyek Terpilih</span>
-                  <span className="material-symbols-outlined text-xl group-hover:translate-x-1 transition-transform">
+                  <span className="material-symbols-outlined text-xl group-hover:translate-x-1 transition-transform" aria-hidden="true">
                     arrow_forward
                   </span>
                 </Link>
@@ -48,15 +65,15 @@ export default function Home() {
                   href="/kontak"
                   className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-[#101828] hover:bg-[#162035] text-slate-200 font-body text-sm sm:text-base font-semibold border border-[#283959] shadow-sm hover:border-[#00a3af]/50 hover:text-[#8fe3c6] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 w-full sm:w-auto"
                 >
-                  <span className="material-symbols-outlined text-xl text-[#00a3af]">chat_bubble</span>
+                  <span className="material-symbols-outlined text-xl text-[#00a3af]" aria-hidden="true">chat_bubble</span>
                   <span>Hubungi / Diskusi</span>
                 </Link>
 
                 <Link
                   href="/curriculum-vitae"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-transparent hover:bg-[#101828] text-slate-400 hover:text-[#8fe3c6] font-body text-sm sm:text-base font-semibold transition-colors border border-transparent hover:border-[#283959] hover:-translate-y-0.5 active:translate-y-0 w-full sm:w-auto"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-transparent hover:bg-[#101828] text-slate-300 hover:text-[#8fe3c6] font-body text-sm sm:text-base font-semibold transition-colors border border-transparent hover:border-[#283959] hover:-translate-y-0.5 active:translate-y-0 w-full sm:w-auto"
                 >
-                  <span className="material-symbols-outlined text-xl">work_history</span>
+                  <span className="material-symbols-outlined text-xl" aria-hidden="true">work_history</span>
                   <span>Download CV</span>
                 </Link>
               </div>
@@ -73,7 +90,7 @@ export default function Home() {
             {/* Section Header */}
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
               <div className="flex flex-col gap-2 max-w-2xl">
-                <h2 className="font-headline text-2xl sm:text-4xl text-slate-100 font-bold tracking-tight">
+                <h2 className="font-headline text-2xl sm:text-4xl text-slate-100 font-bold tracking-tight text-balance">
                   Mengapa Bekerja Sama Dengan Saya?
                 </h2>
               </div>
@@ -85,16 +102,16 @@ export default function Home() {
               <div className="group p-6 sm:p-8 rounded-2xl bg-[#162035] border border-[#283959] shadow-sm hover:shadow-xl hover:border-[#00a3af]/50 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between gap-6 cursor-default">
                 <div className="flex flex-col gap-4">
                   <div className="w-12 h-12 rounded-xl bg-[#00a3af]/15 border border-[#00a3af]/30 flex items-center justify-center text-[#8fe3c6] shadow-sm group-hover:scale-105 transition-transform">
-                    <span className="material-symbols-outlined text-2xl">code_blocks</span>
+                    <span className="material-symbols-outlined text-2xl" aria-hidden="true">code_blocks</span>
                   </div>
                   <div className="flex flex-col gap-1.5">
                     <span className="font-label text-xs text-[#00a3af] font-bold uppercase tracking-wider">
                       Full-Stack Architecture
                     </span>
-                    <h3 className="font-headline text-xl text-white font-bold group-hover:text-[#8fe3c6] transition-colors">
+                    <h3 className="font-headline text-xl text-white font-bold group-hover:text-[#8fe3c6] transition-colors text-balance">
                       Modern Laravel &amp; React Flow
                     </h3>
-                    <p className="font-body text-sm text-slate-300 leading-relaxed mt-1">
+                    <p className="font-body text-sm text-slate-300 leading-relaxed mt-1 text-pretty">
                       Menguasai integrasi frontend interaktif (React SPA / PWA) dengan backend Laravel yang tangguh.
                       Menerapkan pola MVC bersih, Eloquent ORM efisien, autentikasi terstruktur, dan komponen UI modular.
                     </p>
@@ -118,16 +135,16 @@ export default function Home() {
               <div className="group p-6 sm:p-8 rounded-2xl bg-[#162035] border border-[#283959] shadow-sm hover:shadow-xl hover:border-[#8fe3c6]/50 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between gap-6 cursor-default">
                 <div className="flex flex-col gap-4">
                   <div className="w-12 h-12 rounded-xl bg-[#1e50a2]/25 border border-[#1e50a2]/40 flex items-center justify-center text-[#5dd7e4] shadow-sm group-hover:scale-105 transition-transform">
-                    <span className="material-symbols-outlined text-2xl">cloud_sync</span>
+                    <span className="material-symbols-outlined text-2xl" aria-hidden="true">cloud_sync</span>
                   </div>
                   <div className="flex flex-col gap-1.5">
                     <span className="font-label text-xs text-[#5dd7e4] font-bold uppercase tracking-wider">
                       Cloud &amp; Microservices
                     </span>
-                    <h3 className="font-headline text-xl text-white font-bold group-hover:text-[#8fe3c6] transition-colors">
+                    <h3 className="font-headline text-xl text-white font-bold group-hover:text-[#8fe3c6] transition-colors text-balance">
                       GCP Infrastructure &amp; Cloud Run
                     </h3>
-                    <p className="font-body text-sm text-slate-300 leading-relaxed mt-1">
+                    <p className="font-body text-sm text-slate-300 leading-relaxed mt-1 text-pretty">
                       Lulusan Bangkit Cloud Computing dengan kompetensi merancang RESTful API berlatensi rendah,
                       deployment container Docker pada Google Cloud Run, penyimpanan Cloud Storage aman, dan IAM access.
                     </p>
@@ -151,16 +168,16 @@ export default function Home() {
               <div className="group p-6 sm:p-8 rounded-2xl bg-[#162035] border border-[#283959] shadow-sm hover:shadow-xl hover:border-[#00a3af]/50 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between gap-6 cursor-default">
                 <div className="flex flex-col gap-4">
                   <div className="w-12 h-12 rounded-xl bg-[#00a3af]/15 border border-[#00a3af]/30 flex items-center justify-center text-[#00a3af] shadow-sm group-hover:scale-105 transition-transform">
-                    <span className="material-symbols-outlined text-2xl">database</span>
+                    <span className="material-symbols-outlined text-2xl" aria-hidden="true">database</span>
                   </div>
                   <div className="flex flex-col gap-1.5">
                     <span className="font-label text-xs text-[#8fe3c6] font-bold uppercase tracking-wider">
                       Data Integrity &amp; Ops
                     </span>
-                    <h3 className="font-headline text-xl text-white font-bold group-hover:text-[#8fe3c6] transition-colors">
+                    <h3 className="font-headline text-xl text-white font-bold group-hover:text-[#8fe3c6] transition-colors text-balance">
                       Skema Relasional &amp; Linux SysAdmin
                     </h3>
-                    <p className="font-body text-sm text-slate-300 leading-relaxed mt-1">
+                    <p className="font-body text-sm text-slate-300 leading-relaxed mt-1 text-pretty">
                       Perancangan skema database MySQL terindeks efisien untuk ratusan pengguna simultan, kebiasaan
                       bekerja di terminal Ubuntu Linux.
                     </p>
@@ -188,7 +205,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto flex flex-col gap-8">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div className="flex flex-col gap-1">
-                <h2 className="font-headline text-2xl sm:text-3xl text-slate-100 font-bold tracking-tight">
+                <h2 className="font-headline text-2xl sm:text-3xl text-slate-100 font-bold tracking-tight text-balance">
                   Proyek Unggulan Terpilih
                 </h2>
               </div>
@@ -197,7 +214,7 @@ export default function Home() {
                 className="inline-flex items-center gap-1.5 font-headline text-xs font-bold text-[#8fe3c6] hover:text-white transition-colors"
               >
                 <span>Lihat Seluruh Arsip Proyek</span>
-                <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                <span className="material-symbols-outlined text-sm" aria-hidden="true">arrow_forward</span>
               </Link>
             </div>
 
@@ -330,17 +347,17 @@ export default function Home() {
                     <span className="material-symbols-outlined text-2xl">work_history</span>
                   </div>
                   <div>
-                    <h3 className="font-headline text-lg font-bold text-white group-hover:text-[#8fe3c6] transition-colors">
+                    <h3 className="font-headline text-lg font-bold text-white group-hover:text-[#8fe3c6] transition-colors text-balance">
                       Rekam Jejak Profesional
                     </h3>
-                    <p className="font-body text-xs text-slate-300 mt-1 leading-relaxed">
+                    <p className="font-body text-xs text-slate-300 mt-1 leading-relaxed text-pretty">
                       Riwayat rekayasa dan riwayat membangun sistem dengan tech stack yang ada.
                     </p>
                   </div>
                 </div>
                 <div className="pt-3 border-t border-white/5 flex items-center justify-between text-xs font-headline font-semibold text-[#8fe3c6]">
                   <span>Buka Halaman Karir</span>
-                  <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">
+                  <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform" aria-hidden="true">
                     arrow_forward
                   </span>
                 </div>
@@ -353,20 +370,20 @@ export default function Home() {
               >
                 <div className="flex flex-col gap-3">
                   <div className="w-11 h-11 rounded-xl bg-[#1e50a2]/25 border border-[#1e50a2]/40 flex items-center justify-center text-[#5dd7e4]">
-                    <span className="material-symbols-outlined text-2xl">groups</span>
+                    <span className="material-symbols-outlined text-2xl" aria-hidden="true">groups</span>
                   </div>
                   <div>
-                    <h3 className="font-headline text-lg font-bold text-white group-hover:text-[#8fe3c6] transition-colors">
+                    <h3 className="font-headline text-lg font-bold text-white group-hover:text-[#8fe3c6] transition-colors text-balance">
                       Pengalaman Organisasi
                     </h3>
-                    <p className="font-body text-xs text-slate-300 mt-1 leading-relaxed">
+                    <p className="font-body text-xs text-slate-300 mt-1 leading-relaxed text-pretty">
                       Kepemimpinan dan pengalaman dalam berorganisasi selama berkuliah.
                     </p>
                   </div>
                 </div>
                 <div className="pt-3 border-t border-white/5 flex items-center justify-between text-xs font-headline font-semibold text-[#5dd7e4]">
                   <span>Buka Halaman Organisasi</span>
-                  <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">
+                  <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform" aria-hidden="true">
                     arrow_forward
                   </span>
                 </div>
@@ -379,21 +396,20 @@ export default function Home() {
               >
                 <div className="flex flex-col gap-3">
                   <div className="w-11 h-11 rounded-xl bg-[#00a3af]/15 border border-[#00a3af]/30 flex items-center justify-center text-[#00a3af]">
-                    <span className="material-symbols-outlined text-2xl">layers</span>
+                    <span className="material-symbols-outlined text-2xl" aria-hidden="true">layers</span>
                   </div>
                   <div>
-                    <h3 className="font-headline text-lg font-bold text-white group-hover:text-[#8fe3c6] transition-colors">
+                    <h3 className="font-headline text-lg font-bold text-white group-hover:text-[#8fe3c6] transition-colors text-balance">
                       Tech Stack &amp; Ekosistem
                     </h3>
-                    <p className="font-body text-xs text-slate-300 mt-1 leading-relaxed">
-                      Rangkuman kemahiran dalam berbegai bidang rekayasa perangkat lunak dan ekosistem yang saya 
-                      kuasai.
+                    <p className="font-body text-xs text-slate-300 mt-1 leading-relaxed text-pretty">
+                      Rangkuman kemahiran dalam berbagai bidang rekayasa perangkat lunak dan ekosistem teknologi.
                     </p>
                   </div>
                 </div>
                 <div className="pt-3 border-t border-white/5 flex items-center justify-between text-xs font-headline font-semibold text-[#8fe3c6]">
                   <span>Buka Halaman Tech Stack</span>
-                  <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">
+                  <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform" aria-hidden="true">
                     arrow_forward
                   </span>
                 </div>
@@ -411,10 +427,10 @@ export default function Home() {
 
               <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-8">
                 <div className="flex flex-col gap-4 max-w-2xl">
-                  <h2 className="font-headline text-2xl sm:text-4xl text-slate-100 font-extrabold tracking-tight">
+                  <h2 className="font-headline text-2xl sm:text-4xl text-slate-100 font-extrabold tracking-tight text-balance">
                     Punya ide proyek atau butuh developer di tim Anda?
                   </h2>
-                  <p className="font-body text-sm sm:text-base text-slate-400 leading-relaxed">
+                  <p className="font-body text-sm sm:text-base text-slate-400 leading-relaxed text-pretty">
                     Mari diskusikan visi teknis, timeline, atau kebutuhan arsitektur produk Anda. Siap membantu
                     membangun solusi web dengan performa tinggi dari nol hingga siap tayang.
                   </p>
@@ -423,18 +439,19 @@ export default function Home() {
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 shrink-0">
                   <Link
                     href="/kontak"
-                    className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl bg-gradient-to-r from-[#1e50a2] via-[#00a3af] to-[#00a3af] hover:to-[#8fe3c6] text-white font-body text-sm font-bold shadow-lg shadow-[#00a3af]/25 hover:shadow-[#00a3af]/40 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 w-full sm:w-auto"
+                    className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl bg-gradient-to-r from-[#00a3af] via-[#5dd7e4] to-[#8fe3c6] text-slate-950 font-body text-sm font-bold shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 w-full sm:w-auto"
                   >
-                    <span className="material-symbols-outlined text-lg">mail</span>
+                    <span className="material-symbols-outlined text-lg" aria-hidden="true">mail</span>
                     <span>Hubungi Saya</span>
                   </Link>
                   <a
                     className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#162035] hover:bg-[#1c2844] text-slate-100 font-body text-sm font-bold border border-[#283959] hover:border-[#00a3af]/40 shadow-sm hover:-translate-y-0.5 active:translate-y-0 transition-all w-full sm:w-auto"
-                    href="https://linkedin.com/in/radot-nababan-a51247195"
+                    href="https://linkedin.com/in/radotnababan"
                     rel="noreferrer"
                     target="_blank"
+                    aria-label="Koneksi LinkedIn Radot Yohanes Nababan (membuka di tab baru)"
                   >
-                    <span className="material-symbols-outlined text-base text-[#00a3af]">hub</span>
+                    <span className="material-symbols-outlined text-base text-[#00a3af]" aria-hidden="true">hub</span>
                     <span>Koneksi LinkedIn</span>
                   </a>
                 </div>

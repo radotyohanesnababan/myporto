@@ -7,7 +7,7 @@ interface Project {
   id: string;
   category: "fullstack" | "frontend" | "backend";
   title: string;
-  badge?: string;
+  type: string;
   org: string;
   description: string;
   stats?: { value: string; label: string }[];
@@ -27,7 +27,7 @@ export default function ProyekPage() {
       id: "perpustakaan",
       category: "fullstack",
       title: "Sistem Informasi Perpustakaan SMP N 1 Tarutung",
-      badge: "FEATURED SYSTEM",
+      type: 'Skripsi / Tugas Akhir',
       org: "SMP N 1 TARUTUNG",
       description:
         "Sistem manajemen perpustakaan digital komprehensif yang dirancang untuk mengelola inventaris buku, peminjaman siswa, dan sirkulasi bagi sekitar 300 siswa di SMP N 1 Tarutung dengan antarmuka responsif.",
@@ -35,62 +35,57 @@ export default function ProyekPage() {
         { value: "300+", label: "Siswa Terlayani" },
         { value: "Laravel + React", label: "Full Stack Flow" }
       ],
-      tags: ["Laravel PHP", "React Framework", "MySQL", "RESTful API", "TailwindCSS"],
-      demoUrl: "#",
-      repoUrl: "https://github.com",
-      hasCodeSnippet: true,
+      tags: ["Laravel PHP", "MySQL", "RESTful API", "TailwindCSS"],
+      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuA5iHPHJrdyq9blKKkkadlyMbzjA-2iH2aMrSsx1KySZIKIDlj8GCd--c8z7egbMbP83clROSnbJbBFByMu8BvIuf-uEOxpuANfwvI0ud236wrOvBlvpOxHmHJ9tySypIdzZ7cRGvo-afr7VhNLxYszWdYjiVWlDYML7xtqTDq5JxpVN8a1xJOioToSdgjqxNVFFOUoRaF_wtmwAKsEl3-1Zv3u4IRiZa1TkgqlXUaBD1fxzkGKu3s",
+      repoUrl: "https://github.com/radotyohanesnababan",
+      hasCodeSnippet: false,
     },
     {
       id: "lettuce-api",
       category: "backend",
       title: "Bangkit Capstone: Lettuce Disease Detection API",
-      badge: "CLOUD & ML API",
+      type: "Project MBKM/Kampus Merdeka",
       org: "BANGKIT CLOUD COHORT",
-      description:
-        "Layanan RESTful API terintegrasi model Machine Learning deteksi penyakit tanaman selada, dideploy pada infrastruktur Google Cloud Platform (Cloud Run) untuk aplikasi Android.",
+      description: "Layanan RESTful API terintegrasi model Machine Learning deteksi penyakit tanaman selada, dideploy pada infrastruktur Google Cloud Platform (Cloud Run) untuk aplikasi Android.",
       tags: ["Google Cloud (GCP)", "Cloud Run", "Python / Flask", "RESTful API"],
-      image:
-        "https://lh3.googleusercontent.com/aida-public/AB6AXuA5iHPHJrdyq9blKKkkadlyMbzjA-2iH2aMrSsx1KySZIKIDlj8GCd--c8z7egbMbP83clROSnbJbBFByMu8BvIuf-uEOxpuANfwvI0ud236wrOvBlvpOxHmHJ9tySypIdzZ7cRGvo-afr7VhNLxYszWdYjiVWlDYML7xtqTDq5JxpVN8a1xJOioToSdgjqxNVFFOUoRaF_wtmwAKsEl3-1Zv3u4IRiZa1TkgqlXUaBD1fxzkGKu3s",
+      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuA5iHPHJrdyq9blKKkkadlyMbzjA-2iH2aMrSsx1KySZIKIDlj8GCd--c8z7egbMbP83clROSnbJbBFByMu8BvIuf-uEOxpuANfwvI0ud236wrOvBlvpOxHmHJ9tySypIdzZ7cRGvo-afr7VhNLxYszWdYjiVWlDYML7xtqTDq5JxpVN8a1xJOioToSdgjqxNVFFOUoRaF_wtmwAKsEl3-1Zv3u4IRiZa1TkgqlXUaBD1fxzkGKu3s",
       demoUrl: "#case-study",
-      repoUrl: "https://github.com",
+      repoUrl: "https://github.com/radotyohanesnababan",
     },
     {
       id: "tapamajuma",
       category: "fullstack",
       title: "PWA Tapamajuma Projects : SMP N 1 Siborongborong",
-      badge: "PROGRESSIVE WEB APP",
+      type: "Project Kolaborasi",
       org: "200+ SISWA AKTIF",
-      description:
-        "Proyek aplikasi PWA memadukan React SPA dan Laravel backend untuk latihan literasi & numerasi bagi siswa SMP N 1 Siborongborong dengan 200+ pengguna aktif.",
+      description: "Proyek aplikasi PWA memadukan React SPA dan Laravel backend untuk latihan literasi & numerasi bagi siswa SMP N 1 Siborongborong dengan 200+ pengguna aktif.",
       tags: ["React SPA", "Laravel", "PWA", "MySQL"],
-      image:
-        "https://lh3.googleusercontent.com/aida-public/AB6AXuBSNEcddK_aGvhBzRNr_UaL-Ti_oRhFcpIw9ByOD4Iwcdl3cQSlar-6NSXh8_AuXP2HIZYl8wYaelTeGU9K-VHOWf_vYzrcazGStWHUOmYpkOUuGlJffbBATtoaYc0_biPTcwZvaP2xtatYSs5J7dBYgcfCHMx5Ihz98Y3VWqYir0-c1bd8-TdTDU0P9Q17eIFIiPSNBVVwxx1HMYad2-Nrfx1B-dTGD78WthWAO6ioOL6zZxs3MR0",
-      demoUrl: "#",
-      repoUrl: "https://github.com",
+      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBSNEcddK_aGvhBzRNr_UaL-Ti_oRhFcpIw9ByOD4Iwcdl3cQSlar-6NSXh8_AuXP2HIZYl8wYaelTeGU9K-VHOWf_vYzrcazGStWHUOmYpkOUuGlJffbBATtoaYc0_biPTcwZvaP2xtatYSs5J7dBYgcfCHMx5Ihz98Y3VWqYir0-c1bd8-TdTDU0P9Q17eIFIiPSNBVVwxx1HMYad2-Nrfx1B-dTGD78WthWAO6ioOL6zZxs3MR0",
+      repoUrl: "https://github.com/radotyohanesnababan",
     },
     {
-      id: "web-native",
-      category: "frontend",
-      title: "Website HTML CSS Native & PHP (Mata Kuliah Pemrograman Web)",
-      badge: "WEB FUNDAMENTAL",
-      org: "ITERA INFORMATIKA",
+      id: "haltev",
+      category: "fullstack",
+      title: "Project Pembelajaran Web Course Haltev",
+      type: "Project Klien",
+      org: "Haltev",
       description:
-        "Website interaktif dengan HTML, Native CSS, dan PHP backend meliputi homepage interaktif, pembuatan form dinamis, dan pengelolaan tabel database.",
-      tags: ["PHP Native", "HTML5", "CSS3 Native", "MySQL"],
-      demoUrl: "#",
-      repoUrl: "https://github.com",
+        "Project pembuatan website dinamis dan statis untuk pembelajaran Web Development pada course di Haltev.",
+      tags: ["Laravel Framework", "Tailwind CSS", "PHP Native", "MySQL"],
+      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuA5iHPHJrdyq9blKKkkadlyMbzjA-2iH2aMrSsx1KySZIKIDlj8GCd--c8z7egbMbP83clROSnbJbBFByMu8BvIuf-uEOxpuANfwvI0ud236wrOvBlvpOxHmHJ9tySypIdzZ7cRGvo-afr7VhNLxYszWdYjiVWlDYML7xtqTDq5JxpVN8a1xJOioToSdgjqxNVFFOUoRaF_wtmwAKsEl3-1Zv3u4IRiZa1TkgqlXUaBD1fxzkGKu3s",
+      repoUrl: "https://github.com/radotyohanesnababan",
     },
     {
       id: "alphapro",
       category: "fullstack",
-      title: "Bimbingan Belajar Alphapro Landing Page & Haltev Modules",
-      badge: "CLIENT & EDUTECH",
-      org: "HALTEV & ALPHAPRO",
+      title: "Bimbingan Belajar Alphapro Landing Page",
+      type: "Project Klien",
+      org: "Alphapro",
       description:
-        "Landing page berkonversi tinggi untuk bimbel Alphapro dan pembuatan website studi kasus modul kelas Expert Web Development di Haltev IT Learning Center.",
-      tags: ["Laravel Framework", "Tailwind CSS", "Responsive Web", "Blade Engine"],
-      demoUrl: "#",
-      repoUrl: "https://github.com",
+        "Project pembuatan landing page Alphapro dengan HTML dan Tailwind CSS, serta CMS dengan Laravel",
+      tags: ["Laravel Framework", "Tailwind CSS", "CMS"],
+      image:"https://lh3.googleusercontent.com/aida-public/AB6AXuA5iHPHJrdyq9blKKkkadlyMbzjA-2iH2aMrSsx1KySZIKIDlj8GCd--c8z7egbMbP83clROSnbJbBFByMu8BvIuf-uEOxpuANfwvI0ud236wrOvBlvpOxHmHJ9tySypIdzZ7cRGvo-afr7VhNLxYszWdYjiVWlDYML7xtqTDq5JxpVN8a1xJOioToSdgjqxNVFFOUoRaF_wtmwAKsEl3-1Zv3u4IRiZa1TkgqlXUaBD1fxzkGKu3s",
+      repoUrl: "https://github.com/radotyohanesnababan",
     },
   ];
 
@@ -115,31 +110,66 @@ export default function ProyekPage() {
   };
 
   return (
-    <main className="w-full xl:pl-24 bg-[#0b111d] min-h-screen">
-      <div className="flex flex-col w-full">
-        <div className="relative w-full overflow-hidden">
-          {/* Ambient Glows */}
-          <div className="absolute -top-32 right-12 w-[30rem] h-[30rem] rounded-full bg-[#00a3af]/12 blur-[140px] pointer-events-none" />
-          <div className="absolute top-96 -left-12 w-96 h-96 rounded-full bg-[#1e50a2]/20 blur-[140px] pointer-events-none" />
-          <div className="absolute bottom-20 right-1/4 w-80 h-80 rounded-full bg-[#8fe3c6]/10 blur-[120px] pointer-events-none" />
+    <main className="w-full xl:pl-24 bg-[#090e1a] text-[#dbe2f9] min-h-screen relative z-10 overflow-hidden">
+      {/* Background ambient lighting */}
+      <div className="absolute -top-40 left-1/3 w-[450px] h-[450px] rounded-full bg-[#1e50a2]/15 blur-3xl pointer-events-none z-0" />
+      <div className="absolute bottom-10 right-10 w-[400px] h-[400px] rounded-full bg-[#00a3af]/10 blur-3xl pointer-events-none z-0" />
 
-          <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 py-10 lg:py-16 flex flex-col gap-10 lg:gap-12 relative">
-            {/* Header Section */}
-            <div className="flex flex-col gap-7">
-              <div className="flex flex-col gap-3 max-w-3xl">
-                <h1 className="font-headline text-3xl sm:text-4xl lg:text-5xl text-white font-bold tracking-tight leading-tight">
-                  Proyek & Portofolio Rekayasa Web
-                </h1>
-                <p className="font-body text-base sm:text-lg text-[#94a3b8] leading-relaxed">
-                  Koleksi proyek pengembangan web, sistem informasi sekolah, arsitektur cloud, dan aplikasi berbasis
-                  Laravel, React, serta Google Cloud.
-                </p>
-              </div>
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-10 relative z-10">
+        {/* Header identity row */}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-6 border-b border-white/5">
+          <div className="flex items-center gap-3">
+            <span className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#1e50a2] via-[#00a3af] to-[#8fe3c6] flex items-center justify-center font-mono font-bold text-slate-950 text-xs shadow-md shadow-[#00a3af]/20">
+              &lt;/&gt;
+            </span>
+            <div>
+              <h1 className="font-headline font-bold text-xl sm:text-2xl text-white tracking-tight">
+                Proyek &amp; Portofolio
+              </h1>
+              <p className="font-body text-xs text-[#8fe3c6]">Showcase Rekayasa Web &amp; Arsitektur Cloud</p>
             </div>
+          </div>
+        </div>
 
-            {/* Project List */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-              {filteredProjects.map((project) => {
+        {/* Section: Project Showcase */}
+        <section className="mb-14">
+          <div className="flex flex-col gap-2 mb-8">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#101828] border border-[#00a3af]/30 w-fit">
+              <span className="material-symbols-outlined text-[#00a3af] text-sm" aria-hidden="true">folder_special</span>
+              <span className="font-body text-xs text-[#8fe3c6] font-semibold tracking-wider uppercase">
+                Proyek Unggulan
+              </span>
+            </div>
+            <h2 className="font-headline text-2xl sm:text-3xl text-white font-bold tracking-tight">
+              Proyek Rekayasa Perangkat Lunak
+            </h2>
+            <p className="font-body text-sm sm:text-base text-slate-400 max-w-2xl leading-relaxed">
+              Koleksi berbagai proyek yang pernah saya kerjakan mulai dari sistem informasi berbasis web, arsitektur cloud, serta aplikasi berbasis Laravel, React, dan Google Cloud Platform.
+            </p>
+          </div>
+
+          <div className="flex flex-col gap-10 lg:gap-12">
+            {/* Project List / Empty State */}
+            {filteredProjects.length === 0 ? (
+              <div className="w-full p-12 rounded-2xl bg-[#101828] border border-[#1e2c44] text-center flex flex-col items-center justify-center gap-4">
+                <span className="material-symbols-outlined text-4xl text-[#00a3af]" aria-hidden="true">folder_off</span>
+                <div className="flex flex-col gap-1">
+                  <h3 className="font-headline text-lg font-bold text-white">Tidak Ada Proyek Ditemukan</h3>
+                  <p className="font-body text-sm text-slate-400 max-w-md">
+                    Belum ada proyek yang terdaftar dalam kategori ini. Silakan pilih kategori lain atau tampilkan seluruh proyek.
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setActiveFilter("all")}
+                  className="px-4 py-2 rounded-xl bg-[#00a3af]/15 hover:bg-[#00a3af]/25 text-[#8fe3c6] text-xs font-semibold border border-[#00a3af]/40 transition-colors"
+                >
+                  Tampilkan Semua Proyek
+                </button>
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                {filteredProjects.map((project) => {
                 if (project.hasCodeSnippet) {
                   return (
                     <div
@@ -149,11 +179,8 @@ export default function ProyekPage() {
                       <div className="flex flex-col gap-8 justify-between items-start relative z-10">
                         <div className="flex flex-col gap-5 max-w-2xl">
                           <div className="flex items-center gap-2 flex-wrap">
-                            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#00a3af]/15 text-[#8fe3c6] border border-[#00a3af]/40 font-label text-xs font-bold shadow-xs">
-                              <span className="w-1.5 h-1.5 rounded-full bg-[#00a3af] animate-pulse" />
-                              {project.badge}
-                            </span>
-                            <span className="font-mono text-xs text-[#8fe3c6] font-medium">{project.org}</span>
+                            
+                            <span className="font-mono text-xs text-[#8fe3c6] font-medium">{project.type}</span>
                           </div>
 
                           <div className="flex flex-col gap-2">
@@ -199,27 +226,28 @@ export default function ProyekPage() {
                           </div>
 
                           <div className="flex items-center gap-3 flex-wrap pt-2">
-                            <a
-                              className="px-4 py-2.5 rounded-xl bg-[#00a3af] text-[#080d16] font-headline text-sm font-semibold hover:bg-[#00a3af]/90 transition-all flex items-center gap-2 shadow-sm shadow-[#00a3af]/25"
-                              href="#"
+                            <div
+                              className="px-4 py-2.5 rounded-xl bg-[#0f1624] text-[#8fe3c6] font-headline text-sm font-semibold flex items-center gap-2 border border-[#00a3af]/40 shadow-sm"
+                              title="Implementasi on-premise internal SMP N 1 Tarutung"
                             >
-                              <span className="material-symbols-outlined text-base">local_library</span>
-                              <span>Demo Perpustakaan</span>
-                            </a>
+                              <span className="material-symbols-outlined text-base text-[#00a3af]" aria-hidden="true">domain_verification</span>
+                              <span>Sistem On-Premise Aktif</span>
+                            </div>
                             <a
                               className="px-4 py-2.5 rounded-xl bg-[#0f1624] hover:bg-[#182337] text-white font-headline text-sm font-semibold transition-colors flex items-center gap-2 border border-[#1e2c44]"
-                              href="https://github.com"
+                              href="https://github.com/radotyohanesnababan"
                               rel="noreferrer"
                               target="_blank"
+                              aria-label="Repository GitHub Radot Yohanes Nababan (membuka di tab baru)"
                             >
-                              <span className="material-symbols-outlined text-base">code</span>
-                              <span>Repository</span>
+                              <span className="material-symbols-outlined text-base" aria-hidden="true">code</span>
+                              <span>Profil GitHub</span>
                             </a>
                             <a
                               className="px-3 py-2.5 rounded-xl text-[#00a3af] hover:text-[#8fe3c6] hover:bg-[#0f1624] transition-colors font-headline text-sm font-semibold flex items-center gap-1.5"
                               href="#case-study"
                             >
-                              <span className="material-symbols-outlined text-base">menu_book</span>
+                              <span className="material-symbols-outlined text-base" aria-hidden="true">menu_book</span>
                               <span>Arsitektur Sistem</span>
                             </a>
                           </div>
@@ -251,20 +279,15 @@ export default function ProyekPage() {
                             alt={project.title}
                             src={project.image}
                           />
-                          <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-[#080d16]/90 backdrop-blur-sm font-label text-xs text-[#8fe3c6] font-bold shadow-xs border border-[#00a3af]/40">
-                            {project.badge}
-                          </div>
+        
                         </div>
                       )}
 
                       {!project.image && (
                         <div className="flex items-center gap-2">
-                          <span className="inline-flex items-center px-3 py-1 rounded-full bg-[#0f1624] text-[#94a3b8] font-label text-xs font-bold border border-[#1e2c44]">
-                            {project.badge}
-                          </span>
                           <span className="font-label text-xs text-[#8fe3c6] font-bold flex items-center gap-1">
                             <span className="material-symbols-outlined text-sm text-[#00a3af]">verified</span>{" "}
-                            {project.org}
+                            {project.type}
                           </span>
                         </div>
                       )}
@@ -290,53 +313,56 @@ export default function ProyekPage() {
 
                     <div className="flex items-center justify-between pt-3 border-t border-[#1e2c44]">
                       <div className="flex items-center gap-2">
-                        <a
-                          className="px-3 py-1.5 rounded-lg bg-[#0f1624] hover:bg-[#00a3af] hover:text-[#080d16] text-[#e2e8f0] font-label text-xs font-semibold transition-all flex items-center gap-1.5 border border-[#1e2c44]"
-                          href={project.demoUrl || "#"}
-                        >
-                          <span className="material-symbols-outlined text-sm">visibility</span>
-                          <span>Buka Preview</span>
-                        </a>
+                        {project.demoUrl && project.demoUrl !== "#" ? (
+                          <a
+                            className="px-3 py-1.5 rounded-lg bg-[#0f1624] hover:bg-[#00a3af] hover:text-[#080d16] text-[#e2e8f0] font-label text-xs font-semibold transition-all flex items-center gap-1.5 border border-[#1e2c44]"
+                            href={project.demoUrl}
+                          >
+                            <span className="material-symbols-outlined text-sm" aria-hidden="true">visibility</span>
+                            <span>Buka Preview</span>
+                          </a>
+                        ) : (
+                          <span
+                            className="px-3 py-1.5 rounded-lg bg-[#0f1624]/60 text-slate-400 font-label text-xs font-medium flex items-center gap-1.5 border border-[#1e2c44]/50 cursor-default"
+                            title="Akses demo bersifat internal atau on-site"
+                          >
+                            <span className="material-symbols-outlined text-xs text-[#00a3af]" aria-hidden="true">check_circle</span>
+                            <span>Sistem Terpasang</span>
+                          </span>
+                        )}
                         <a
                           className="p-1.5 rounded-lg bg-[#0f1624] hover:text-[#8fe3c6] text-[#94a3b8] transition-colors flex items-center justify-center border border-[#1e2c44]"
-                          href={project.repoUrl || "https://github.com"}
+                          href={project.repoUrl || "https://github.com/radotyohanesnababan"}
                           rel="noreferrer"
                           target="_blank"
                           title="Source Code"
+                          aria-label={`Source code repository untuk ${project.title} (membuka di tab baru)`}
                         >
-                          <span className="material-symbols-outlined text-base">code</span>
+                          <span className="material-symbols-outlined text-base" aria-hidden="true">code</span>
                         </a>
                       </div>
                       <span className="font-mono text-xs text-[#8fe3c6] font-semibold flex items-center gap-1.5">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#00a3af]" /> {project.org}
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#00a3af]" /> {project.type}
                       </span>
                     </div>
                   </div>
                 );
               })}
             </div>
+          )}
 
             {/* Case Study Section */}
             <div className="rounded-2xl bg-[#101828] p-6 sm:p-10 border border-[#1e2c44] flex flex-col gap-8 shadow-xl" id="case-study">
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                 <div className="flex flex-col gap-1.5">
-                  <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-[#00a3af] animate-ping" />
-                    <span className="font-label text-xs text-[#8fe3c6] font-bold uppercase tracking-wider">
-                      Deep Dive
-                    </span>
-                  </div>
                   <h2 className="font-headline text-2xl sm:text-3xl text-white font-bold">
                     Keputusan Arsitektur & Trade-Offs Teknis
                   </h2>
                   <p className="font-body text-sm sm:text-base text-[#94a3b8]">
-                    Dokumentasi transparansi teknis di balik pemilihan stack, toleransi latensi, dan skema data.
+                    Pemilihan teknis dalam pengembangan proyek, seperti stack atau latensi data. 
                   </p>
                 </div>
-                <div className="px-3.5 py-1.5 rounded-xl bg-[#0f1624] font-mono text-xs text-[#94a3b8] border border-[#1e2c44]">
-                  ISO Architecture Review: <span className="text-[#8fe3c6] font-bold">Passed</span>
                 </div>
-              </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="flex flex-col gap-3 p-5 sm:p-6 rounded-xl bg-[#080d16] border border-[#1e2c44] shadow-sm hover:border-[#00a3af]/50 transition-colors">
@@ -348,10 +374,7 @@ export default function ProyekPage() {
                     Bagaimana implementasi Progressive Web App memberikan akses cepat latihan soal dengan bandwidth
                     rendah untuk siswa sekolah di SMP N 1 Siborongborong tanpa perlu instalasi aplikasi berat.
                   </p>
-                  <div className="mt-auto pt-3 flex items-center gap-1 font-label text-xs text-[#8fe3c6] font-bold">
-                    <span>Optimasi Aksesibilitas Siswa</span>
-                    <span className="material-symbols-outlined text-sm text-[#00a3af]">arrow_forward</span>
-                  </div>
+                  
                 </div>
 
                 <div className="flex flex-col gap-3 p-5 sm:p-6 rounded-xl bg-[#080d16] border border-[#1e2c44] shadow-sm hover:border-[#8fe3c6]/50 transition-colors">
@@ -365,10 +388,6 @@ export default function ProyekPage() {
                     Integrasi backend Laravel yang tangguh dengan interaktivitas React untuk sistem informasi
                     perpustakaan SMP N 1 Tarutung guna menyajikan katalog real-time dan sirkulasi buku yang presisi.
                   </p>
-                  <div className="mt-auto pt-3 flex items-center gap-1 font-label text-xs text-[#8fe3c6] font-bold">
-                    <span>Decoupled API & Reactive UI</span>
-                    <span className="material-symbols-outlined text-sm text-[#00a3af]">arrow_forward</span>
-                  </div>
                 </div>
 
                 <div className="flex flex-col gap-3 p-5 sm:p-6 rounded-xl bg-[#080d16] border border-[#1e2c44] shadow-sm hover:border-[#00a3af]/50 transition-colors">
@@ -382,10 +401,6 @@ export default function ProyekPage() {
                     Penanganan latensi RESTful API model machine learning pada Google Cloud Platform (Cloud Run) untuk
                     deteksi penyakit tanaman selada Bangkit Capstone, menghasilkan inferensi cepat ke klien Android.
                   </p>
-                  <div className="mt-auto pt-3 flex items-center gap-1 font-label text-xs text-[#8fe3c6] font-bold">
-                    <span>Cloud Run Container Deployment</span>
-                    <span className="material-symbols-outlined text-sm text-[#00a3af]">arrow_forward</span>
-                  </div>
                 </div>
               </div>
 
@@ -413,7 +428,7 @@ export default function ProyekPage() {
               </div>
             </div>
           </div>
-        </div>
+        </section>
       </div>
     </main>
   );

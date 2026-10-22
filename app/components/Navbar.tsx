@@ -37,13 +37,14 @@ export default function Navbar() {
       {/* Floating Left Glossy Vertical Dock Nav (Desktop) */}
       <aside
         aria-label="Navigasi Utama Desktop"
-        className="fixed left-6 top-1/2 -translate-y-1/2 z-50 hidden xl:flex flex-col items-center gap-3 p-3 rounded-2xl backdrop-blur-2xl bg-[#101828]/90 border border-white/10 shadow-2xl ring-1 ring-[#00a3af]/25 select-none"
+        className="fixed left-6 top-1/2 -translate-y-1/2 z-50 hidden xl:flex flex-col items-center gap-3 p-3 rounded-2xl backdrop-blur-2xl bg-[#101828]/95 border border-white/10 shadow-2xl shadow-black/50 select-none"
       >
         {/* Brand / Micro Monogram */}
         <Link
           href="/"
-          className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#1e50a2]/40 to-[#00a3af]/20 border border-[#00a3af]/40 flex items-center justify-center text-[#8fe3c6] hover:scale-105 transition-transform mb-1 shadow-lg shadow-[#00a3af]/10 group"
-          title="Radot Yohanes Nababan"
+          aria-label="Beranda - Radot Yohanes Nababan"
+          className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#1e50a2]/40 to-[#00a3af]/20 border border-[#00a3af]/40 flex items-center justify-center text-[#8fe3c6] hover:scale-105 transition-transform mb-1 shadow-md shadow-black/20 group"
+          title="Beranda"
         >
           <span className="font-mono text-sm font-bold tracking-tight">&lt;/&gt;</span>
         </Link>
@@ -56,16 +57,18 @@ export default function Navbar() {
             <Link
               key={item.label}
               href={item.href}
+              aria-label={item.label}
+              aria-current={item.active ? "page" : undefined}
               className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all group relative ${
                 item.active
-                  ? "bg-[#00a3af]/15 text-[#8fe3c6] border border-[#00a3af]/50 shadow-lg shadow-[#00a3af]/25"
+                  ? "bg-[#00a3af]/15 text-[#8fe3c6] border border-[#00a3af]/50 shadow-md shadow-black/20"
                   : "text-[#94a3b8] hover:text-[#e2e8f0] hover:bg-white/5 border border-transparent hover:border-white/10"
               }`}
               title={item.label}
             >
-              <span className="material-symbols-outlined text-[20px]">{item.icon}</span>
+              <span className="material-symbols-outlined text-[20px]" aria-hidden="true">{item.icon}</span>
               {item.active && (
-                <span className="absolute -right-1 top-1 w-2 h-2 rounded-full bg-[#00a3af] animate-pulse" />
+                <span className="absolute -right-1 top-1 w-1.5 h-1.5 rounded-full bg-[#8fe3c6]" aria-hidden="true" />
               )}
               <span className="absolute left-14 px-2.5 py-1 rounded-md bg-[#101828] text-xs font-mono text-[#e2e8f0] border border-white/10 shadow-xl opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity whitespace-nowrap z-50">
                 {item.label} {item.active ? "(Aktif)" : ""}
@@ -83,26 +86,28 @@ export default function Navbar() {
             href="https://github.com/radotyohanesnababan"
             rel="noreferrer"
             target="_blank"
-            title="GitHub"
+            title="GitHub (membuka di tab baru)"
+            aria-label="GitHub Radot Yohanes Nababan (membuka di tab baru)"
           >
-            <span className="material-symbols-outlined text-lg">code</span>
+            <span className="material-symbols-outlined text-lg" aria-hidden="true">code</span>
           </a>
           <a
             className="w-9 h-9 rounded-xl flex items-center justify-center text-[#94a3b8] hover:text-[#8fe3c6] hover:bg-[#00a3af]/10 transition-colors"
-            href="https://linkedin.com/in/radot-nababan-a51247195"
+            href="https://linkedin.com/in/radotnababan"
             rel="noreferrer"
             target="_blank"
-            title="LinkedIn"
+            title="LinkedIn (membuka di tab baru)"
+            aria-label="LinkedIn Radot Yohanes Nababan (membuka di tab baru)"
           >
-            <span className="material-symbols-outlined text-lg">hub</span>
+            <span className="material-symbols-outlined text-lg" aria-hidden="true">hub</span>
           </a>
         </div>
       </aside>
 
       {/* Top Bar Minimal on Mobile/Tablet */}
       <header className="xl:hidden sticky top-0 z-40 bg-[#101828]/90 backdrop-blur-md border-b border-[#1e2c44] px-5 py-3 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2.5">
-          <span className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#1e50a2] via-[#00a3af] to-[#8fe3c6] flex items-center justify-center font-mono font-bold text-slate-950 text-xs shadow-md shadow-[#00a3af]/20">
+        <Link href="/" aria-label="Beranda - Radot Yohanes Nababan" className="flex items-center gap-2.5">
+          <span className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#1e50a2] via-[#00a3af] to-[#8fe3c6] flex items-center justify-center font-mono font-bold text-slate-950 text-xs shadow-md shadow-black/20" aria-hidden="true">
             &lt;/&gt;
           </span>
           <span className="font-headline text-sm font-bold text-[#e2e8f0]">Radot Y. Nababan</span>
@@ -117,22 +122,23 @@ export default function Navbar() {
       {/* Ergonomic Floating Bottom Pill Nav (Mobile/Tablet) */}
       <nav
         aria-label="Navigasi Bawah Mobile"
-        className="fixed bottom-5 left-1/2 -translate-y-0 -translate-x-1/2 z-50 xl:hidden backdrop-blur-xl bg-[#101828]/95 border border-white/10 px-4 sm:px-5 py-2.5 rounded-full shadow-2xl ring-1 ring-[#00a3af]/25 flex items-center gap-4 sm:gap-6 select-none"
+        className="fixed bottom-5 left-1/2 -translate-y-0 -translate-x-1/2 z-50 xl:hidden backdrop-blur-xl bg-[#101828]/95 border border-white/10 px-2 sm:px-3 py-1.5 rounded-full shadow-2xl shadow-black/50 flex items-center gap-1 sm:gap-2 select-none"
       >
         {navItems.map((item) => (
           <Link
             key={item.label}
             href={item.href}
             aria-label={item.label}
-            className={`flex flex-col items-center justify-center p-1 rounded-full transition-all ${
+            aria-current={item.active ? "page" : undefined}
+            className={`min-w-[44px] min-h-[44px] flex flex-col items-center justify-center rounded-full transition-all ${
               item.active
-                ? "text-[#8fe3c6] drop-shadow-[0_0_8px_rgba(143,227,198,0.5)]"
-                : "text-slate-400 hover:text-[#8fe3c6]"
+                ? "text-[#8fe3c6] bg-[#00a3af]/15 border border-[#00a3af]/30"
+                : "text-slate-400 hover:text-[#8fe3c6] hover:bg-white/5"
             }`}
           >
-            <span className="material-symbols-outlined text-[20px] sm:text-[22px]">{item.icon}</span>
+            <span className="material-symbols-outlined text-[20px] sm:text-[22px]" aria-hidden="true">{item.icon}</span>
             {item.active && (
-              <span className="w-1.5 h-1.5 rounded-full bg-[#00a3af] mt-0.5 animate-pulse" />
+              <span className="w-1 h-1 rounded-full bg-[#8fe3c6] mt-0.5" aria-hidden="true" />
             )}
           </Link>
         ))}
