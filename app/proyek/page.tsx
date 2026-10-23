@@ -15,76 +15,80 @@ interface Project {
   image?: string;
   demoUrl?: string;
   repoUrl?: string;
-  hasCodeSnippet?: boolean;
 }
 
 export default function ProyekPage() {
   const [activeFilter, setActiveFilter] = useState<string>("all");
-  const [copiedCode, setCopiedCode] = useState(false);
 
   const projects: Project[] = [
     {
       id: "perpustakaan",
       category: "fullstack",
       title: "Sistem Informasi Perpustakaan SMP N 1 Tarutung",
-      type: 'Skripsi / Tugas Akhir',
+      type: "Skripsi / Tugas Akhir",
       org: "SMP N 1 TARUTUNG",
       description:
         "Sistem manajemen perpustakaan digital komprehensif yang dirancang untuk mengelola inventaris buku, peminjaman siswa, dan sirkulasi bagi sekitar 300 siswa di SMP N 1 Tarutung dengan antarmuka responsif.",
       stats: [
         { value: "300+", label: "Siswa Terlayani" },
-        { value: "Laravel + React", label: "Full Stack Flow" }
+        { value: "Laravel + React", label: "Full Stack Flow" },
       ],
       tags: ["Laravel PHP", "MySQL", "RESTful API", "TailwindCSS"],
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuA5iHPHJrdyq9blKKkkadlyMbzjA-2iH2aMrSsx1KySZIKIDlj8GCd--c8z7egbMbP83clROSnbJbBFByMu8BvIuf-uEOxpuANfwvI0ud236wrOvBlvpOxHmHJ9tySypIdzZ7cRGvo-afr7VhNLxYszWdYjiVWlDYML7xtqTDq5JxpVN8a1xJOioToSdgjqxNVFFOUoRaF_wtmwAKsEl3-1Zv3u4IRiZa1TkgqlXUaBD1fxzkGKu3s",
+      image:
+        "https://lh3.googleusercontent.com/aida-public/AB6AXuA5iHPHJrdyq9blKKkkadlyMbzjA-2iH2aMrSsx1KySZIKIDlj8GCd--c8z7egbMbP83clROSnbJbBFByMu8BvIuf-uEOxpuANfwvI0ud236wrOvBlvpOxHmHJ9tySypIdzZ7cRGvo-afr7VhNLxYszWdYjiVWlDYML7xtqTDq5JxpVN8a1xJOioToSdgjqxNVFFOUoRaF_wtmwAKsEl3-1Zv3u4IRiZa1TkgqlXUaBD1fxzkGKu3s",
       repoUrl: "https://github.com/radotyohanesnababan",
-      hasCodeSnippet: false,
     },
     {
       id: "lettuce-api",
       category: "backend",
       title: "Bangkit Capstone: Lettuce Disease Detection API",
-      type: "Project MBKM/Kampus Merdeka",
+      type: "Proyek MBKM / Kampus Merdeka",
       org: "BANGKIT CLOUD COHORT",
-      description: "Layanan RESTful API terintegrasi model Machine Learning deteksi penyakit tanaman selada, dideploy pada infrastruktur Google Cloud Platform (Cloud Run) untuk aplikasi Android.",
+      description:
+        "Layanan RESTful API terintegrasi model Machine Learning deteksi penyakit tanaman selada, dideploy pada infrastruktur Google Cloud Platform (Cloud Run) untuk aplikasi Android.",
       tags: ["Google Cloud (GCP)", "Cloud Run", "Python / Flask", "RESTful API"],
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuA5iHPHJrdyq9blKKkkadlyMbzjA-2iH2aMrSsx1KySZIKIDlj8GCd--c8z7egbMbP83clROSnbJbBFByMu8BvIuf-uEOxpuANfwvI0ud236wrOvBlvpOxHmHJ9tySypIdzZ7cRGvo-afr7VhNLxYszWdYjiVWlDYML7xtqTDq5JxpVN8a1xJOioToSdgjqxNVFFOUoRaF_wtmwAKsEl3-1Zv3u4IRiZa1TkgqlXUaBD1fxzkGKu3s",
-      demoUrl: "#case-study",
+      image:
+        "https://lh3.googleusercontent.com/aida-public/AB6AXuA5iHPHJrdyq9blKKkkadlyMbzjA-2iH2aMrSsx1KySZIKIDlj8GCd--c8z7egbMbP83clROSnbJbBFByMu8BvIuf-uEOxpuANfwvI0ud236wrOvBlvpOxHmHJ9tySypIdzZ7cRGvo-afr7VhNLxYszWdYjiVWlDYML7xtqTDq5JxpVN8a1xJOioToSdgjqxNVFFOUoRaF_wtmwAKsEl3-1Zv3u4IRiZa1TkgqlXUaBD1fxzkGKu3s",
+      demoUrl: "#",
       repoUrl: "https://github.com/radotyohanesnababan",
     },
     {
       id: "tapamajuma",
       category: "fullstack",
       title: "PWA Tapamajuma Projects : SMP N 1 Siborongborong",
-      type: "Project Kolaborasi",
+      type: "Proyek Kolaborasi",
       org: "200+ SISWA AKTIF",
-      description: "Proyek aplikasi PWA memadukan React SPA dan Laravel backend untuk latihan literasi & numerasi bagi siswa SMP N 1 Siborongborong dengan 200+ pengguna aktif.",
+      description:
+        "Proyek aplikasi PWA memadukan React SPA dan Laravel backend untuk latihan literasi & numerasi bagi siswa SMP N 1 Siborongborong dengan 200+ pengguna aktif.",
       tags: ["React SPA", "Laravel", "PWA", "MySQL"],
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBSNEcddK_aGvhBzRNr_UaL-Ti_oRhFcpIw9ByOD4Iwcdl3cQSlar-6NSXh8_AuXP2HIZYl8wYaelTeGU9K-VHOWf_vYzrcazGStWHUOmYpkOUuGlJffbBATtoaYc0_biPTcwZvaP2xtatYSs5J7dBYgcfCHMx5Ihz98Y3VWqYir0-c1bd8-TdTDU0P9Q17eIFIiPSNBVVwxx1HMYad2-Nrfx1B-dTGD78WthWAO6ioOL6zZxs3MR0",
+      image:
+        "https://lh3.googleusercontent.com/aida-public/AB6AXuBSNEcddK_aGvhBzRNr_UaL-Ti_oRhFcpIw9ByOD4Iwcdl3cQSlar-6NSXh8_AuXP2HIZYl8wYaelTeGU9K-VHOWf_vYzrcazGStWHUOmYpkOUuGlJffbBATtoaYc0_biPTcwZvaP2xtatYSs5J7dBYgcfCHMx5Ihz98Y3VWqYir0-c1bd8-TdTDU0P9Q17eIFIiPSNBVVwxx1HMYad2-Nrfx1B-dTGD78WthWAO6ioOL6zZxs3MR0",
       repoUrl: "https://github.com/radotyohanesnababan",
     },
     {
       id: "haltev",
       category: "fullstack",
-      title: "Project Pembelajaran Web Course Haltev",
-      type: "Project Klien",
+      title: "Proyek Pembelajaran Web Course Haltev",
+      type: "Proyek Klien",
       org: "Haltev",
       description:
-        "Project pembuatan website dinamis dan statis untuk pembelajaran Web Development pada course di Haltev.",
+        "Proyek pembuatan website dinamis dan statis untuk pembelajaran Web Development pada course di Haltev.",
       tags: ["Laravel Framework", "Tailwind CSS", "PHP Native", "MySQL"],
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuA5iHPHJrdyq9blKKkkadlyMbzjA-2iH2aMrSsx1KySZIKIDlj8GCd--c8z7egbMbP83clROSnbJbBFByMu8BvIuf-uEOxpuANfwvI0ud236wrOvBlvpOxHmHJ9tySypIdzZ7cRGvo-afr7VhNLxYszWdYjiVWlDYML7xtqTDq5JxpVN8a1xJOioToSdgjqxNVFFOUoRaF_wtmwAKsEl3-1Zv3u4IRiZa1TkgqlXUaBD1fxzkGKu3s",
+      image:
+        "https://lh3.googleusercontent.com/aida-public/AB6AXuA5iHPHJrdyq9blKKkkadlyMbzjA-2iH2aMrSsx1KySZIKIDlj8GCd--c8z7egbMbP83clROSnbJbBFByMu8BvIuf-uEOxpuANfwvI0ud236wrOvBlvpOxHmHJ9tySypIdzZ7cRGvo-afr7VhNLxYszWdYjiVWlDYML7xtqTDq5JxpVN8a1xJOioToSdgjqxNVFFOUoRaF_wtmwAKsEl3-1Zv3u4IRiZa1TkgqlXUaBD1fxzkGKu3s",
       repoUrl: "https://github.com/radotyohanesnababan",
     },
     {
       id: "alphapro",
       category: "fullstack",
       title: "Bimbingan Belajar Alphapro Landing Page",
-      type: "Project Klien",
+      type: "Proyek Klien",
       org: "Alphapro",
       description:
-        "Project pembuatan landing page Alphapro dengan HTML dan Tailwind CSS, serta CMS dengan Laravel",
+        "Proyek pembuatan landing page Alphapro dengan HTML dan Tailwind CSS, serta CMS dengan Laravel.",
       tags: ["Laravel Framework", "Tailwind CSS", "CMS"],
-      image:"https://lh3.googleusercontent.com/aida-public/AB6AXuA5iHPHJrdyq9blKKkkadlyMbzjA-2iH2aMrSsx1KySZIKIDlj8GCd--c8z7egbMbP83clROSnbJbBFByMu8BvIuf-uEOxpuANfwvI0ud236wrOvBlvpOxHmHJ9tySypIdzZ7cRGvo-afr7VhNLxYszWdYjiVWlDYML7xtqTDq5JxpVN8a1xJOioToSdgjqxNVFFOUoRaF_wtmwAKsEl3-1Zv3u4IRiZa1TkgqlXUaBD1fxzkGKu3s",
+      image:
+        "https://lh3.googleusercontent.com/aida-public/AB6AXuA5iHPHJrdyq9blKKkkadlyMbzjA-2iH2aMrSsx1KySZIKIDlj8GCd--c8z7egbMbP83clROSnbJbBFByMu8BvIuf-uEOxpuANfwvI0ud236wrOvBlvpOxHmHJ9tySypIdzZ7cRGvo-afr7VhNLxYszWdYjiVWlDYML7xtqTDq5JxpVN8a1xJOioToSdgjqxNVFFOUoRaF_wtmwAKsEl3-1Zv3u4IRiZa1TkgqlXUaBD1fxzkGKu3s",
       repoUrl: "https://github.com/radotyohanesnababan",
     },
   ];
@@ -94,265 +98,186 @@ export default function ProyekPage() {
       ? projects
       : projects.filter((project) => project.category === activeFilter);
 
-  const copySnippet = () => {
-    const code = `public function borrowBook(Request $request) {
-    // Validasi & Catat Sirkulasi Siswa SMP N 1
-    $siswa = Siswa::findOrFail($request->siswa_id);
-    if ($siswa->active_loans >= 3) {
-        return response()->json(['limit_exceeded'], 422);
-    }
-    $loan = Loan::createLoanRecord($request->all());
-    return response()->json(['success' => true]);
-}`;
-    navigator.clipboard.writeText(code);
-    setCopiedCode(true);
-    setTimeout(() => setCopiedCode(false), 2500);
-  };
+  const filterOptions = [
+    { id: "all", label: "Semua Proyek" },
+    { id: "fullstack", label: "Full-Stack" },
+    { id: "backend", label: "Backend & Cloud" },
+  ];
 
   return (
-    <main className="w-full xl:pl-24 bg-[#090e1a] text-[#dbe2f9] min-h-screen relative z-10 overflow-hidden">
-      {/* Background ambient lighting */}
-      <div className="absolute -top-40 left-1/3 w-[450px] h-[450px] rounded-full bg-[#1e50a2]/15 blur-3xl pointer-events-none z-0" />
-      <div className="absolute bottom-10 right-10 w-[400px] h-[400px] rounded-full bg-[#00a3af]/10 blur-3xl pointer-events-none z-0" />
-
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-10 relative z-10">
+    <main className="w-full xl:pl-24 bg-background text-foreground min-h-screen">
+      <div className="max-w-5xl mx-auto px-4 md:px-6 py-10">
         {/* Header identity row */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-6 border-b border-white/5">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-4 border-b-2 border-border">
           <div className="flex items-center gap-3">
-            <span className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#1e50a2] via-[#00a3af] to-[#8fe3c6] flex items-center justify-center font-mono font-bold text-slate-950 text-xs shadow-md shadow-[#00a3af]/20">
+            <span className="w-10 h-10 rounded-base bg-main text-main-foreground border-2 border-border shadow-shadow flex items-center justify-center font-mono font-bold text-sm">
               &lt;/&gt;
             </span>
             <div>
-              <h1 className="font-headline font-bold text-xl sm:text-2xl text-white tracking-tight">
+              <h1 className="font-headline font-bold text-xl sm:text-2xl text-foreground tracking-tight">
                 Proyek &amp; Portofolio
               </h1>
-              <p className="font-body text-xs text-[#8fe3c6]">Showcase Rekayasa Web &amp; Arsitektur Cloud</p>
+              <p className="font-mono text-xs text-foreground/70">
+                Showcase Rekayasa Web &amp; Arsitektur Cloud
+              </p>
             </div>
           </div>
         </div>
 
         {/* Section: Project Showcase */}
         <section className="mb-14">
-          <div className="flex flex-col gap-2 mb-8">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#101828] border border-[#00a3af]/30 w-fit">
-              <span className="material-symbols-outlined text-[#00a3af] text-sm" aria-hidden="true">folder_special</span>
-              <span className="font-body text-xs text-[#8fe3c6] font-semibold tracking-wider uppercase">
-                Proyek Unggulan
-              </span>
+          <div className="flex flex-col gap-3 mb-8">
+            <div className="border-2 border-border bg-main text-main-foreground rounded-base px-3 py-1 font-mono text-xs font-bold w-fit shadow-shadow">
+              PROYEK REKAYASA PERANGKAT LUNAK
             </div>
-            <h2 className="font-headline text-2xl sm:text-3xl text-white font-bold tracking-tight">
-              Proyek Rekayasa Perangkat Lunak
+            <h2 className="font-headline text-2xl sm:text-4xl text-foreground font-bold tracking-tight">
+              Koleksi Karya &amp; Sistem Nyata
             </h2>
-            <p className="font-body text-sm sm:text-base text-slate-400 max-w-2xl leading-relaxed">
-              Koleksi berbagai proyek yang pernah saya kerjakan mulai dari sistem informasi berbasis web, arsitektur cloud, serta aplikasi berbasis Laravel, React, dan Google Cloud Platform.
+            <p className="font-body text-base text-foreground/80 max-w-2xl leading-relaxed">
+              Koleksi berbagai proyek yang pernah saya kerjakan, mulai dari sistem informasi perpustakaan berbasis web, arsitektur backend cloud Google Cloud Platform, hingga aplikasi PWA berbasis Laravel dan React.
             </p>
           </div>
 
-          <div className="flex flex-col gap-10 lg:gap-12">
-            {/* Project List / Empty State */}
-            {filteredProjects.length === 0 ? (
-              <div className="w-full p-12 rounded-2xl bg-[#101828] border border-[#1e2c44] text-center flex flex-col items-center justify-center gap-4">
-                <span className="material-symbols-outlined text-4xl text-[#00a3af]" aria-hidden="true">folder_off</span>
-                <div className="flex flex-col gap-1">
-                  <h3 className="font-headline text-lg font-bold text-white">Tidak Ada Proyek Ditemukan</h3>
-                  <p className="font-body text-sm text-slate-400 max-w-md">
-                    Belum ada proyek yang terdaftar dalam kategori ini. Silakan pilih kategori lain atau tampilkan seluruh proyek.
-                  </p>
-                </div>
-                <button
-                  type="button"
-                  onClick={() => setActiveFilter("all")}
-                  className="px-4 py-2 rounded-xl bg-[#00a3af]/15 hover:bg-[#00a3af]/25 text-[#8fe3c6] text-xs font-semibold border border-[#00a3af]/40 transition-colors"
-                >
-                  Tampilkan Semua Proyek
-                </button>
+          {/* Filter Categories */}
+          <div className="flex flex-wrap gap-2 mb-8">
+            {filterOptions.map((f) => (
+              <button
+                key={f.id}
+                type="button"
+                onClick={() => setActiveFilter(f.id)}
+                className={`border-2 border-border rounded-base px-3 py-1.5 font-mono text-xs font-bold transition-all cursor-pointer ${
+                  activeFilter === f.id
+                    ? "bg-main text-main-foreground shadow-shadow hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none"
+                    : "bg-secondary-background text-foreground shadow-shadow hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none"
+                }`}
+              >
+                {f.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Projects Grid */}
+          {filteredProjects.length === 0 ? (
+            <div className="w-full p-10 rounded-base bg-secondary-background border-2 border-border shadow-shadow text-center flex flex-col items-center justify-center gap-4">
+              <span className="material-symbols-outlined text-4xl text-main" aria-hidden="true">folder_off</span>
+              <div className="flex flex-col gap-1">
+                <h3 className="font-headline text-lg font-bold text-foreground">Tidak Ada Proyek Ditemukan</h3>
+                <p className="font-body text-sm text-foreground/70 max-w-md">
+                  Belum ada proyek dalam kategori ini. Silakan pilih kategori lain.
+                </p>
               </div>
-            ) : (
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-                {filteredProjects.map((project) => {
-                if (project.hasCodeSnippet) {
-                  return (
-                    <div
-                      key={project.id}
-                      className="lg:col-span-12 rounded-2xl bg-[#101828]/95 p-6 sm:p-8 border border-[#1e2c44] shadow-xl relative overflow-hidden group hover:border-[#00a3af]/60 transition-all duration-300"
-                    >
-                      <div className="flex flex-col gap-8 justify-between items-start relative z-10">
-                        <div className="flex flex-col gap-5 max-w-2xl">
-                          <div className="flex items-center gap-2 flex-wrap">
-                            
-                            <span className="font-mono text-xs text-[#8fe3c6] font-medium">{project.type}</span>
-                          </div>
-
-                          <div className="flex flex-col gap-2">
-                            <h2 className="font-headline text-2xl sm:text-3xl text-white group-hover:text-[#8fe3c6] transition-colors font-semibold">
-                              {project.title}
-                            </h2>
-                            <p className="font-body text-base text-[#94a3b8] leading-relaxed">
-                              {project.description}
-                            </p>
-                          </div>
-
-                          {project.stats && (
-                            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 py-1">
-                              {project.stats.map((st, i) => (
-                                <div
-                                  key={st.label}
-                                  className={`p-3.5 rounded-xl bg-[#0f1624] border border-[#1e2c44] ${
-                                    i === 2 ? "col-span-2 sm:col-span-1" : ""
-                                  }`}
-                                >
-                                  <div className="font-headline text-2xl font-bold text-[#8fe3c6]">{st.value}</div>
-                                  <div className="font-label text-xs text-[#94a3b8] uppercase tracking-wider font-semibold">
-                                    {st.label}
-                                  </div>
-                                </div>
-                              ))}
-                            </div>
-                          )}
-
-                          <div className="flex flex-wrap gap-2">
-                            {project.tags.map((tg, idx) => (
-                              <span
-                                key={tg}
-                                className={`font-label text-xs px-2.5 py-1 rounded-lg ${
-                                  idx === 0
-                                    ? "bg-[#00a3af]/15 text-[#8fe3c6] font-semibold border border-[#00a3af]/30"
-                                    : "bg-[#0f1624] text-[#e2e8f0] font-medium border border-[#1e2c44]"
-                                }`}
-                              >
-                                {tg}
-                              </span>
-                            ))}
-                          </div>
-
-                          <div className="flex items-center gap-3 flex-wrap pt-2">
-                            <div
-                              className="px-4 py-2.5 rounded-xl bg-[#0f1624] text-[#8fe3c6] font-headline text-sm font-semibold flex items-center gap-2 border border-[#00a3af]/40 shadow-sm"
-                              title="Implementasi on-premise internal SMP N 1 Tarutung"
-                            >
-                              <span className="material-symbols-outlined text-base text-[#00a3af]" aria-hidden="true">domain_verification</span>
-                              <span>Sistem On-Premise Aktif</span>
-                            </div>
-                            <a
-                              className="px-4 py-2.5 rounded-xl bg-[#0f1624] hover:bg-[#182337] text-white font-headline text-sm font-semibold transition-colors flex items-center gap-2 border border-[#1e2c44]"
-                              href="https://github.com/radotyohanesnababan"
-                              rel="noreferrer"
-                              target="_blank"
-                              aria-label="Repository GitHub Radot Yohanes Nababan (membuka di tab baru)"
-                            >
-                              <span className="material-symbols-outlined text-base" aria-hidden="true">code</span>
-                              <span>Profil GitHub</span>
-                            </a>
-                            <a
-                              className="px-3 py-2.5 rounded-xl text-[#00a3af] hover:text-[#8fe3c6] hover:bg-[#0f1624] transition-colors font-headline text-sm font-semibold flex items-center gap-1.5"
-                              href="#case-study"
-                            >
-                              <span className="material-symbols-outlined text-base" aria-hidden="true">menu_book</span>
-                              <span>Arsitektur Sistem</span>
-                            </a>
-                          </div>
-                        </div>
-                        {project.image && (
-                          <div className="w-full h-48 rounded-xl overflow-hidden bg-[#0f1624] relative border border-[#1e2c44]">
-                            <img
-                              alt={project.title}
-                              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                              src={project.image}
-                            />
-                          </div>
-                        )}
+              <button
+                type="button"
+                onClick={() => setActiveFilter("all")}
+                className="border-2 border-border bg-main text-main-foreground shadow-shadow rounded-base px-4 py-2 font-mono text-xs font-bold hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none transition-all"
+              >
+                Tampilkan Semua Proyek
+              </button>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {filteredProjects.map((project) => (
+                <div
+                  key={project.id}
+                  className="border-2 border-border bg-secondary-background shadow-shadow rounded-base p-5 flex flex-col justify-between gap-4 hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none transition-all group"
+                >
+                  <div className="flex flex-col gap-3">
+                    {project.image && (
+                      <div className="w-full h-48 rounded-base overflow-hidden border-2 border-border bg-background">
+                        <img
+                          className="w-full h-full object-cover"
+                          alt={project.title}
+                          src={project.image}
+                        />
                       </div>
+                    )}
+
+                    <div className="flex flex-col gap-1.5">
+                      <div className="flex items-center justify-between gap-2">
+                        <span className="font-mono text-xs text-foreground/70 uppercase tracking-wide">
+                          {project.type}
+                        </span>
+                        <span className="font-mono text-xs text-foreground/70 font-bold">
+                          {project.org}
+                        </span>
+                      </div>
+
+                      <h3 className="font-headline text-xl text-foreground font-bold">
+                        {project.title}
+                      </h3>
+
+                      <p className="font-body text-sm text-foreground/80 leading-relaxed">
+                        {project.description}
+                      </p>
                     </div>
-                  );
-                }
 
-                return (
-                  <div
-                    key={project.id}
-                    className="lg:col-span-6 rounded-2xl bg-[#101828] p-6 border border-[#1e2c44] shadow-md flex flex-col justify-between gap-6 group hover:border-[#00a3af]/60 transition-all duration-300"
-                  >
-                    <div className="flex flex-col gap-4">
-                      {project.image && (
-                        <div className="w-full h-48 rounded-xl overflow-hidden bg-[#0f1624] relative border border-[#1e2c44]">
-                          <img
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 opacity-90"
-                            alt={project.title}
-                            src={project.image}
-                          />
-        
-                        </div>
-                      )}
-
-                      {!project.image && (
-                        <div className="flex items-center gap-2">
-                          <span className="font-label text-xs text-[#8fe3c6] font-bold flex items-center gap-1">
-                            <span className="material-symbols-outlined text-sm text-[#00a3af]">verified</span>{" "}
-                            {project.type}
-                          </span>
-                        </div>
-                      )}
-
-                      <div className="flex flex-col gap-1.5">
-                        <h3 className="font-headline text-xl text-white group-hover:text-[#8fe3c6] transition-colors font-semibold">
-                          {project.title}
-                        </h3>
-                        <p className="font-body text-sm text-[#94a3b8] leading-relaxed">{project.description}</p>
-                      </div>
-
-                      <div className="flex flex-wrap gap-1.5">
-                        {project.tags.map((tg) => (
-                          <span
-                            key={tg}
-                            className="font-label text-xs px-2.5 py-1 rounded-lg bg-[#0f1624] text-[#e2e8f0] font-medium border border-[#1e2c44]"
+                    {project.stats && (
+                      <div className="grid grid-cols-2 gap-2 py-1">
+                        {project.stats.map((st) => (
+                          <div
+                            key={st.label}
+                            className="p-2.5 rounded-base bg-background border-2 border-border"
                           >
-                            {tg}
-                          </span>
+                            <div className="font-headline text-lg font-bold text-foreground">{st.value}</div>
+                            <div className="font-mono text-[11px] text-foreground/70 uppercase font-semibold">
+                              {st.label}
+                            </div>
+                          </div>
                         ))}
                       </div>
-                    </div>
+                    )}
 
-                    <div className="flex items-center justify-between pt-3 border-t border-[#1e2c44]">
-                      <div className="flex items-center gap-2">
-                        {project.demoUrl && project.demoUrl !== "#" ? (
-                          <a
-                            className="px-3 py-1.5 rounded-lg bg-[#0f1624] hover:bg-[#00a3af] hover:text-[#080d16] text-[#e2e8f0] font-label text-xs font-semibold transition-all flex items-center gap-1.5 border border-[#1e2c44]"
-                            href={project.demoUrl}
-                          >
-                            <span className="material-symbols-outlined text-sm" aria-hidden="true">visibility</span>
-                            <span>Buka Preview</span>
-                          </a>
-                        ) : (
-                          <span
-                            className="px-3 py-1.5 rounded-lg bg-[#0f1624]/60 text-slate-400 font-label text-xs font-medium flex items-center gap-1.5 border border-[#1e2c44]/50 cursor-default"
-                            title="Akses demo bersifat internal atau on-site"
-                          >
-                            <span className="material-symbols-outlined text-xs text-[#00a3af]" aria-hidden="true">check_circle</span>
-                            <span>Sistem Terpasang</span>
-                          </span>
-                        )}
-                        <a
-                          className="p-1.5 rounded-lg bg-[#0f1624] hover:text-[#8fe3c6] text-[#94a3b8] transition-colors flex items-center justify-center border border-[#1e2c44]"
-                          href={project.repoUrl || "https://github.com/radotyohanesnababan"}
-                          rel="noreferrer"
-                          target="_blank"
-                          title="Source Code"
-                          aria-label={`Source code repository untuk ${project.title} (membuka di tab baru)`}
+                    <div className="flex flex-wrap gap-1.5 pt-1">
+                      {project.tags.map((tg) => (
+                        <span
+                          key={tg}
+                          className="border-2 border-border bg-main text-main-foreground rounded-base px-2 py-0.5 font-mono text-xs font-bold"
                         >
-                          <span className="material-symbols-outlined text-base" aria-hidden="true">code</span>
-                        </a>
-                      </div>
-                      <span className="font-mono text-xs text-[#8fe3c6] font-semibold flex items-center gap-1.5">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#00a3af]" /> {project.type}
-                      </span>
+                          {tg}
+                        </span>
+                      ))}
                     </div>
                   </div>
-                );
-              })}
+
+                  <div className="flex items-center justify-between pt-3 border-t-2 border-border mt-2">
+                    <div className="flex items-center gap-2">
+                      {project.demoUrl && project.demoUrl !== "#" ? (
+                        <a
+                          className="border-2 border-border bg-main text-main-foreground shadow-shadow rounded-base px-3 py-1.5 font-mono text-xs font-bold hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none transition-all flex items-center gap-1.5"
+                          href={project.demoUrl}
+                        >
+                          <span className="material-symbols-outlined text-sm" aria-hidden="true">visibility</span>
+                          <span>Preview</span>
+                        </a>
+                      ) : (
+                        <span
+                          className="border-2 border-border bg-secondary-background text-foreground/70 rounded-base px-2.5 py-1 font-mono text-xs font-medium flex items-center gap-1 cursor-default"
+                          title="Sistem aktif secara internal atau terpasang di instansi"
+                        >
+                          <span className="material-symbols-outlined text-xs text-main" aria-hidden="true">check_circle</span>
+                          <span>Sistem Terpasang</span>
+                        </span>
+                      )}
+                      <a
+                        className="border-2 border-border bg-secondary-background text-foreground shadow-shadow rounded-base p-1.5 font-mono text-xs font-bold hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none transition-all flex items-center justify-center"
+                        href={project.repoUrl || "https://github.com/radotyohanesnababan"}
+                        rel="noreferrer"
+                        target="_blank"
+                        title="Repository GitHub"
+                        aria-label={`Repository GitHub untuk ${project.title} (membuka di tab baru)`}
+                      >
+                        <span className="material-symbols-outlined text-base" aria-hidden="true">code</span>
+                      </a>
+                    </div>
+
+                    <span className="font-mono text-xs text-foreground/70 font-semibold">
+                      {project.category.toUpperCase()}
+                    </span>
+                  </div>
+                </div>
+              ))}
             </div>
           )}
-
-            
-          </div>
         </section>
       </div>
     </main>

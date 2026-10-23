@@ -54,53 +54,55 @@ export default function KontakPage() {
   };
 
   return (
-    <main className="w-full xl:pl-24 bg-[#090e1a] text-[#dbe2f9] min-h-screen relative z-10 overflow-hidden">
-      {/* Background ambient lighting */}
-      <div className="absolute -top-40 left-1/3 w-[450px] h-[450px] rounded-full bg-[#1e50a2]/15 blur-3xl pointer-events-none z-0" />
-      <div className="absolute bottom-10 right-10 w-[400px] h-[400px] rounded-full bg-[#00a3af]/10 blur-3xl pointer-events-none z-0" />
-
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-10 relative z-10">
+    <main className="w-full xl:pl-24 bg-background text-foreground min-h-screen">
+      <div className="max-w-5xl mx-auto px-4 md:px-6 py-10">
         {/* Header identity row */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-6 border-b border-white/5">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-4 border-b-2 border-border">
           <div className="flex items-center gap-3">
-            <span className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#1e50a2] via-[#00a3af] to-[#8fe3c6] flex items-center justify-center font-mono font-bold text-slate-950 text-xs shadow-md shadow-[#00a3af]/20">
+            <span className="w-10 h-10 rounded-base bg-main text-main-foreground border-2 border-border shadow-shadow flex items-center justify-center font-mono font-bold text-sm">
               &lt;/&gt;
             </span>
             <div>
-              <h1 className="font-headline font-bold text-xl sm:text-2xl text-white tracking-tight">
+              <h1 className="font-headline font-bold text-xl sm:text-2xl text-foreground tracking-tight">
                 Hubungi &amp; Kolaborasi
               </h1>
+              <p className="font-mono text-xs text-foreground/70">
+                Kanal Komunikasi &amp; Diskusi Teknis
+              </p>
             </div>
           </div>
         </div>
 
         {/* Section: Contact Form & Collaboration */}
         <section className="mb-14" id="kontak">
-          <div className="mb-8 max-w-3xl">
-            <h2 className="font-headline text-3xl sm:text-4xl text-white font-bold tracking-tight">
+          <div className="mb-8">
+            <div className="border-2 border-border bg-main text-main-foreground rounded-base px-3 py-1 font-mono text-xs font-bold w-fit shadow-shadow mb-3">
+              KIRIM PESAN LANGSUNG
+            </div>
+            <h2 className="font-headline text-2xl sm:text-4xl text-foreground font-bold tracking-tight">
               Mari Berkolaborasi atau Diskusikan Proyek Anda
             </h2>
-            <p className="font-body text-base text-slate-400 mt-2 leading-relaxed">
-              Terbuka untuk posisi full-time, freelance project, maupun konsultasi arsitektur perangkat lunak.
+            <p className="font-body text-base text-foreground/80 mt-2 max-w-2xl leading-relaxed">
+              Terbuka untuk posisi full-time, freelance project, maupun konsultasi arsitektur perangkat lunak dan cloud computing.
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            {/* Main Form Container */}
-            <div className="lg:col-span-8 bg-[#101828]/95 rounded-2xl p-6 sm:p-8 shadow-2xl border border-white/10 ring-1 ring-[#00a3af]/10">
+            {/* Main Form Container (3px Neobrutalism Border) */}
+            <div className="lg:col-span-7 border-[3px] border-border bg-secondary-background shadow-shadow rounded-base p-6 sm:p-8">
               <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {/* Nama Lengkap */}
                   <div className="flex flex-col gap-1.5">
                     <label
-                      className="font-body text-xs font-bold text-slate-300 uppercase tracking-wider flex items-center justify-between"
+                      className="font-mono text-xs font-bold text-foreground uppercase tracking-wider flex items-center justify-between"
                       htmlFor="fullName"
                     >
                       <span>Nama Lengkap</span>
-                      <span className="text-[#8fe3c6] font-mono">*</span>
+                      <span className="text-main font-bold">*</span>
                     </label>
                     <input
-                      className="w-full bg-[#090e1a] text-white font-body text-sm px-4 py-2.5 rounded-xl border border-white/10 focus:border-[#00a3af] focus:bg-[#141f36] focus:ring-2 focus:ring-[#00a3af]/20 outline-none transition-all placeholder:text-slate-600"
+                      className="w-full border-2 border-border bg-secondary-background text-foreground rounded-base px-3 py-2 font-body text-sm focus-visible:outline-2 focus-visible:outline-offset-2 outline-none"
                       id="fullName"
                       placeholder="mis. Sarah Wijaya"
                       required
@@ -114,14 +116,14 @@ export default function KontakPage() {
                   {/* Email */}
                   <div className="flex flex-col gap-1.5">
                     <label
-                      className="font-body text-xs font-bold text-slate-300 uppercase tracking-wider flex items-center justify-between"
+                      className="font-mono text-xs font-bold text-foreground uppercase tracking-wider flex items-center justify-between"
                       htmlFor="emailAddr"
                     >
                       <span>Email Anda</span>
-                      <span className="text-[#8fe3c6] font-mono">*</span>
+                      <span className="text-main font-bold">*</span>
                     </label>
                     <input
-                      className="w-full bg-[#090e1a] text-white font-body text-sm px-4 py-2.5 rounded-xl border border-white/10 focus:border-[#00a3af] focus:bg-[#141f36] focus:ring-2 focus:ring-[#00a3af]/20 outline-none transition-all placeholder:text-slate-600"
+                      className="w-full border-2 border-border bg-secondary-background text-foreground rounded-base px-3 py-2 font-body text-sm focus-visible:outline-2 focus-visible:outline-offset-2 outline-none"
                       id="emailAddr"
                       placeholder="sarah@company.com"
                       required
@@ -136,54 +138,42 @@ export default function KontakPage() {
                 {/* Dropdown Tipe Proyek */}
                 <div className="flex flex-col gap-1.5">
                   <label
-                    className="font-body text-xs font-bold text-slate-300 uppercase tracking-wider"
+                    className="font-mono text-xs font-bold text-foreground uppercase tracking-wider"
                     htmlFor="projectType"
                   >
                     Tipe Proyek &amp; Kebutuhan
                   </label>
                   <div className="relative">
                     <select
-                      className="w-full bg-[#090e1a] text-white font-body text-sm px-4 py-2.5 rounded-xl border border-white/10 focus:border-[#00a3af] focus:bg-[#141f36] focus:ring-2 focus:ring-[#00a3af]/20 outline-none transition-all appearance-none cursor-pointer"
+                      className="w-full border-2 border-border bg-secondary-background text-foreground rounded-base px-3 py-2 font-body text-sm focus-visible:outline-2 focus-visible:outline-offset-2 outline-none cursor-pointer appearance-none"
                       id="projectType"
                       value={projectType}
                       onChange={(e) => setProjectType(e.target.value)}
                     >
-                      <option className="bg-[#101828] text-white" value="fullstack">
-                        Full-Stack Web App (End-to-End)
-                      </option>
-                      <option className="bg-[#101828] text-white" value="frontend">
-                        Frontend Refactor &amp; UI Architecture
-                      </option>
-                      <option className="bg-[#101828] text-white" value="consulting">
-                        Konsultasi Arsitektur Perangkat Lunak
-                      </option>
-                      <option className="bg-[#101828] text-white" value="job">
-                        Penawaran Kerja (Full-time / Contract)
-                      </option>
-                      <option className="bg-[#101828] text-white" value="other">
-                        Lainnya / Diskusi Lepas
-                      </option>
+                      <option className="bg-secondary-background text-foreground" value="fullstack">Full-Stack Web App (End-to-End)</option>
+                      <option className="bg-secondary-background text-foreground" value="frontend">Frontend Refactor &amp; UI Architecture</option>
+                      <option className="bg-secondary-background text-foreground" value="consulting">Konsultasi Arsitektur Perangkat Lunak</option>
+                      <option className="bg-secondary-background text-foreground" value="job">Penawaran Kerja (Full-time / Contract)</option>
+                      <option className="bg-secondary-background text-foreground" value="other">Lainnya / Diskusi Lepas</option>
                     </select>
-                    <span className="material-symbols-outlined absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400 text-base" aria-hidden="true">
+                    <span className="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-foreground text-base" aria-hidden="true">
                       expand_more
                     </span>
                   </div>
                 </div>
 
-
-
                 {/* Message Textarea */}
                 <div className="flex flex-col gap-1.5">
                   <label
-                    className="font-body text-xs font-bold text-slate-300 uppercase tracking-wider"
+                    className="font-mono text-xs font-bold text-foreground uppercase tracking-wider"
                     htmlFor="projectMessage"
                   >
                     Ceritakan Detail Proyek atau Pesan Anda
                   </label>
                   <textarea
-                    className="w-full bg-[#090e1a] text-white font-body text-sm px-4 py-3 rounded-xl border border-white/10 focus:border-[#00a3af] focus:bg-[#141f36] focus:ring-2 focus:ring-[#00a3af]/20 outline-none transition-all placeholder:text-slate-600 resize-none"
+                    className="w-full border-2 border-border bg-secondary-background text-foreground rounded-base px-3 py-2.5 font-body text-sm focus-visible:outline-2 focus-visible:outline-offset-2 outline-none resize-none"
                     id="projectMessage"
-                    placeholder="Jelaskan kebutuhan fungsional, target waktu peluncuran, atau detail teknis yang relevan..."
+                    placeholder="Jelaskan kebutuhan fungsional, target waktu peluncuran, atau detail teknis..."
                     required
                     aria-required="true"
                     rows={4}
@@ -194,12 +184,12 @@ export default function KontakPage() {
 
                 {/* Submit & SLA Note */}
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-2">
-                  <div className="flex items-center gap-1.5 text-slate-400">
-                    <span className="material-symbols-outlined text-base text-[#00a3af]" aria-hidden="true">schedule</span>
-                    <span className="font-body text-xs font-medium">Biasanya membalas dalam kurun 24 jam</span>
+                  <div className="flex items-center gap-1.5 text-foreground/70 font-mono text-xs">
+                    <span className="material-symbols-outlined text-base text-main" aria-hidden="true">schedule</span>
+                    <span>Balasan dalam kurun 24 jam</span>
                   </div>
                   <button
-                    className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#1e50a2] via-[#00a3af] to-[#8fe3c6] hover:opacity-95 text-slate-950 font-body text-sm font-semibold transition-all duration-200 transform hover:scale-[1.01] flex items-center justify-center gap-2 shadow-lg shadow-[#00a3af]/30 cursor-pointer disabled:opacity-75"
+                    className="border-2 border-border bg-main text-main-foreground shadow-shadow rounded-base px-6 py-2.5 font-mono text-sm font-bold hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-75"
                     disabled={isSubmitting}
                     type="submit"
                   >
@@ -210,7 +200,7 @@ export default function KontakPage() {
                       </>
                     ) : (
                       <>
-                        <span>Kirim Pesan Langsung</span>
+                        <span>Kirim Pesan</span>
                         <span className="material-symbols-outlined text-base" aria-hidden="true">send</span>
                       </>
                     )}
@@ -219,129 +209,127 @@ export default function KontakPage() {
 
                 {/* Toast Feedback */}
                 {isSubmitted && (
-                  <div role="status" aria-live="polite" className="p-3.5 rounded-xl bg-[#101828] border border-[#00a3af] text-[#8fe3c6] font-body text-sm flex items-center gap-2 shadow-lg animate-fade-in">
-                    <span className="material-symbols-outlined text-base text-[#8fe3c6]" aria-hidden="true">check_circle</span>
-                    <span className="font-semibold">
-                      Pesan terkirim dengan sukses! Radot akan segera menghubungi Anda kembali via email.
-                    </span>
+                  <div role="status" aria-live="polite" className="p-3.5 rounded-base border-2 border-border bg-main text-main-foreground shadow-shadow font-mono text-xs font-bold flex items-center gap-2">
+                    <span className="material-symbols-outlined text-base" aria-hidden="true">check_circle</span>
+                    <span>Pesan berhasil dikirim! Saya akan segera menghubungi Anda kembali via email.</span>
                   </div>
                 )}
 
                 {errorMessage && (
-                  <div role="alert" aria-live="assertive" className="p-3.5 rounded-xl bg-red-950/40 border border-red-500/50 text-red-300 font-body text-sm flex items-center gap-2 shadow-lg animate-fade-in">
-                    <span className="material-symbols-outlined text-base text-red-400" aria-hidden="true">error</span>
+                  <div role="alert" aria-live="assertive" className="p-3.5 rounded-base border-2 border-border bg-chart-4 text-white shadow-shadow font-mono text-xs font-bold flex items-center gap-2">
+                    <span className="material-symbols-outlined text-base" aria-hidden="true">error</span>
                     <span>{errorMessage}</span>
                   </div>
                 )}
               </form>
             </div>
 
-            {/* Quick Contact Cards & Metadata Sidebar */}
-            <div className="lg:col-span-4 flex flex-col gap-5">
-              <div className="bg-[#101828] rounded-2xl p-6 shadow-xl border border-white/10 ring-1 ring-[#00a3af]/10">
-                <h3 className="font-headline text-lg text-white font-bold mb-4 flex items-center gap-2">
-                  <span className="material-symbols-outlined text-[#00a3af] text-lg">quick_reference</span>
-                  <span>Kontak Cepat</span>
+            {/* Quick Contact Cards Sidebar */}
+            <div className="lg:col-span-5 flex flex-col gap-4">
+              <div className="border-[3px] border-border bg-secondary-background shadow-shadow rounded-base p-6">
+                <h3 className="font-headline text-lg text-foreground font-bold mb-4 flex items-center gap-2">
+                  <span className="material-symbols-outlined text-main text-xl">quick_reference</span>
+                  <span>Kontak Langsung</span>
                 </h3>
 
-                <div className="flex flex-col gap-2.5">
+                <div className="flex flex-col gap-3">
                   {/* Email */}
                   <a
-                    className="group flex items-center justify-between p-3 rounded-xl bg-[#090e1a] hover:bg-[#141f36] border border-white/10 hover:border-[#00a3af]/50 transition-all"
+                    className="group flex items-center justify-between p-3 rounded-base border-2 border-border bg-secondary-background text-foreground shadow-shadow hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none transition-all"
                     href="mailto:radot2510@gmail.com"
                   >
                     <div className="flex items-center gap-3 min-w-0">
-                      <span className="material-symbols-outlined text-[#00a3af] text-lg">mail</span>
+                      <span className="material-symbols-outlined text-main text-lg">mail</span>
                       <div className="min-w-0">
-                        <div className="font-mono text-[10px] text-slate-500 font-semibold uppercase">
-                          PRIMARY EMAIL
+                        <div className="font-mono text-[10px] text-foreground/70 uppercase font-bold">
+                          EMAIL UTAMA
                         </div>
-                        <div className="font-body text-sm text-white truncate font-semibold group-hover:text-[#8fe3c6] transition-colors">
+                        <div className="font-mono text-xs truncate font-bold text-foreground">
                           radot2510@gmail.com
                         </div>
                       </div>
                     </div>
-                    <span className="material-symbols-outlined text-slate-500 group-hover:text-[#8fe3c6] transition-colors text-base">
+                    <span className="material-symbols-outlined text-foreground/70 text-base">
                       open_in_new
                     </span>
                   </a>
 
                   {/* Phone / WhatsApp */}
                   <a
-                    className="group flex items-center justify-between p-3 rounded-xl bg-[#090e1a] hover:bg-[#141f36] border border-white/10 hover:border-[#00a3af]/50 transition-all"
+                    className="group flex items-center justify-between p-3 rounded-base border-2 border-border bg-secondary-background text-foreground shadow-shadow hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none transition-all"
                     href="tel:082272118326"
                   >
                     <div className="flex items-center gap-3 min-w-0">
-                      <span className="material-symbols-outlined text-[#00a3af] text-lg">call</span>
+                      <span className="material-symbols-outlined text-main text-lg">call</span>
                       <div className="min-w-0">
-                        <div className="font-mono text-[10px] text-slate-500 font-semibold uppercase">
+                        <div className="font-mono text-[10px] text-foreground/70 uppercase font-bold">
                           TELEPON / WHATSAPP
                         </div>
-                        <div className="font-body text-sm text-white truncate font-semibold group-hover:text-[#8fe3c6] transition-colors">
+                        <div className="font-mono text-xs truncate font-bold text-foreground">
                           082272118326
                         </div>
                       </div>
                     </div>
-                    <span className="material-symbols-outlined text-slate-500 group-hover:text-[#8fe3c6] transition-colors text-base">
+                    <span className="material-symbols-outlined text-foreground/70 text-base">
                       open_in_new
                     </span>
                   </a>
 
                   {/* GitHub */}
                   <a
-                    className="group flex items-center justify-between p-3 rounded-xl bg-[#090e1a] hover:bg-[#141f36] border border-white/10 hover:border-[#00a3af]/50 transition-all"
+                    className="group flex items-center justify-between p-3 rounded-base border-2 border-border bg-secondary-background text-foreground shadow-shadow hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none transition-all"
                     href="https://github.com/radotyohanesnababan"
                     rel="noreferrer"
                     target="_blank"
                   >
                     <div className="flex items-center gap-3 min-w-0">
-                      <span className="material-symbols-outlined text-[#00a3af] text-lg">code</span>
+                      <span className="material-symbols-outlined text-main text-lg">code</span>
                       <div className="min-w-0">
-                        <div className="font-mono text-[10px] text-slate-500 font-semibold uppercase">
-                          SOURCE CODE &amp; REPO
+                        <div className="font-mono text-[10px] text-foreground/70 uppercase font-bold">
+                          SOURCE CODE
                         </div>
-                        <div className="font-body text-sm text-white truncate font-semibold group-hover:text-[#8fe3c6] transition-colors">
+                        <div className="font-mono text-xs truncate font-bold text-foreground">
                           github.com/radotyohanesnababan
                         </div>
                       </div>
                     </div>
-                    <span className="material-symbols-outlined text-slate-500 group-hover:text-[#8fe3c6] transition-colors text-base">
+                    <span className="material-symbols-outlined text-foreground/70 text-base">
                       open_in_new
                     </span>
                   </a>
 
                   {/* LinkedIn */}
                   <a
-                    className="group flex items-center justify-between p-3 rounded-xl bg-[#090e1a] hover:bg-[#141f36] border border-white/10 hover:border-[#00a3af]/50 transition-all"
+                    className="group flex items-center justify-between p-3 rounded-base border-2 border-border bg-secondary-background text-foreground shadow-shadow hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none transition-all"
                     href="https://linkedin.com/in/radotnababan"
                     rel="noreferrer"
                     target="_blank"
                   >
                     <div className="flex items-center gap-3 min-w-0">
-                      <span className="material-symbols-outlined text-[#00a3af] text-lg">hub</span>
+                      <span className="material-symbols-outlined text-main text-lg">hub</span>
                       <div className="min-w-0">
-                        <div className="font-mono text-[10px] text-slate-500 font-semibold uppercase">
-                          PROFESSIONAL NETWORK
+                        <div className="font-mono text-[10px] text-foreground/70 uppercase font-bold">
+                          LINKEDIN
                         </div>
-                        <div className="font-body text-sm text-white truncate font-semibold group-hover:text-[#8fe3c6] transition-colors">
+                        <div className="font-mono text-xs truncate font-bold text-foreground">
                           linkedin.com/in/radotnababan
                         </div>
                       </div>
                     </div>
-                    <span className="material-symbols-outlined text-slate-500 group-hover:text-[#8fe3c6] transition-colors text-base">
+                    <span className="material-symbols-outlined text-foreground/70 text-base">
                       open_in_new
                     </span>
                   </a>
 
                   {/* Location */}
-                  <div className="p-3 rounded-xl bg-[#090e1a] border border-white/10 flex items-start gap-3">
-                    <span className="material-symbols-outlined text-[#00a3af] text-lg mt-0.5">location_on</span>
+                  <div className="p-3 rounded-base border-2 border-border bg-secondary-background shadow-shadow flex items-start gap-3">
+                    <span className="material-symbols-outlined text-main text-lg mt-0.5">location_on</span>
                     <div>
-                      <div className="font-mono text-[10px] text-slate-500 font-semibold uppercase">
+                      <div className="font-mono text-[10px] text-foreground/70 uppercase font-bold">
                         LOKASI &amp; PREFERENSI KERJA
                       </div>
-                      <div className="font-body text-sm text-white font-semibold">Bandar Lampung &amp; Jakarta</div>
-                      <div className="font-body text-xs text-[#8fe3c6] font-semibold mt-0.5">
+                      <div className="font-body text-sm text-foreground font-bold">Bandar Lampung &amp; Jakarta</div>
+                      <div className="font-mono text-xs text-foreground/80 mt-0.5">
                         Terbuka untuk On-site &amp; Remote
                       </div>
                     </div>
@@ -349,25 +337,16 @@ export default function KontakPage() {
                 </div>
               </div>
 
-              {/* Base of Operations Card */}
-              <div
-                className="w-full h-44 bg-[#101828] rounded-2xl bg-cover bg-center overflow-hidden relative shadow-xl border border-white/10 flex items-end p-5"
-                style={{
-                  backgroundImage:
-                    "url('https://lh3.googleusercontent.com/aida-public/AB6AXuAeDRp_5l5bz8kSQ14CUpkR3SEex0Xq56fGQTCmWNvpe-p0AiPFHVBL309Aswb0P8CLhe3Nsd9GHSTfIPY5aQ2PdBSem7uxSvoxBltzFKlKnl-gWe3O09tCGmpTrkp-VTTJ1iVQEbtZ7x4opSYv3kNE-CjO9uitWQrHqaI02jMaS342zMwouXBRfDuDTwKohUBp6SIQ2jN3kzfMG0j-XFSUNciIJFRdw4lLMUgRRlBKfX3lRAThqxE')",
-                }}
-              >
-                <div className="absolute inset-0 bg-gradient-to-t from-[#090e1a] via-[#101828]/80 to-transparent" />
-                <div className="relative z-10">
-                  <span className="font-mono text-[10px] text-[#8fe3c6] uppercase font-bold tracking-wider">
-                    Base of Operations
-                  </span>
-                  <p className="font-headline text-lg text-white font-bold">WIB (UTC+7) Bandar Lampung &amp; Jakarta</p>
-                </div>
+              {/* Base Info Box */}
+              <div className="border-[3px] border-border bg-main text-main-foreground shadow-shadow rounded-base p-5">
+                <span className="font-mono text-[10px] uppercase font-bold tracking-wider block mb-1">
+                  ZONA WAKTU &amp; OPERASIONAL
+                </span>
+                <p className="font-headline text-lg font-bold">WIB (UTC+7) Bandar Lampung &amp; Jakarta</p>
+                <p className="font-body text-xs mt-1">Siap berkolaborasi dalam waktu kerja fleksibel sesuai zona waktu tim Anda.</p>
               </div>
             </div>
           </div>
-
         </section>
       </div>
     </main>

@@ -43,10 +43,26 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
           rel="stylesheet"
         />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var saved = localStorage.getItem('theme');
+                  if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.documentElement.classList.add('dark');
+                  } else {
+                    document.documentElement.classList.remove('dark');
+                  }
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
       </head>
       <body
         suppressHydrationWarning
-        className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} ${geist.variable} font-body bg-[#0b111d] text-[#e2e8f0] min-h-screen selection:bg-[#00a3af]/30 selection:text-[#8fe3c6] relative overflow-x-hidden`}
+        className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} ${geist.variable} font-body bg-background text-foreground min-h-screen relative overflow-x-hidden`}
       >
         <ScrollReveal />
         <Navbar />
