@@ -43,7 +43,7 @@ export async function POST(req: Request) {
     const labelType = projectTypeLabels[projectType] || projectType || "Umum";
 
     // Kirim email via Resend REST API langsung
-    // Bebas ketergantungan node_modules / module bundler
+    // Bebas ketergadntungan node_modules / module bundler
     const resendResponse = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
