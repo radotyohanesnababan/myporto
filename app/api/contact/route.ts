@@ -35,7 +35,11 @@ export async function POST(req: Request) {
       );
     }
 
-    const recipient = process.env.CONTACT_TO_EMAIL || "[EMAIL_ADDRESS]";
+    const recipient = process.env.CONTACT_TO_EMAIL || "radot2510@gmail.com";
+    const fromAddress =
+      process.env.RESEND_FROM_EMAIL ||
+      process.env.RESEND_FROM ||
+      "onboarding@resend.dev";
     const labelType = projectTypeLabels[projectType] || projectType || "Umum";
 
     // Kirim email via Resend REST API langsung
@@ -47,7 +51,7 @@ export async function POST(req: Request) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: `Form Kontak <${process.env.RESEND_FROM}>`,
+        from: `Form Kontak <${fromAddress.trim()}>`,
         to: [recipient],
         reply_to: email,
         subject: `[Portfolio Inquiry] ${fullName} - ${labelType}`,
