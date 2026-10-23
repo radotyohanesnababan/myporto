@@ -9,13 +9,34 @@ export default function KontakPage() {
   const [message, setMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setErrorMessage("");
+    setIsSubmitted(false);
 
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          fullName,
+          email,
+          projectType,
+          message,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || "Gagal mengirim pesan. Silakan coba beberapa saat lagi.");
+      }
+
       setIsSubmitted(true);
       setFullName("");
       setEmail("");
@@ -23,8 +44,13 @@ export default function KontakPage() {
 
       setTimeout(() => {
         setIsSubmitted(false);
-      }, 5000);
-    }, 1000);
+      }, 7000);
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : "Terjadi kesalahan saat mengirim pesan.";
+      setErrorMessage(msg);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -198,6 +224,13 @@ export default function KontakPage() {
                     <span className="font-semibold">
                       Pesan terkirim dengan sukses! Radot akan segera menghubungi Anda kembali via email.
                     </span>
+                  </div>
+                )}
+
+                {errorMessage && (
+                  <div role="alert" aria-live="assertive" className="p-3.5 rounded-xl bg-red-950/40 border border-red-500/50 text-red-300 font-body text-sm flex items-center gap-2 shadow-lg animate-fade-in">
+                    <span className="material-symbols-outlined text-base text-red-400" aria-hidden="true">error</span>
+                    <span>{errorMessage}</span>
                   </div>
                 )}
               </form>
