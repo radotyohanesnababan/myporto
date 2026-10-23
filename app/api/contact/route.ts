@@ -47,7 +47,7 @@ export async function POST(req: Request) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: "Portfolio Contact <[EMAIL_ADDRESS]>",
+        from: `Form Kontak <${process.env.RESEND_FROM}>`,
         to: [recipient],
         reply_to: email,
         subject: `[Portfolio Inquiry] ${fullName} - ${labelType}`,
