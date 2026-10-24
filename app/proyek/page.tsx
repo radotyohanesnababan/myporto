@@ -1,42 +1,42 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import Image from "next/image";
 
 interface Project {
   id: string;
-  category: "fullstack" | "frontend" | "backend";
+  category: "fullstack" | "frontend" | "backend" | "other";
   title: string;
   type: string;
-  org: string;
+  org?: string;
   description: string;
-  stats?: { value: string; label: string }[];
   tags: string[];
-  image?: string;
+  images?: string[];
   demoUrl?: string;
   repoUrl?: string;
 }
 
 export default function ProyekPage() {
   const [activeFilter, setActiveFilter] = useState<string>("all");
+  const [activeSlides, setActiveSlides] = useState<Record<string, number>>({});
 
   const projects: Project[] = [
     {
-      id: "perpustakaan",
+      id: "sparta",
       category: "fullstack",
       title: "Sistem Informasi Perpustakaan SMP N 1 Tarutung",
       type: "Skripsi / Tugas Akhir",
       org: "SMP N 1 TARUTUNG",
       description:
-        "Sistem manajemen perpustakaan digital komprehensif yang dirancang untuk mengelola inventaris buku, peminjaman siswa, dan sirkulasi bagi sekitar 300 siswa di SMP N 1 Tarutung dengan antarmuka responsif.",
-      stats: [
-        { value: "300+", label: "Siswa Terlayani" },
-        { value: "Laravel + React", label: "Full Stack Flow" },
+        "Sistem pengelolaan perpustakaan untuk inventaris buku, peminjaman siswa, dan sirkulasi di SMP N 1 Tarutung.",
+      tags: ["Laravel PHP", "MySQL", "TailwindCSS"],
+      images: [
+        "/image/project/sparta-1.webp",
+        "/image/project/sparta-2.webp",
+        "/image/project/sparta-3.webp",
       ],
-      tags: ["Laravel PHP", "MySQL", "RESTful API", "TailwindCSS"],
-      image:
-        "https://lh3.googleusercontent.com/aida-public/AB6AXuA5iHPHJrdyq9blKKkkadlyMbzjA-2iH2aMrSsx1KySZIKIDlj8GCd--c8z7egbMbP83clROSnbJbBFByMu8BvIuf-uEOxpuANfwvI0ud236wrOvBlvpOxHmHJ9tySypIdzZ7cRGvo-afr7VhNLxYszWdYjiVWlDYML7xtqTDq5JxpVN8a1xJOioToSdgjqxNVFFOUoRaF_wtmwAKsEl3-1Zv3u4IRiZa1TkgqlXUaBD1fxzkGKu3s",
-      repoUrl: "https://github.com/radotyohanesnababan",
+      repoUrl:
+        "https://github.com/radotyohanesnababan/SIPerpus-SMP-N-1-Tarutung",
     },
     {
       id: "lettuce-api",
@@ -46,24 +46,25 @@ export default function ProyekPage() {
       org: "BANGKIT CLOUD COHORT",
       description:
         "Layanan RESTful API terintegrasi model Machine Learning deteksi penyakit tanaman selada, dideploy pada infrastruktur Google Cloud Platform (Cloud Run) untuk aplikasi Android.",
-      tags: ["Google Cloud (GCP)", "Cloud Run", "Python / Flask", "RESTful API"],
-      image:
-        "https://lh3.googleusercontent.com/aida-public/AB6AXuA5iHPHJrdyq9blKKkkadlyMbzjA-2iH2aMrSsx1KySZIKIDlj8GCd--c8z7egbMbP83clROSnbJbBFByMu8BvIuf-uEOxpuANfwvI0ud236wrOvBlvpOxHmHJ9tySypIdzZ7cRGvo-afr7VhNLxYszWdYjiVWlDYML7xtqTDq5JxpVN8a1xJOioToSdgjqxNVFFOUoRaF_wtmwAKsEl3-1Zv3u4IRiZa1TkgqlXUaBD1fxzkGKu3s",
-      demoUrl: "#",
-      repoUrl: "https://github.com/radotyohanesnababan",
+      tags: ["Google Cloud (GCP)", "Cloud Run",  "RESTful API"],
+      repoUrl: "https://github.com/YogaaPratama/CloudComputing-Hicare",
     },
     {
       id: "tapamajuma",
       category: "fullstack",
       title: "PWA Tapamajuma Projects : SMP N 1 Siborongborong",
       type: "Proyek Kolaborasi",
-      org: "200+ SISWA AKTIF",
+      org: "SMP N 1 SIBORONGBORONG",
       description:
-        "Proyek aplikasi PWA memadukan React SPA dan Laravel backend untuk latihan literasi & numerasi bagi siswa SMP N 1 Siborongborong dengan 200+ pengguna aktif.",
+        "Aplikasi PWA untuk latihan literasi dan numerasi siswa SMP N 1 Siborongborong, dengan React SPA dan Laravel backend.",
       tags: ["React SPA", "Laravel", "PWA", "MySQL"],
-      image:
-        "https://lh3.googleusercontent.com/aida-public/AB6AXuBSNEcddK_aGvhBzRNr_UaL-Ti_oRhFcpIw9ByOD4Iwcdl3cQSlar-6NSXh8_AuXP2HIZYl8wYaelTeGU9K-VHOWf_vYzrcazGStWHUOmYpkOUuGlJffbBATtoaYc0_biPTcwZvaP2xtatYSs5J7dBYgcfCHMx5Ihz98Y3VWqYir0-c1bd8-TdTDU0P9Q17eIFIiPSNBVVwxx1HMYad2-Nrfx1B-dTGD78WthWAO6ioOL6zZxs3MR0",
-      repoUrl: "https://github.com/radotyohanesnababan",
+      images: [
+        "/image/project/tapa-1.webp",
+        "/image/project/tapa-2.jpeg",
+        "/image/project/tapa-3.jpeg",
+      ],
+      demoUrl: "https://tapamajuma.smpn1siborongborong.sch.id",
+      repoUrl: "https://github.com/radotyohanesnababan/Tapamajuma-PWA-",
     },
     {
       id: "haltev",
@@ -74,9 +75,11 @@ export default function ProyekPage() {
       description:
         "Proyek pembuatan website dinamis dan statis untuk pembelajaran Web Development pada course di Haltev.",
       tags: ["Laravel Framework", "Tailwind CSS", "PHP Native", "MySQL"],
-      image:
-        "https://lh3.googleusercontent.com/aida-public/AB6AXuA5iHPHJrdyq9blKKkkadlyMbzjA-2iH2aMrSsx1KySZIKIDlj8GCd--c8z7egbMbP83clROSnbJbBFByMu8BvIuf-uEOxpuANfwvI0ud236wrOvBlvpOxHmHJ9tySypIdzZ7cRGvo-afr7VhNLxYszWdYjiVWlDYML7xtqTDq5JxpVN8a1xJOioToSdgjqxNVFFOUoRaF_wtmwAKsEl3-1Zv3u4IRiZa1TkgqlXUaBD1fxzkGKu3s",
-      repoUrl: "https://github.com/radotyohanesnababan",
+      images: [
+        "/image/project/haltev-1.webp",
+        "/image/project/haltev-2.webp",
+      ],
+      repoUrl: "https://github.com/radotyohanesnababan/unibooks-v.1.1",
     },
     {
       id: "alphapro",
@@ -87,10 +90,10 @@ export default function ProyekPage() {
       description:
         "Proyek pembuatan landing page Alphapro dengan HTML dan Tailwind CSS, serta CMS dengan Laravel.",
       tags: ["Laravel Framework", "Tailwind CSS", "CMS"],
-      image:
-        "https://lh3.googleusercontent.com/aida-public/AB6AXuA5iHPHJrdyq9blKKkkadlyMbzjA-2iH2aMrSsx1KySZIKIDlj8GCd--c8z7egbMbP83clROSnbJbBFByMu8BvIuf-uEOxpuANfwvI0ud236wrOvBlvpOxHmHJ9tySypIdzZ7cRGvo-afr7VhNLxYszWdYjiVWlDYML7xtqTDq5JxpVN8a1xJOioToSdgjqxNVFFOUoRaF_wtmwAKsEl3-1Zv3u4IRiZa1TkgqlXUaBD1fxzkGKu3s",
-      repoUrl: "https://github.com/radotyohanesnababan",
+      images: ["/image/project/alpha-1.webp"],
+      repoUrl: "https://github.com/radotyohanesnababan/LITERA-PROJECT",
     },
+    
   ];
 
   const filteredProjects =
@@ -102,7 +105,19 @@ export default function ProyekPage() {
     { id: "all", label: "Semua Proyek" },
     { id: "fullstack", label: "Full-Stack" },
     { id: "backend", label: "Backend & Cloud" },
+    { id: "other", label: "Lainnya" },
   ];
+
+  const changeSlide = (project: Project, direction: -1 | 1) => {
+    const imageCount = project.images?.length ?? 0;
+    if (imageCount < 2) return;
+
+    setActiveSlides((current) => ({
+      ...current,
+      [project.id]:
+        ((current[project.id] ?? 0) + direction + imageCount) % imageCount,
+    }));
+  };
 
   return (
     <main className="w-full xl:pl-24 bg-background text-foreground min-h-screen">
@@ -182,13 +197,66 @@ export default function ProyekPage() {
                   className="border-2 border-border bg-secondary-background shadow-shadow rounded-base p-5 flex flex-col justify-between gap-4 hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none transition-all group"
                 >
                   <div className="flex flex-col gap-3">
-                    {project.image && (
-                      <div className="w-full h-48 rounded-base overflow-hidden border-2 border-border bg-background">
-                        <img
-                          className="w-full h-full object-cover"
-                          alt={project.title}
-                          src={project.image}
-                        />
+                    {project.images && project.images.length > 0 && (
+                      <div>
+                        <div className="relative w-full h-48 rounded-base overflow-hidden border-2 border-border bg-background">
+                          <Image
+                            className="object-cover"
+                            alt={`${project.title}, gambar ${(
+                              activeSlides[project.id] ?? 0
+                            ) + 1}`}
+                            src={
+                              project.images[
+                                activeSlides[project.id] ?? 0
+                              ] ?? project.images[0]
+                            }
+                            fill
+                            loading={
+                              project.id === "sparta" &&
+                              (activeSlides[project.id] ?? 0) === 0
+                                ? "eager"
+                                : "lazy"
+                            }
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                          />
+                        </div>
+                        {project.images.length > 1 && (
+                          <div className="flex items-center justify-between mt-2">
+                            <button
+                              type="button"
+                              className="min-h-11 min-w-11 border-2 border-border bg-secondary-background text-foreground shadow-shadow rounded-base flex items-center justify-center hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none transition-all"
+                              onClick={() => changeSlide(project, -1)}
+                              aria-label={`Gambar sebelumnya untuk ${project.title}`}
+                            >
+                              <span
+                                className="material-symbols-outlined"
+                                aria-hidden="true"
+                              >
+                                chevron_left
+                              </span>
+                            </button>
+                            <span
+                              className="font-mono text-xs text-foreground/70"
+                              aria-live="polite"
+                            >
+                              {(activeSlides[project.id] ?? 0) + 1} /{" "}
+                              {project.images.length}
+                            </span>
+                            <button
+                              type="button"
+                              className="min-h-11 min-w-11 border-2 border-border bg-secondary-background text-foreground shadow-shadow rounded-base flex items-center justify-center hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none transition-all"
+                              onClick={() => changeSlide(project, 1)}
+                              aria-label={`Gambar berikutnya untuk ${project.title}`}
+                            >
+                              <span
+                                className="material-symbols-outlined"
+                                aria-hidden="true"
+                              >
+                                chevron_right
+                              </span>
+                            </button>
+                          </div>
+                        )}
                       </div>
                     )}
 
@@ -197,9 +265,11 @@ export default function ProyekPage() {
                         <span className="font-mono text-xs text-foreground/70 uppercase tracking-wide">
                           {project.type}
                         </span>
-                        <span className="font-mono text-xs text-foreground/70 font-bold">
-                          {project.org}
-                        </span>
+                        {project.org && (
+                          <span className="font-mono text-xs text-foreground/70 font-bold">
+                            {project.org}
+                          </span>
+                        )}
                       </div>
 
                       <h3 className="font-headline text-xl text-foreground font-bold">
@@ -211,57 +281,35 @@ export default function ProyekPage() {
                       </p>
                     </div>
 
-                    {project.stats && (
-                      <div className="grid grid-cols-2 gap-2 py-1">
-                        {project.stats.map((st) => (
-                          <div
-                            key={st.label}
-                            className="p-2.5 rounded-base bg-background border-2 border-border"
+                    {project.tags.length > 0 && (
+                      <div className="flex flex-wrap gap-1.5 pt-1">
+                        {project.tags.map((tg) => (
+                          <span
+                            key={tg}
+                            className="border-2 border-border bg-main text-main-foreground rounded-base px-2 py-0.5 font-mono text-xs font-bold"
                           >
-                            <div className="font-headline text-lg font-bold text-foreground">{st.value}</div>
-                            <div className="font-mono text-[11px] text-foreground/70 uppercase font-semibold">
-                              {st.label}
-                            </div>
-                          </div>
+                            {tg}
+                          </span>
                         ))}
                       </div>
                     )}
-
-                    <div className="flex flex-wrap gap-1.5 pt-1">
-                      {project.tags.map((tg) => (
-                        <span
-                          key={tg}
-                          className="border-2 border-border bg-main text-main-foreground rounded-base px-2 py-0.5 font-mono text-xs font-bold"
-                        >
-                          {tg}
-                        </span>
-                      ))}
-                    </div>
                   </div>
 
                   <div className="flex items-center justify-between pt-3 border-t-2 border-border mt-2">
                     <div className="flex items-center gap-2">
-                      {project.demoUrl && project.demoUrl !== "#" ? (
+                      {project.demoUrl && project.demoUrl !== "#" && (
                         <a
                           className="border-2 border-border bg-main text-main-foreground shadow-shadow rounded-base px-3 py-1.5 font-mono text-xs font-bold hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none transition-all flex items-center gap-1.5"
                           href={project.demoUrl}
                         >
                           <span className="material-symbols-outlined text-sm" aria-hidden="true">visibility</span>
-                          <span>Preview</span>
+                          <span>Situs Asli</span>
                         </a>
-                      ) : (
-                        <span
-                          className="border-2 border-border bg-secondary-background text-foreground/70 rounded-base px-2.5 py-1 font-mono text-xs font-medium flex items-center gap-1 cursor-default"
-                          title="Sistem aktif secara internal atau terpasang di instansi"
-                        >
-                          <span className="material-symbols-outlined text-xs text-main" aria-hidden="true">check_circle</span>
-                          <span>Sistem Terpasang</span>
-                        </span>
                       )}
                       <a
                         className="border-2 border-border bg-secondary-background text-foreground shadow-shadow rounded-base p-1.5 font-mono text-xs font-bold hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none transition-all flex items-center justify-center"
                         href={project.repoUrl || "https://github.com/radotyohanesnababan"}
-                        rel="noreferrer"
+                        rel="noopener noreferrer"
                         target="_blank"
                         title="Repository GitHub"
                         aria-label={`Repository GitHub untuk ${project.title} (membuka di tab baru)`}
