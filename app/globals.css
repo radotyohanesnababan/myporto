@@ -215,10 +215,10 @@ html {
   --background: #0b111d;
   --secondary-background: #131c2d;
   --main: hsl(173, 100%, 38%);
-  --ring: oklch(100% 0 0);
-  --foreground: oklch(96% 0 0);
-  --main-foreground: oklch(0% 0 0);
-  --border: oklch(100% 0 0);
+  --ring: oklch(0 0 0);
+  --foreground: oklch(100% 0 0);
+  --main-foreground: oklch(100% 0 0);
+  --border: oklch(0% 0 0);
   --overlay: oklch(0% 0 0 / 0.8);
   --shadow: 4px 4px 0px 0px var(--border);
   --chart-1: #00D6BD;

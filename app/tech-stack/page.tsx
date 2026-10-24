@@ -1,11 +1,16 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 interface SkillItem {
   name: string;
   description: string;
   subLeft: string;
+  icons?: {
+    src: string;
+    alt: string;
+  }[];
 }
 
 interface DomainGroup {
@@ -28,31 +33,40 @@ export default function TechStackPage() {
           name: "HTML & CSS",
           description: "Struktur semantik HTML5 dan penataan gaya responsif modern dengan CSS3 & Tailwind.",
           subLeft: "Markup & Styling",
+          icons: [
+            { src: "/icons/html.webp", alt: "HTML" },
+            { src: "/icons/css.jfif", alt: "CSS" },
+          ],
         },
         {
           name: "PHP",
           description: "Pemrograman backend server-side, Object-Oriented Programming (OOP), dan penanganan sesi.",
           subLeft: "Backend Core",
+          icons: [{ src: "/icons/php.webp", alt: "PHP" }],
         },
         {
           name: "Laravel",
           description: "Framework MVC untuk arsitektur API bersih, Eloquent ORM, middleware, dan autentikasi.",
           subLeft: "MVC Framework",
+          icons: [{ src: "/icons/Laravel.svg.webp", alt: "Laravel" }],
         },
         {
           name: "React.js",
           description: "Pengembangan antarmuka komponen modular, state management, hooks, dan Single Page App.",
           subLeft: "Component-Based",
+          icons: [{ src: "/icons/React.webp", alt: "React" }],
         },
         {
           name: "Express.js",
           description: "Framework minimalis Node.js untuk perutean endpoint RESTful API berlatensi rendah.",
           subLeft: "Microservices",
+          icons: [{ src: "/icons/jsexpress.webp", alt: "Express.js" }],
         },
         {
           name: "Node.js",
           description: "JavaScript runtime environment untuk eksekusi server-side, package npm, dan script otomasi.",
           subLeft: "Runtime Env",
+          icons: [{ src: "/icons/Node.js_logo.svg.webp", alt: "Node.js" }],
         },
       ],
     },
@@ -66,11 +80,13 @@ export default function TechStackPage() {
           name: "MySQL",
           description: "Perancangan skema relasional, relasi foreign key, query kompleks, dan optimasi indeks.",
           subLeft: "Relational DB",
+          icons: [{ src: "/icons/MySQL.webp", alt: "MySQL" }],
         },
         {
           name: "TiDB",
           description: "Distributed SQL database kompatibel MySQL untuk skalabilitas data tinggi dan elastisitas cloud.",
           subLeft: "Distributed SQL",
+          icons: [{ src: "/icons/tidb.webp", alt: "TiDB" }],
         },
       ],
     },
@@ -84,21 +100,25 @@ export default function TechStackPage() {
           name: "Google Cloud Platform",
           description: "Pengalaman deployment di Cloud Run, Cloud Storage, Compute Engine, dan konfigurasi IAM.",
           subLeft: "Bangkit Cohort",
+          icons: [{ src: "/icons/gcp.png", alt: "Google Cloud" }],
         },
         {
           name: "Cloudflare R2",
           description: "Object storage kompatibel Amazon S3 dengan latensi rendah dan tanpa biaya transfer egress.",
           subLeft: "Object Storage",
+          icons: [{ src: "/icons/cloudflare-r2.webp", alt: "Cloudflare R2" }],
         },
         {
           name: "Railway",
           description: "Penyebaran aplikasi full-stack dan database cloud dengan otomasi deploy berbasis Git.",
           subLeft: "PaaS Hosting",
+          icons: [{ src: "/icons/railway.webp", alt: "Railway" }],
         },
         {
           name: "Docker",
           description: "Containerization aplikasi ke image Docker untuk memastikan keseragaman lingkungan lokal & cloud.",
           subLeft: "Container",
+          icons: [{ src: "/icons/docker.webp", alt: "Docker" }],
         },
       ],
     },
@@ -112,31 +132,37 @@ export default function TechStackPage() {
           name: "Microsoft Word",
           description: "Penyusunan laporan teknis terstruktur, penulisan proposal, dan format dokumen standar.",
           subLeft: "Dokumentasi",
+          icons: [{ src: "/icons/word%20logo.webp", alt: "Microsoft Word" }],
         },
         {
           name: "Microsoft Excel",
           description: "Pengolahan spreadsheet, visualisasi data, formula logika/matematika, dan tabel dinamis.",
           subLeft: "Spreadsheet",
+          icons: [{ src: "/icons/excellogo.webp", alt: "Microsoft Excel" }],
         },
         {
           name: "Microsoft PowerPoint",
           description: "Pembuatan materi presentasi teknis yang jelas, komunikatif, dan menarik secara visual.",
           subLeft: "Presentasi",
+          icons: [{ src: "/icons/powerpointlogo.webp", alt: "Microsoft PowerPoint" }],
         },
         {
           name: "Google Docs",
           description: "Penyuntingan dan penulisan dokumen berbasis cloud dengan fitur kolaborasi tim real-time.",
           subLeft: "Cloud Docs",
+          icons: [{ src: "/icons/docslogo.png", alt: "Google Docs" }],
         },
         {
           name: "Google Sheets",
           description: "Spreadsheet cloud kolaboratif untuk manajemen data, kalkulasi bersama, dan sinkronisasi.",
           subLeft: "Cloud Sheets",
+          icons: [{ src: "/icons/sheetslogo.webp", alt: "Google Sheets" }],
         },
         {
           name: "Google Slides",
           description: "Desain presentasi kolaboratif berbasis cloud untuk kebutuhan presentasi proyek tim.",
           subLeft: "Cloud Slides",
+          icons: [{ src: "/icons/slideslogo.png", alt: "Google Slides" }],
         },
       ],
     },
@@ -250,9 +276,26 @@ export default function TechStackPage() {
                         className="border-2 border-border bg-background rounded-base p-3 flex flex-col justify-between gap-2"
                       >
                         <div>
-                          <span className="font-headline text-sm font-bold text-foreground block mb-1">
-                            {skill.name}
-                          </span>
+                          <div className="flex items-center gap-2 mb-1">
+                            {skill.icons && (
+                              <div className="flex shrink-0 items-center gap-1">
+                                {skill.icons.map((icon) => (
+                                  <Image
+                                    key={icon.src}
+                                    src={icon.src}
+                                    alt={icon.alt}
+                                    width={28}
+                                    height={28}
+                                    sizes="28px"
+                                    className="h-7 w-7 object-contain"
+                                  />
+                                ))}
+                              </div>
+                            )}
+                            <span className="font-headline text-sm font-bold text-foreground">
+                              {skill.name}
+                            </span>
+                          </div>
                           {skill.description && (
                             <p className="font-body text-xs text-foreground/80 leading-relaxed">
                               {skill.description}
