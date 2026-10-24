@@ -303,7 +303,7 @@ export default function ProyekPage() {
                           href={project.demoUrl}
                         >
                           <span className="material-symbols-outlined text-sm" aria-hidden="true">visibility</span>
-                          <span>Situs Asli</span>
+                          <span>Situs</span>
                         </a>
                       )}
                       <a

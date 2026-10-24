@@ -52,7 +52,12 @@ export default function Footer() {
             <span>Diskusi Teknis</span>
           </Link>
         </div>
-      </div>
+        </div>
+        <div className="pt-4 text-center">
+          <p className="font-mono text-xs text-foreground/70 ">
+            Made with <span className="font-bold"><a className="hover:underline" href="https://www.neobrutalism.dev/" target="_blank" rel="noreferrer">Neobrutalism</a></span>.
+          </p>
+        </div>
     </footer>
   );
 }

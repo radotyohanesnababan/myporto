@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { PhotoSlots } from "../components/PhotoSlots";
 
 interface ExperienceItem {
   id: string;
@@ -125,6 +126,26 @@ export default function PengalamanPage() {
                     ))}
                   </ul>
                 </div>
+
+                <PhotoSlots
+                  subject={exp.title}
+                  images={
+                    exp.id === "haltekom"
+                      ? [
+                          "/image/org&pengalaman/pkl-1.webp",
+                          "/image/org&pengalaman/pkl-2.webp",
+                        ]
+                      : exp.id === "research-tarutung"
+                        ? [
+                            "/image/org&pengalaman/ta-1.webp",
+                            "/image/org&pengalaman/ta-2.webp",
+                          ]
+                        : [
+                            "/image/org&pengalaman/lab-1.webp",
+                            "/image/org&pengalaman/lab-2.webp",
+                          ]
+                  }
+                />
 
                 <div className="flex flex-wrap gap-1.5 pt-3 border-t-2 border-border mt-2">
                   {exp.tags.map((tg) => (

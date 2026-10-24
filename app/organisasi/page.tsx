@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { PhotoSlots } from "../components/PhotoSlots";
 
 interface OrganizationItem {
   id: string;
@@ -121,6 +122,18 @@ export default function OrganisasiPage() {
                     ))}
                   </ul>
                 </div>
+
+                <PhotoSlots
+                  subject={org.title}
+                  images={
+                    org.id === "hmif-tech"
+                      ? [
+                          "/image/org&pengalaman/hmifdiv-1.webp",
+                          "/image/org&pengalaman/hmifdiv-2.webp",
+                        ]
+                      : undefined
+                  }
+                />
 
                 <div className="flex flex-wrap gap-1.5 pt-3 border-t-2 border-border mt-2">
                   {org.tags.map((tg) => (

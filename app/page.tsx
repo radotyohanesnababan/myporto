@@ -1,6 +1,116 @@
+"use client";
+
+import  Image  from "next/image";
 import Link from "next/link";
+import { useState } from "react";
+
+interface Project {
+  id: string;
+  category: "fullstack" | "frontend" | "backend" | "other";
+  title: string;
+  type: string;
+  org?: string;
+  description: string;
+  tags: string[];
+  images?: string[];
+  demoUrl?: string;
+  repoUrl?: string;
+}
+
 
 export default function Home() {
+const [activeFilter, setActiveFilter] = useState<string>("all");
+const [activeSlides, setActiveSlides] = useState<Record<string, number>>({});
+
+const projects: Project[] = [
+    {
+      id: "sparta",
+      category: "fullstack",
+      title: "Sistem Informasi Perpustakaan SMP N 1 Tarutung",
+      type: "Skripsi / Tugas Akhir",
+      org: "SMP N 1 TARUTUNG",
+      description:
+        "Sistem pengelolaan perpustakaan untuk inventaris buku, peminjaman siswa, dan sirkulasi di SMP N 1 Tarutung. Dibangun dengan Laravel Framework, MySQL, dan Tailwind CSS.",
+      tags: ["Laravel PHP", "MySQL", "TailwindCSS"],
+      images: [
+        "/image/project/sparta-1.webp",
+        "/image/project/sparta-2.webp",
+        "/image/project/sparta-3.webp",
+      ],
+      repoUrl:
+        "https://github.com/radotyohanesnababan/SIPerpus-SMP-N-1-Tarutung",
+    },
+    {
+      id: "lettuce-api",
+      category: "backend",
+      title: "Bangkit Capstone: Lettuce Disease Detection API",
+      type: "Proyek MBKM / Kampus Merdeka",
+      org: "BANGKIT CLOUD COHORT",
+      description:
+        "Layanan RESTful API terintegrasi model Machine Learning deteksi penyakit tanaman selada, dideploy pada infrastruktur Google Cloud Platform (Cloud Run) untuk aplikasi Android.",
+      tags: ["Google Cloud (GCP)", "Cloud Run",  "RESTful API"],
+      repoUrl: "https://github.com/YogaaPratama/CloudComputing-Hicare",
+    },
+    {
+      id: "tapamajuma",
+      category: "fullstack",
+      title: "PWA Tapamajuma Projects : SMP N 1 Siborongborong",
+      type: "Proyek Kolaborasi",
+      org: "SMP N 1 SIBORONGBORONG",
+      description:
+        "Aplikasi PWA untuk latihan literasi dan numerasi siswa SMP N 1 Siborongborong, dengan React SPA dan Laravel backend. Saat ini dipakai aktif oleh 270+ siswa dan sedang diajukan ke GTK Tranformatif Competition 2026 Sumatera Utara",
+      tags: ["React SPA", "Laravel", "PWA", "MySQL"],
+      images: [
+        "/image/project/tapa-1.webp",
+        "/image/project/tapa-2.jpeg",
+        "/image/project/tapa-3.jpeg",
+      ],
+      demoUrl: "https://tapamajuma.smpn1siborongborong.sch.id",
+      repoUrl: "https://github.com/radotyohanesnababan/Tapamajuma-PWA-",
+    },
+    {
+      id: "haltev",
+      category: "fullstack",
+      title: "Proyek Pembelajaran Web Course Haltev",
+      type: "Proyek Klien",
+      org: "Haltev",
+      description:
+        "Proyek pembuatan website dinamis dan statis untuk pembelajaran Web Development pada course di Haltev untuk kepentingan course dan portofolio. Dibangun dengan Laravel Framework, Tailwind CSS, dan MySQL.",
+      tags: ["Laravel Framework", "Tailwind CSS", "PHP Native", "MySQL"],
+      images: [
+        "/image/project/haltev-1.webp",
+        "/image/project/haltev-2.webp",
+      ],
+      repoUrl: "https://github.com/radotyohanesnababan/unibooks-v.1.1",
+    },
+    {
+      id: "alphapro",
+      category: "fullstack",
+      title: "Bimbingan Belajar Alphapro Landing Page",
+      type: "Proyek Klien",
+      org: "Alphapro",
+      description:
+        "Proyek pembuatan landing page Alphapro dengan HTML dan Tailwind CSS, serta CMS dengan Laravel.",
+      tags: ["Laravel Framework", "Tailwind CSS", "CMS"],
+      images: ["/image/project/alpha-1.webp"],
+      repoUrl: "https://github.com/radotyohanesnababan/LITERA-PROJECT",
+    },
+    
+  ];
+
+  const featuredProjects = projects.slice(0, 3);
+  
+
+  const changeSlide = (project: Project, direction: -1 | 1) => {
+    const imageCount = project.images?.length ?? 0;
+    if (imageCount < 2) return;
+
+    setActiveSlides((current) => ({
+      ...current,
+      [project.id]:
+        ((current[project.id] ?? 0) + direction + imageCount) % imageCount,
+    }));
+  };
   return (
     <main className="w-full xl:pl-24 bg-background text-foreground min-h-screen">
       <div className="flex flex-col w-full">
@@ -97,128 +207,146 @@ export default function Home() {
               </Link>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* Project 1 */}
-              <article className="border-2 border-border bg-secondary-background shadow-shadow rounded-base p-5 flex flex-col justify-between gap-4 hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none transition-all">
-                <div className="flex flex-col gap-3">
-                  <div className="w-full h-48 rounded-base overflow-hidden border-2 border-border bg-background">
-                    <img
-                      className="w-full h-full object-cover"
-                      alt="Sistem Informasi Perpustakaan SMP N 1 Tarutung"
-                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuADmoxlO4drt2rHg_Y8oYefLl208RBy-zvxsc-AfSI04ZRXNIL0KvAgCEYFGlpE2xu3VSJj5krzdi4TYyrCgyDBUiW-4fYxDydl9S67yY3QFylqauUleBMgtmjbf5O3j5YLdHSfqbec8i7yA8sTmbnjiABJXnPwRmod-CJMMIYfTtyUlIdVjSqEr3HMxytXIQRT_3rme2xukFo08Ug74ARsovSY7Xy4wvRCcOO1nk5XxqEb6oIMp9k"
-                    />
-                  </div>
-
-                  <div className="flex flex-col gap-2">
-                    <span className="font-mono text-xs text-foreground/70 uppercase tracking-wide">
-                      Skripsi / Tugas Akhir &bull; 2025–2026
-                    </span>
-                    <h3 className="font-headline text-xl text-foreground font-bold">
-                      Sistem Informasi Perpustakaan SMP N 1 Tarutung
-                    </h3>
-                    <p className="font-body text-sm text-foreground/80 leading-relaxed">
-                      Sistem perpustakaan digital komprehensif untuk inventaris buku dan sirkulasi peminjaman ~300 siswa
-                      berbasis Laravel PHP dan React Framework dengan pengujian Blackbox langsung di lapangan.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex flex-wrap gap-1.5 pt-2 border-t-2 border-border">
-                  <span className="border-2 border-border bg-main text-main-foreground rounded-base px-2 py-0.5 font-mono text-xs font-bold">
-                    Laravel PHP
-                  </span>
-                  <span className="border-2 border-border bg-main text-main-foreground rounded-base px-2 py-0.5 font-mono text-xs font-bold">
-                    React.js
-                  </span>
-                  <span className="border-2 border-border bg-main text-main-foreground rounded-base px-2 py-0.5 font-mono text-xs font-bold">
-                    MySQL
-                  </span>
-                </div>
-              </article>
-
-              {/* Project 2 */}
-              <article className="border-2 border-border bg-secondary-background shadow-shadow rounded-base p-5 flex flex-col justify-between gap-4 hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none transition-all">
-                <div className="flex flex-col gap-3">
-                  <div className="w-full h-48 rounded-base overflow-hidden border-2 border-border bg-background">
-                    <img
-                      className="w-full h-full object-cover"
-                      alt="Bangkit Capstone: Lettuce Plant Disease Detection"
-                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5iHPHJrdyq9blKKkkadlyMbzjA-2iH2aMrSsx1KySZIKIDlj8GCd--c8z7egbMbP83clROSnbJbBFByMu8BvIuf-uEOxpuANfwvI0ud236wrOvBlvpOxHmHJ9tySypIdzZ7cRGvo-afr7VhNLxYszWdYjiVWlDYML7xtqTDq5JxpVN8a1xJOioToSdgjqxNVFFOUoRaF_wtmwAKsEl3-1Zv3u4IRiZa1TkgqlXUaBD1fxzkGKu3s"
-                    />
-                  </div>
-
-                  <div className="flex flex-col gap-2">
-                    <span className="font-mono text-xs text-foreground/70 uppercase tracking-wide">
-                      Bangkit Capstone &bull; Cloud Cohort 2024
-                    </span>
-                    <h3 className="font-headline text-xl text-foreground font-bold">
-                      Bangkit Capstone: Lettuce Disease Detection API
-                    </h3>
-                    <p className="font-body text-sm text-foreground/80 leading-relaxed">
-                      Layanan RESTful API terintegrasi model Machine Learning di Google Cloud Platform (Cloud Run) untuk
-                      klien aplikasi mobile Android.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex flex-wrap gap-1.5 pt-2 border-t-2 border-border">
-                  <span className="border-2 border-border bg-main text-main-foreground rounded-base px-2 py-0.5 font-mono text-xs font-bold">
-                    Express.js
-                  </span>
-                  <span className="border-2 border-border bg-main text-main-foreground rounded-base px-2 py-0.5 font-mono text-xs font-bold">
-                    Google Cloud
-                  </span>
-                  <span className="border-2 border-border bg-main text-main-foreground rounded-base px-2 py-0.5 font-mono text-xs font-bold">
-                    Cloud Run
-                  </span>
-                </div>
-              </article>
-
-              {/* Project 3 */}
-              <article className="border-2 border-border bg-secondary-background shadow-shadow rounded-base p-5 flex flex-col justify-between gap-4 hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none transition-all md:col-span-2">
-                <div className="flex flex-col md:flex-row gap-5 items-start">
-                  <div className="w-full md:w-1/2 h-52 rounded-base overflow-hidden border-2 border-border bg-background shrink-0">
-                    <img
-                      className="w-full h-full object-cover"
-                      alt="Tapamajuma Learning | PWA Literasi & Numerasi"
-                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSNEcddK_aGvhBzRNr_UaL-Ti_oRhFcpIw9ByOD4Iwcdl3cQSlar-6NSXh8_AuXP2HIZYl8wYaelTeGU9K-VHOWf_vYzrcazGStWHUOmYpkOUuGlJffbBATtoaYc0_biPTcwZvaP2xtatYSs5J7dBYgcfCHMx5Ihz98Y3VWqYir0-c1bd8-TdTDU0P9Q17eIFIiPSNBVVwxx1HMYad2-Nrfx1B-dTGD78WthWAO6ioOL6zZxs3MR0"
-                    />
-                  </div>
-
-                  <div className="flex flex-col gap-3 justify-between h-full">
-                    <div className="flex flex-col gap-2">
-                      <span className="font-mono text-xs text-foreground/70 uppercase tracking-wide">
-                        Proyek Kolaborasi &bull; 2026
-                      </span>
-                      <h3 className="font-headline text-xl sm:text-2xl text-foreground font-bold">
-                        Tapamajuma Learning: Platform Literasi &amp; Numerasi
-                      </h3>
-                      <p className="font-body text-sm text-foreground/80 leading-relaxed">
-                        Sistem informasi pembelajaran dan asesmen literasi-numerasi berbasis soal interaktif dan gamifikasi.
-                        Digunakan aktif oleh 250+ siswa di SMP N 1 Siborongborong dan diajukan ke Lomba GTK Transformatif 2026.
-                      </p>
-                    </div>
-
-                    <div className="flex flex-wrap gap-1.5 pt-2">
-                      <span className="border-2 border-border bg-main text-main-foreground rounded-base px-2 py-0.5 font-mono text-xs font-bold">
-                        React (SPA)
-                      </span>
-                      <span className="border-2 border-border bg-main text-main-foreground rounded-base px-2 py-0.5 font-mono text-xs font-bold">
-                        Laravel PHP
-                      </span>
-                      <span className="border-2 border-border bg-main text-main-foreground rounded-base px-2 py-0.5 font-mono text-xs font-bold">
-                        MySQL
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </article>
-            </div>
+             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                          {featuredProjects.map((project) => (
+                            <div
+                              key={project.id}
+                              className="border-2 border-border bg-secondary-background shadow-shadow rounded-base p-5 flex flex-col justify-between gap-4 hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none transition-all group"
+                            >
+                              <div className="flex flex-col gap-3">
+                                {project.images && project.images.length > 0 && (
+                                  <div>
+                                    <div className="relative w-full h-48 rounded-base overflow-hidden border-2 border-border bg-background">
+                                      <Image
+                                        className="object-cover"
+                                        alt={`${project.title}, gambar ${(
+                                          activeSlides[project.id] ?? 0
+                                        ) + 1}`}
+                                        src={
+                                          project.images[
+                                            activeSlides[project.id] ?? 0
+                                          ] ?? project.images[0]
+                                        }
+                                        fill
+                                        loading={
+                                          project.id === "sparta" &&
+                                          (activeSlides[project.id] ?? 0) === 0
+                                            ? "eager"
+                                            : "lazy"
+                                        }
+                                        sizes="(max-width: 768px) 100vw, 50vw"
+                                      />
+                                    </div>
+                                    {project.images.length > 1 && (
+                                      <div className="flex items-center justify-between mt-2">
+                                        <button
+                                          type="button"
+                                          className="min-h-11 min-w-11 border-2 border-border bg-secondary-background text-foreground shadow-shadow rounded-base flex items-center justify-center hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none transition-all"
+                                          onClick={() => changeSlide(project, -1)}
+                                          aria-label={`Gambar sebelumnya untuk ${project.title}`}
+                                        >
+                                          <span
+                                            className="material-symbols-outlined"
+                                            aria-hidden="true"
+                                          >
+                                            chevron_left
+                                          </span>
+                                        </button>
+                                        <span
+                                          className="font-mono text-xs text-foreground/70"
+                                          aria-live="polite"
+                                        >
+                                          {(activeSlides[project.id] ?? 0) + 1} /{" "}
+                                          {project.images.length}
+                                        </span>
+                                        <button
+                                          type="button"
+                                          className="min-h-11 min-w-11 border-2 border-border bg-secondary-background text-foreground shadow-shadow rounded-base flex items-center justify-center hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none transition-all"
+                                          onClick={() => changeSlide(project, 1)}
+                                          aria-label={`Gambar berikutnya untuk ${project.title}`}
+                                        >
+                                          <span
+                                            className="material-symbols-outlined"
+                                            aria-hidden="true"
+                                          >
+                                            chevron_right
+                                          </span>
+                                        </button>
+                                      </div>
+                                    )}
+                                  </div>
+                                )}
+            
+                                <div className="flex flex-col gap-1.5">
+                                  <div className="flex items-center justify-between gap-2">
+                                    <span className="font-mono text-xs text-foreground/70 uppercase tracking-wide">
+                                      {project.type}
+                                    </span>
+                                    {project.org && (
+                                      <span className="font-mono text-xs text-foreground/70 font-bold">
+                                        {project.org}
+                                      </span>
+                                    )}
+                                  </div>
+            
+                                  <h3 className="font-headline text-xl text-foreground font-bold">
+                                    {project.title}
+                                  </h3>
+            
+                                  <p className="font-body text-sm text-foreground/80 leading-relaxed">
+                                    {project.description}
+                                  </p>
+                                </div>
+            
+                                {project.tags.length > 0 && (
+                                  <div className="flex flex-wrap gap-1.5 pt-1">
+                                    {project.tags.map((tg) => (
+                                      <span
+                                        key={tg}
+                                        className="border-2 border-border bg-main text-main-foreground rounded-base px-2 py-0.5 font-mono text-xs font-bold"
+                                      >
+                                        {tg}
+                                      </span>
+                                    ))}
+                                  </div>
+                                )}
+                              </div>
+            
+                              <div className="flex items-center justify-between pt-3 border-t-2 border-border mt-2">
+                                <div className="flex items-center gap-2">
+                                  {project.demoUrl && project.demoUrl !== "#" && (
+                                    <a
+                                      className="border-2 border-border bg-main text-main-foreground shadow-shadow rounded-base px-3 py-1.5 font-mono text-xs font-bold hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none transition-all flex items-center gap-1.5"
+                                      href={project.demoUrl}
+                                    >
+                                      <span className="material-symbols-outlined text-sm" aria-hidden="true">visibility</span>
+                                      <span>Situs</span>
+                                    </a>
+                                  )}
+                                  <a
+                                    className="border-2 border-border bg-secondary-background text-foreground shadow-shadow rounded-base p-1.5 font-mono text-xs font-bold hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none transition-all flex items-center justify-center"
+                                    href={project.repoUrl || "https://github.com/radotyohanesnababan"}
+                                    rel="noopener noreferrer"
+                                    target="_blank"
+                                    title="Repository GitHub"
+                                    aria-label={`Repository GitHub untuk ${project.title} (membuka di tab baru)`}
+                                  >
+                                    <span className="material-symbols-outlined text-base" aria-hidden="true">code</span>
+                                  </a>
+                                </div>
+            
+                                <span className="font-mono text-xs text-foreground/70 font-semibold">
+                                  {project.category.toUpperCase()}
+                                </span>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
           </div>
         </section>
 
         {/* SECTION: RANGKUMAN PORTOFOLIO & NAVIGASI */}
-        <section className="w-full max-w-5xl mx-auto px-4 md:px-6 py-16 md:py-24">
+        <section className="w-full max-w-5xl mx-auto px-4 md:px-6 py-16 md:py-24 ">
           <div className="flex flex-col gap-8">
             <div>
               <h2 className="font-headline text-2xl sm:text-3xl text-foreground font-bold tracking-tight">
