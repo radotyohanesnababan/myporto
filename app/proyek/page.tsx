@@ -28,7 +28,7 @@ export default function ProyekPage() {
       type: "Skripsi / Tugas Akhir",
       org: "SMP N 1 TARUTUNG",
       description:
-        "Sistem pengelolaan perpustakaan untuk inventaris buku, peminjaman siswa, dan sirkulasi di SMP N 1 Tarutung.",
+        "Sistem pengelolaan perpustakaan untuk inventaris buku, peminjaman siswa, dan sirkulasi di SMP N 1 Tarutung. Dibangun dengan Laravel Framework, MySQL, dan Tailwind CSS.",
       tags: ["Laravel PHP", "MySQL", "TailwindCSS"],
       images: [
         "/image/project/sparta-1.webp",
@@ -56,7 +56,7 @@ export default function ProyekPage() {
       type: "Proyek Kolaborasi",
       org: "SMP N 1 SIBORONGBORONG",
       description:
-        "Aplikasi PWA untuk latihan literasi dan numerasi siswa SMP N 1 Siborongborong, dengan React SPA dan Laravel backend.",
+        "Aplikasi PWA untuk latihan literasi dan numerasi siswa SMP N 1 Siborongborong, dengan React SPA dan Laravel backend. Saat ini dipakai aktif oleh 270+ siswa dan sedang diajukan ke GTK Tranformatif Competition 2026 Sumatera Utara",
       tags: ["React SPA", "Laravel", "PWA", "MySQL"],
       images: [
         "/image/project/tapa-1.webp",
@@ -73,7 +73,7 @@ export default function ProyekPage() {
       type: "Proyek Klien",
       org: "Haltev",
       description:
-        "Proyek pembuatan website dinamis dan statis untuk pembelajaran Web Development pada course di Haltev.",
+        "Proyek pembuatan website dinamis dan statis untuk pembelajaran Web Development pada course di Haltev untuk kepentingan course dan portofolio. Dibangun dengan Laravel Framework, Tailwind CSS, dan MySQL.",
       tags: ["Laravel Framework", "Tailwind CSS", "PHP Native", "MySQL"],
       images: [
         "/image/project/haltev-1.webp",
